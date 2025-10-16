@@ -1,10 +1,10 @@
 apiVersion: v1beta1
 kind: AgentConfig
 metadata:
- name: ocp1
+ name: 
 rendezvousIP: 172.20.1.31
 hosts:
- - hostname: ai-ocp1-cp-01
+ - hostname: 
    role: master
    rootDeviceHints:
      deviceName: "/dev/nvme0n1"
