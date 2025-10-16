@@ -1,0 +1,129 @@
+apiVersion: v1beta1
+kind: AgentConfig
+metadata:
+ name: ocp1
+rendezvousIP: 172.20.1.31
+hosts:
+ - hostname: ai-ocp1-cp-01
+   role: master
+   rootDeviceHints:
+     deviceName: "/dev/nvme0n1"
+   interfaces:
+   - name: ens35f0np0
+     macAddress: 10:70:FD:18:A3:9C
+   - name: ens33f0np0
+     macAddress: 10:70:FD:18:A3:68
+   networkConfig:
+        interfaces:
+          - name: bond0
+            type: bond
+            state: up
+            mac-address: 10:70:FD:18:A3:68
+            ipv4:
+              address:
+                - ip: 172.20.1.31
+                  prefix-length: 24
+              enabled: true
+              dhcp: false
+            ipv6:
+              enabled: false
+            link-aggregation:
+              mode: "4"
+              options:
+                miimon: "150"
+              port:
+               - ens35f0np0
+               - ens33f0np0
+        dns-resolver:
+          config:
+            server:
+              - 172.20.1.10
+               
+        routes:
+          config:
+            - destination: 0.0.0.0/0
+              next-hop-address: 172.20.1.1
+              next-hop-interface: bond0
+              table-id: 254
+ - hostname: ai-ocp1-cp-02
+   role: master
+   rootDeviceHints:
+     deviceName: "/dev/nvme0n1"
+   interfaces:
+   - name: ens35f0np0
+     macAddress: 10:70:FD:18:A3:6E
+   - name: ens33f0np0
+     macAddress: 10:70:FD:18:A3:6A
+   networkConfig:
+        interfaces:
+          - name: bond0
+            type: bond
+            state: up
+            mac-address: 10:70:FD:18:A3:6A
+            ipv4:
+              address:
+                - ip: 172.20.1.32
+                  prefix-length: 24
+              enabled: true
+              dhcp: false
+            ipv6:
+              enabled: false
+            link-aggregation:
+              mode: "4"
+              options:
+                miimon: "150"
+              port:
+               - ens35f0np0
+               - ens33f0np0
+        dns-resolver:
+          config:
+            server:
+              - 172.20.1.10
+                
+        routes:
+          config:
+            - destination: 0.0.0.0/0
+              next-hop-address: 172.20.1.1
+              next-hop-interface: bond0
+              table-id: 254
+ - hostname: ai-ocp1-cp-03
+   role: master
+   rootDeviceHints:
+     deviceName: "/dev/nvme0n1"
+   interfaces:
+   - name: ens35f0np0
+     macAddress: 10:70:FD:18:A3:70
+   - name: ens33f0np0
+     macAddress: 10:70:FD:18:A3:80
+   networkConfig:
+        interfaces:
+          - name: bond0
+            type: bond
+            state: up
+            mac-address: 10:70:FD:18:A3:80
+            ipv4:
+              address:
+                - ip: 172.20.1.33
+                  prefix-length: 24
+              enabled: true
+              dhcp: false
+            ipv6:
+              enabled: false
+            link-aggregation:
+              mode: "4"
+              options:
+                miimon: "150"
+              port:
+              - ens35f0np0
+              - ens33f0np0
+        dns-resolver:
+          config:
+            server:
+               - 172.20.1.10
+                
+        routes:
+          config:
+            - destination: 0.0.0.0/0
+              next-hop-address: 172.20.1.1
+              next-hop-interface: bond0
+              table-id: 254
