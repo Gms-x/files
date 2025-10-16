@@ -45,7 +45,7 @@ hosts:
               next-hop-address: 172.20.1.1
               next-hop-interface: bond0
               table-id: 254
- - hostname: ai-ocp1-cp-02
+ - hostname: 
    role: master
    rootDeviceHints:
      deviceName: "/dev/nvme0n1"
@@ -86,7 +86,7 @@ hosts:
               next-hop-address: 172.20.1.1
               next-hop-interface: bond0
               table-id: 254
- - hostname: ai-ocp1-cp-03
+ - hostname: 
    role: master
    rootDeviceHints:
      deviceName: "/dev/nvme0n1"
