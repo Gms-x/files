@@ -1,0 +1,151 @@
+apiVersion: v1beta1
+kind: AgentConfig
+metadata:
+  name: wrocp
+rendezvousIP: 10.232.115.10
+additionalNTPSources:
+  - 172.17.62.25
+  - 158.230.4.112
+  - 158.230.106.56
+hosts:
+  - hostname: ukytt-d10-pts018
+    role: master
+    interfaces:
+      - name: ens4f0
+        macAddress: 40:a6:b7:38:45:78
+      - name: ens6f1
+        macAddress: 40:a6:b7:26:06:c9
+    networkConfig:
+      interfaces:
+        - name: bond0.500 
+          type: vlan 
+          state: up
+          vlan:
+            base-iface: bond0
+            id: 500
+          ipv4:
+            enabled: true
+            address:
+              - ip: 10.232.115.10
+                prefix-length: 27
+            dhcp: false
+        - name: bond0 
+          type: bond 
+          state: up
+          ipv4:
+            enabled: false
+          ipv6:
+            enabled: false
+          link-aggregation:
+            mode: "active-backup"
+            options:
+              miimon: "150" 
+            port:
+              - ens4f0
+              - ens6f1
+      dns-resolver: 
+        config:
+          server:
+            - 172.17.62.25
+            - 158.230.4.112
+            - 158.230.106.56
+      routes:
+        config:
+          - destination: 0.0.0.0/0
+            next-hop-address: 10.232.115.30
+            next-hop-interface: bond0.500 
+            table-id: 254
+  - hostname: ukytt-d10-pts022
+    role: master
+    interfaces:
+      - name: ens4f0
+        macAddress: 40:a6:b7:38:4b:94
+      - name: ens6f1
+        macAddress: 40:a6:b7:38:8d:d1
+    networkConfig:
+      interfaces:
+        - name: bond0.500 
+          type: vlan 
+          state: up
+          vlan:
+            base-iface: bond0
+            id: 500
+          ipv4:
+            enabled: true
+            address:
+              - ip: 10.232.115.11
+                prefix-length: 27
+            dhcp: false
+        - name: bond0
+          type: bond 
+          state: up
+          ipv4:
+            enabled: false
+          ipv6:
+            enabled: false
+          link-aggregation:
+            mode: "active-backup"
+            options:
+              miimon: "150" 
+            port:
+              - ens4f0
+              - ens6f1
+      dns-resolver: 
+        config:
+          server:
+            - 172.17.62.25
+            - 158.230.4.112
+            - 158.230.106.56
+      routes:
+        config:
+          - destination: 0.0.0.0/0
+            next-hop-address: 10.232.115.30
+            next-hop-interface: bond0.500 
+            table-id: 254
+  - hostname: ukytt-d10-pts019
+    role: master
+    interfaces:
+      - name: ens4f0
+        macAddress: 40:a6:b7:22:7b:0c
+      - name: ens6f1
+        macAddress: 40:a6:b7:38:8e:6d
+    networkConfig:
+      interfaces:
+        - name: bond0.500 
+          type: vlan 
+          state: up
+          vlan:
+            base-iface: bond0
+            id: 500
+          ipv4:
+            enabled: true
+            address:
+              - ip: 10.232.115.12
+                prefix-length: 27
+            dhcp: false
+        - name: bond0 
+          type: bond 
+          state: up
+          ipv4:
+            enabled: false
+          ipv6:
+            enabled: false
+          link-aggregation:
+            mode: "active-backup"
+            options:
+              miimon: "150" 
+            port:
+              - ens4f0
+              - ens6f1
+      dns-resolver: 
+        config:
+          server:
+            - 172.17.62.25
+            - 158.230.4.112
+            - 158.230.106.56
+      routes:
+        config:
+          - destination: 0.0.0.0/0
+            next-hop-address: 10.232.115.30
+            next-hop-interface: bond0.500 
+            table-id: 254
