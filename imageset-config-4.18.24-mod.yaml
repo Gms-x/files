@@ -13,12 +13,12 @@ mirror:
     packages:
       - name: gpu-operator-certified
         channels:
-          - name: v25.3
+          - name: v25.10
             minVersion: 25.3.2
             maxVersion: 25.3.2
       - name: nvidia-network-operator
         channels:
-          - name:  v25.4
+          - name:  stable
   - catalog: registry.redhat.io/redhat/redhat-operator-index:v4.18
     packages:
       - name: cincinnati-operator
