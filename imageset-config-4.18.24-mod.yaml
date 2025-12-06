@@ -1,0 +1,110 @@
+kind: ImageSetConfiguration
+apiVersion: mirror.openshift.io/v2alpha1
+archiveSize: 2
+mirror:
+  platform:
+    channels:
+    - name: stable-4.18
+      minVersion: 4.18.24
+      maxVersion: 4.18.24
+    graph: true
+  operators:
+  - catalog: registry.redhat.io/redhat/certified-operator-index:v4.18
+    packages:
+      - name: gpu-operator-certified
+        channels:
+          - name: v25.3
+            minVersion: 25.3.2
+            maxVersion: 25.3.2
+      - name: nvidia-network-operator
+        channels:
+          - name:  v25.4
+  - catalog: registry.redhat.io/redhat/redhat-operator-index:v4.18
+    packages:
+      - name: cincinnati-operator
+        channels:
+          - name: v1
+      - name: openshift-cert-manager-operator
+        channels:
+          - name: stable-v1
+      - name: nfd
+        channels:
+          - name: stable
+      - name: cluster-logging
+        channels:
+          - name: stable-6.4
+      - name: cluster-observability-operator
+        channels:
+          - name: stable
+      - name: compliance-operator
+        channels:
+          - name: stable
+      - name: kubernetes-nmstate-operator
+        channels:
+          - name: stable
+      - name: loki-operator
+        channels:
+          - name: stable-6.4
+      - name: netobserv-operator
+        channels:
+          - name: stable
+      - name: node-maintenance-operator
+        channels:
+          - name: stable
+      - name: node-healthcheck-operator
+        channels:
+          - name: stable
+      - name: sriov-network-operator
+        channels:
+          - name: stable
+  additionalImages:
+    - name: registry.redhat.io/ubi8/ubi:latest
+    - name: registry.redhat.io/ubi9/ubi:latest
+    - name: registry.redhat.io/redhat/redhat-operator-index:v4.18
+    - name: registry.redhat.io/redhat/redhat-marketplace-index:v4.18
+    - name: registry.redhat.io/redhat/certified-operator-index:v4.18
+    - name: registry.access.redhat.com/ubi8/httpd-24:1-226
+    - name: registry.connect.redhat.com/hashicorp/vault:1.18.5-ubi
+    - name: registry.redhat.io/ansible-automation-platform-23/ee-supported-rhel8:latest
+    - name: ghcr.io/external-secrets/external-secrets:v0.8.1-ubi
+    - name: registry.access.redhat.com/ubi8/ubi-minimal:latest
+    - name: registry.access.redhat.com/ubi9/ubi-minimal:latest
+    - name: registry.redhat.io/openshift4/ose-cli:latest
+    - name: registry.redhat.io/openshift4/ose-must-gather:latest
+    - name: quay.io/openshift/origin-must-gather:latest
+    - name: registry.redhat.io/openshift4/ose-cli:latest
+    - name: registry.redhat.io/openshift4/ose-tools-rhel9:latest
+    - name: registry.redhat.io/ubi9/toolbox:latest
+#########
+    - name: registry.redhat.io/rhel8/httpd-24:latest
+    - name: registry.redhat.io/ocp-tools-4/jenkins-rhel8:v4.13.0
+    - name: registry.redhat.io/ocp-tools-4/jenkins-agent-base-rhel8:v4.13.0
+    - name: registry.redhat.io/rhscl/mysql-80-rhel7:latest
+    - name: registry.redhat.io/rhel9/mysql-80:latest
+    - name: registry.redhat.io/ubi9/nginx-124:latest
+    - name: registry.redhat.io/ubi9/nodejs-20:latest
+    - name: registry.redhat.io/ubi9/nodejs-20-minimal:latest
+    - name: registry.redhat.io/ubi9/perl-532:latest
+    - name: registry.redhat.io/ubi9/php-82:latest
+    - name: registry.redhat.io/rhel9/postgresql-13:latest
+    - name: registry.redhat.io/rhel9/postgresql-15:latest
+    - name: registry.redhat.io/ubi9/python-311:latest
+    - name: registry.redhat.io/ubi9/python-312:latest
+    - name: registry.redhat.io/ubi9/python-39:latest
+    - name: registry.redhat.io/rhel9/redis-6:latest
+    - name: registry.redhat.io/rhel9/redis-7:latest
+    - name: registry.redhat.io/ubi9/ruby-33:latest
+    - name: registry.redhat.io/rh-sso-7/sso76-openshift-rhel8:7.6
+    - name: quay.io/openshift/origin-cli:latest
+    - name: quay.io/edge-infrastructure/nvidia-tools:0.1.5
+    - name: nvcr.io/nvidia/driver:570.172.08-rhcos4.18
+    - name: ghcr.io/mellanox/k8s-rdma-shared-dev-plugin@sha256:1eb5ab7f4b6f0cf89c954cf7ac8eb2e6fb2290a4f5f57417136a5302f20b12c8
+    - name: ghcr.io/mellanox/ipoib-cni:v1.2.0
+    - name: ghcr.io/mellanox/nvidia-k8s-ipam:v0.2.0
+    - name: nvcr.io/nvidia/mellanox/doca-driver:25.04-0.6.1.0-2-rhcos4.18-amd64
+    - name: nvcr.io/nvidia/doca/doca_telemetry:1.16.5-doca2.6.0-host
+    - name: ghcr.io/mellanox/nic-feature-discovery:v0.0.1
+    - name: quay.io/melgamasy/nvidia-tools-mod:01
+    - name: registry.redhat.io/rhel9/support-tools:latest
+    - name: quay.io/melgamasy/rocky-nvidia-tools:latest
+    - name: nvcr.io/nvidia/k8s/cuda-sample:vectoradd-cuda12.5.0-ubi8
