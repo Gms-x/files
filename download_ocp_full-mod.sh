@@ -5,7 +5,7 @@ set -e
 rm -rf ./bin
 BIN_DIR="./bin"
 mkdir -p "$BIN_DIR"
-yum install vim wget git jq podman -y 
+yum install vim wget git jq podman tmux -y 
 
 # === Function for visual steps ===
 print_step() {
