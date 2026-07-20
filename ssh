@@ -3,3 +3,11 @@ ssht(){
 onfigs/tmux.conf new -s gamasy || tmux -L gamasy a; else bash --rcfile ~/mgamasy/configs/bashrc || bash; fi'
   #alias sshh='/usr/bin/ssh'
 }
+
+
+
+[root@az1hp-jcse1-ccc ~]#
+[root@az1hp-jcse1-ccc ~]# podman push  az1hp-jcse1-ccc.sgi-idm.fednet.intra:8443/rdma-test/rocky-nvidia-tools --tls-verify false
+Getting image source signatures
+Error: trying to reuse blob sha256:44343de3ea1d3f71f143967c71a91df76138a17a21ac56642f3c0f2a64b07dce at destination: checking whether a blob sha256:44343de3ea1d3f71f143967c71a91df76138a17a21ac56642f3c0f2a64b07dce exists in docker.io/library/false: requested access to the resource is denied
+[root@az1hp-jcse1-ccc ~]#
