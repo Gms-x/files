@@ -1,0 +1,5 @@
+ssht(){
+  command ssh -t "$@" 'if command -v tmux &> /dev/null && [ -f ~/mgamasy/configs/tmux.conf ]; then tmux -L gamasy -f ~/mgamasy/cc
+onfigs/tmux.conf new -s gamasy || tmux -L gamasy a; else bash --rcfile ~/mgamasy/configs/bashrc || bash; fi'
+  #alias sshh='/usr/bin/ssh'
+}
