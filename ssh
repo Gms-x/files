@@ -11,3 +11,98 @@ onfigs/tmux.conf new -s gamasy || tmux -L gamasy a; else bash --rcfile ~/mgamasy
 Getting image source signatures
 Error: trying to reuse blob sha256:44343de3ea1d3f71f143967c71a91df76138a17a21ac56642f3c0f2a64b07dce at destination: checking whether a blob sha256:44343de3ea1d3f71f143967c71a91df76138a17a21ac56642f3c0f2a64b07dce exists in docker.io/library/false: requested access to the resource is denied
 [root@az1hp-jcse1-ccc ~]#
+
+
+
+INFO[0000] podman filtering at log level debug
+DEBU[0000] Called push.PersistentPreRunE(podman push az1hp-jcse1-ccc.sgi-idm.fednet.intra:8443/rdma-test/rocky-nvidia-tools:latest --tls-verify false --log-level=debug)
+DEBU[0000] Using conmon: "/usr/bin/conmon"
+INFO[0000] Using sqlite as database backend
+DEBU[0000] Using graph driver overlay
+DEBU[0000] Using graph root /var/lib/containers/storage
+DEBU[0000] Using run root /run/containers/storage
+DEBU[0000] Using static dir /var/lib/containers/storage/libpod
+DEBU[0000] Using tmp dir /run/libpod
+DEBU[0000] Using volume path /var/lib/containers/storage/volumes
+DEBU[0000] Using transient store: false
+DEBU[0000] [graphdriver] trying provided driver "overlay"
+DEBU[0000] Cached value indicated that overlay is supported
+DEBU[0000] Cached value indicated that overlay is supported
+DEBU[0000] Cached value indicated that metacopy is being used
+DEBU[0000] Cached value indicated that native-diff is not being used
+INFO[0000] Not using native diff for overlay, this may cause degraded performance for building images: kernel has CONFIG_OVERLAY_FS_REDIRECT_DIR enabled
+DEBU[0000] backingFs=xfs, projectQuotaSupported=false, useNativeDiff=false, usingMetacopy=true
+DEBU[0000] Initializing event backend file
+DEBU[0000] Configured OCI runtime crun initialization failed: no valid executable found for OCI runtime crun: invalid argument
+DEBU[0000] Configured OCI runtime crun-vm initialization failed: no valid executable found for OCI runtime crun-vm: invalid argument
+DEBU[0000] Configured OCI runtime kata initialization failed: no valid executable found for OCI runtime kata: invalid argument
+DEBU[0000] Configured OCI runtime youki initialization failed: no valid executable found for OCI runtime youki: invalid argument
+DEBU[0000] Configured OCI runtime crun-wasm initialization failed: no valid executable found for OCI runtime crun-wasm: invalid argument
+DEBU[0000] Configured OCI runtime runj initialization failed: no valid executable found for OCI runtime runj: invalid argument
+DEBU[0000] Configured OCI runtime runsc initialization failed: no valid executable found for OCI runtime runsc: invalid argument
+DEBU[0000] Configured OCI runtime krun initialization failed: no valid executable found for OCI runtime krun: invalid argument
+DEBU[0000] Configured OCI runtime ocijail initialization failed: no valid executable found for OCI runtime ocijail: invalid argument
+DEBU[0000] Using OCI runtime "/usr/bin/runc"
+INFO[0000] Setting parallel job count to 7
+DEBU[0000] Looking up image "az1hp-jcse1-ccc.sgi-idm.fednet.intra:8443/rdma-test/rocky-nvidia-tools:latest" in local containers storage
+DEBU[0000] Normalized platform linux/amd64 to {amd64 linux  [] }
+DEBU[0000] Trying "az1hp-jcse1-ccc.sgi-idm.fednet.intra:8443/rdma-test/rocky-nvidia-tools:latest" ...
+DEBU[0000] parsed reference into "[overlay@/var/lib/containers/storage+/run/containers/storage:overlay.mountopt=nodev,metacopy=on]@f6f9e045e2c3006f62a0683be70412994d9bf737b4ebc8e1f318f713db234d78"
+DEBU[0000] Found image "az1hp-jcse1-ccc.sgi-idm.fednet.intra:8443/rdma-test/rocky-nvidia-tools:latest" as "az1hp-jcse1-ccc.sgi-idm.fednet.intra:8443/rdma-test/rocky-nvidia-tools:latest" in local containers storage
+DEBU[0000] Found image "az1hp-jcse1-ccc.sgi-idm.fednet.intra:8443/rdma-test/rocky-nvidia-tools:latest" as "az1hp-jcse1-ccc.sgi-idm.fednet.intra:8443/rdma-test/rocky-nvidia-tools:latest" in local containers storage ([overlay@/var/lib/containers/storage+/run/containers/storage:overlay.mountopt=nodev,metacopy=on]@f6f9e045e2c3006f62a0683be70412994d9bf737b4ebc8e1f318f713db234d78)
+DEBU[0000] exporting opaque data as blob "sha256:f6f9e045e2c3006f62a0683be70412994d9bf737b4ebc8e1f318f713db234d78"
+DEBU[0000] Pushing image az1hp-jcse1-ccc.sgi-idm.fednet.intra:8443/rdma-test/rocky-nvidia-tools:latest to false
+DEBU[0000] Normalized platform linux/amd64 to {amd64 linux  [] }
+DEBU[0000] Copying source image [overlay@/var/lib/containers/storage+/run/containers/storage:overlay.mountopt=nodev,metacopy=on]@f6f9e045e2c3006f62a0683be70412994d9bf737b4ebc8e1f318f713db234d78 to destination image //false:latest
+DEBU[0000] Using registries.d directory /etc/containers/registries.d
+DEBU[0000] Loading registries configuration "/etc/containers/registries.conf"
+DEBU[0000] Loading registries configuration "/etc/containers/registries.conf.d/000-shortnames.conf"
+DEBU[0000] Loading registries configuration "/etc/containers/registries.conf.d/001-rhel-shortnames.conf"
+DEBU[0000] Loading registries configuration "/etc/containers/registries.conf.d/002-rhel-shortnames-overrides.conf"
+DEBU[0000] No credentials matching docker.io/library/false found in /run/user/0/containers/auth.json
+DEBU[0000] No credentials matching docker.io/library/false found in /root/.config/containers/auth.json
+DEBU[0000] No credentials matching docker.io/library/false found in /root/.docker/config.json
+DEBU[0000] No credentials matching docker.io/library/false found in /root/.dockercfg
+DEBU[0000] No credentials for docker.io/library/false found
+DEBU[0000]  No signature storage configuration found for docker.io/library/false:latest, using built-in default file:///var/lib/containers/sigstore
+DEBU[0000] Looking for TLS certificates and private keys in /etc/docker/certs.d/docker.io
+DEBU[0000] Using SQLite blob info cache at /var/lib/containers/cache/blob-info-cache-v1.sqlite
+DEBU[0000] IsRunningImageAllowed for image containers-storage:[overlay@/var/lib/containers/storage]@f6f9e045e2c3006f62a0683be70412994d9bf737b4ebc8e1f318f713db234d78
+DEBU[0000]  Using transport "containers-storage" policy section ""
+DEBU[0000]  Requirement 0: allowed
+DEBU[0000] Overall: allowed
+Getting image source signatures
+DEBU[0000] Manifest has MIME type application/vnd.docker.distribution.manifest.v2+json, ordered candidate list [application/vnd.docker.distribution.manifest.v2+json, application/vnd.docker.distribution.manifest.v1+prettyjws, application/vnd.oci.image.manifest.v1+json, application/vnd.oci.image.index.v1+json, application/vnd.docker.distribution.manifest.list.v2+json, application/vnd.docker.distribution.manifest.v1+json]
+DEBU[0000] ... will first try using the original manifest unmodified
+DEBU[0000] Checking if we can reuse blob sha256:7601248fcf89f2c39372a682df3d57bf4089ea2c5a5780b820f9387e6db84827: general substitution = true, compression for MIME type "application/vnd.docker.image.rootfs.diff.tar" = true
+DEBU[0000] Checking /v2/library/false/blobs/sha256:7601248fcf89f2c39372a682df3d57bf4089ea2c5a5780b820f9387e6db84827
+DEBU[0000] GET https://registry-1.docker.io/v2/
+DEBU[0000] Checking if we can reuse blob sha256:44343de3ea1d3f71f143967c71a91df76138a17a21ac56642f3c0f2a64b07dce: general substitution = true, compression for MIME type "application/vnd.docker.image.rootfs.diff.tar" = true
+DEBU[0000] Checking /v2/library/false/blobs/sha256:44343de3ea1d3f71f143967c71a91df76138a17a21ac56642f3c0f2a64b07dce
+DEBU[0000] Ping https://registry-1.docker.io/v2/ status 401
+DEBU[0000] GET https://auth.docker.io/token?scope=repository%3Alibrary%2Ffalse%3Apull%2Cpush&service=registry.docker.io
+DEBU[0000] GET https://auth.docker.io/token?scope=repository%3Alibrary%2Ffalse%3Apull%2Cpush&service=registry.docker.io
+DEBU[0001] HEAD https://registry-1.docker.io/v2/library/false/blobs/sha256:44343de3ea1d3f71f143967c71a91df76138a17a21ac56642f3c0f2a64b07dce
+DEBU[0001] HEAD https://registry-1.docker.io/v2/library/false/blobs/sha256:7601248fcf89f2c39372a682df3d57bf4089ea2c5a5780b820f9387e6db84827
+DEBU[0001] Detected insufficient_scope error, will retry request with updated scope
+DEBU[0001] GET https://auth.docker.io/token?scope=repository%3Alibrary%2Ffalse%3Apull%2Cpush&scope=repository%3Alibrary%2Ffalse%3Apull&service=registry.docker.io
+DEBU[0001] Detected insufficient_scope error, will retry request with updated scope
+DEBU[0001] GET https://auth.docker.io/token?scope=repository%3Alibrary%2Ffalse%3Apull%2Cpush&scope=repository%3Alibrary%2Ffalse%3Apull&service=registry.docker.io
+DEBU[0001] HEAD https://registry-1.docker.io/v2/library/false/blobs/sha256:7601248fcf89f2c39372a682df3d57bf4089ea2c5a5780b820f9387e6db84827
+DEBU[0001] HEAD https://registry-1.docker.io/v2/library/false/blobs/sha256:44343de3ea1d3f71f143967c71a91df76138a17a21ac56642f3c0f2a64b07dce
+DEBU[0002] ... not authorized
+DEBU[0002] Discarding non-primary errors:
+DEBU[0002]   error parsing HTTP 401 response body: unexpected end of JSON input: ""
+DEBU[0002] ... not authorized
+DEBU[0002] Discarding non-primary errors:
+DEBU[0002]   error parsing HTTP 401 response body: unexpected end of JSON input: ""
+DEBU[0002] Looking up image "az1hp-jcse1-ccc.sgi-idm.fednet.intra:8443/rdma-test/rocky-nvidia-tools:latest" in local containers storage
+DEBU[0002] Normalized platform linux/amd64 to {amd64 linux  [] }
+DEBU[0002] Trying "az1hp-jcse1-ccc.sgi-idm.fednet.intra:8443/rdma-test/rocky-nvidia-tools:latest" ...
+DEBU[0002] parsed reference into "[overlay@/var/lib/containers/storage+/run/containers/storage:overlay.mountopt=nodev,metacopy=on]@f6f9e045e2c3006f62a0683be70412994d9bf737b4ebc8e1f318f713db234d78"
+DEBU[0002] Found image "az1hp-jcse1-ccc.sgi-idm.fednet.intra:8443/rdma-test/rocky-nvidia-tools:latest" as "az1hp-jcse1-ccc.sgi-idm.fednet.intra:8443/rdma-test/rocky-nvidia-tools:latest" in local containers storage
+Error: trying to reuse blob sha256:44343de3ea1d3f71f143967c71a91df76138a17a21ac56642f3c0f2a64b07dce at destination: checking whether a blob sha256:44343de3ea1d3f71f143967c71a91df76138a17a21ac56642f3c0f2a64b07dce exists in docker.io/library/false: requested access to the resource is denied
+DEBU[0002] Shutting down engines
+az1hp-jcse1-ccc:~  13:14:27  [system:admin:sno-sgi:openshift-config]
+
+
