@@ -136,3 +136,10 @@ ib_core               565248  13 rdma_cm,ib_ipoib,rpcrdma,ib_srpt,iw_cm,bnxt_re,
 
 
 
+
+
+for d in /sys/class/infiniband/*; do
+    echo "RDMA Device: $(basename $d)"
+    ls $d/device/net
+    echo
+done
