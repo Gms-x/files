@@ -106,3 +106,19 @@ DEBU[0002] Shutting down engines
 az1hp-jcse1-ccc:~  13:14:27  [system:admin:sno-sgi:openshift-config]
 
 
+
+
+
+sh-5.1# ib_write_bw
+libibverbs: Warning: Driver bnxt_re does not support the kernel ABI of 8 (supports 1 to 1) for device /sys/class/infiniband/bnxt_re1
+libibverbs: Warning: Driver bnxt_re does not support the kernel ABI of 8 (supports 1 to 1) for device /sys/class/infiniband/bnxt_re1
+libibverbs: Warning: Driver bnxt_re does not support the kernel ABI of 8 (supports 1 to 1) for device /sys/class/infiniband/bnxt_re0
+libibverbs: Warning: Driver bnxt_re does not support the kernel ABI of 8 (supports 1 to 1) for device /sys/class/infiniband/bnxt_re0
+
+************************************
+* Waiting for client to connect... *
+************************************
+
+
+
+
