@@ -121,4 +121,18 @@ libibverbs: Warning: Driver bnxt_re does not support the kernel ABI of 8 (suppor
 
 
 
+[root@master-01 bnxt_re0]# lsmod | grep bnxt
+bnxt_re               753664  0
+ib_peer_mem            32768  2 nvidia_peermem,bnxt_re
+bnxt_en              4198400  1 bnxt_re
+tls                   159744  4 cxgb4,bnxt_en,mlx5_core
+ib_uverbs             208896  4 ib_peer_mem,bnxt_re,rdma_ucm,mlx5_ib
+ib_core               565248  13 rdma_cm,ib_ipoib,rpcrdma,ib_srpt,iw_cm,bnxt_re,ib_iser,ib_umad,ib_isert,rdma_ucm,ib_uverbs,mlx5_ib,ib_cm
+[root@master-01 bnxt_re0]#
+[root@master-01 bnxt_re0]#
+[root@master-01 bnxt_re0]#
+
+
+
+
 
