@@ -1,0 +1,89 @@
+apiVersion: kmm.sigs.x-k8s.io/v1beta1
+kind: Module
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"kmm.sigs.x-k8s.io/v1beta1","kind":"Module","metadata":{"annotations":{},"name":"bnxt-rdma","namespace":"openshift-kmm"},"spec":{"moduleLoader":{"container":{"inTreeModulesToRemove":["bnxt_en"],"kernelMappings":[{"containerImage":"image-registry.openshift-image-registry.svc:5000/openshift-kmm/bnxt-rdma:1.10.3-${KERNEL_FULL_VERSION}","regexp":"^.*\\.el9_\\d+\\.x86_64$"}],"modprobe":{"dirName":"/opt","moduleName":"bnxt_re","modulesLoadingOrder":["bnxt_re","ib_peer_mem","bnxt_en"]}}},"selector":{"broadcom-bnxt":"present"}}}
+  resourceVersion: '2449911'
+  name: bnxt-rdma
+  uid: 4c3f73b2-a88a-483a-9bf8-5f03f9dbfe9e
+  creationTimestamp: '2026-07-17T12:11:58Z'
+  generation: 1
+  managedFields:
+    - apiVersion: kmm.sigs.x-k8s.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:metadata':
+          'f:annotations':
+            .: {}
+            'f:kubectl.kubernetes.io/last-applied-configuration': {}
+        'f:spec':
+          .: {}
+          'f:moduleLoader':
+            .: {}
+            'f:container':
+              .: {}
+              'f:inTreeModulesToRemove': {}
+              'f:kernelMappings': {}
+              'f:modprobe':
+                .: {}
+                'f:dirName': {}
+                'f:moduleName': {}
+                'f:modulesLoadingOrder': {}
+          'f:selector':
+            .: {}
+            'f:broadcom-bnxt': {}
+      manager: kubectl-client-side-apply
+      operation: Update
+      time: '2026-07-17T12:11:58Z'
+    - apiVersion: kmm.sigs.x-k8s.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:metadata':
+          'f:finalizers':
+            .: {}
+            'v:"kmm.node.kubernetes.io/module-finalizer"': {}
+      manager: manager
+      operation: Update
+      time: '2026-07-17T12:11:59Z'
+    - apiVersion: kmm.sigs.x-k8s.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:status':
+          .: {}
+          'f:devicePlugin': {}
+          'f:moduleLoader':
+            .: {}
+            'f:availableNumber': {}
+            'f:desiredNumber': {}
+            'f:nodesMatchingSelectorNumber': {}
+      manager: manager
+      operation: Update
+      subresource: status
+      time: '2026-07-17T13:01:28Z'
+  namespace: openshift-kmm
+  finalizers:
+    - kmm.node.kubernetes.io/module-finalizer
+spec:
+  moduleLoader:
+    container:
+      inTreeModulesToRemove:
+        - bnxt_en
+      kernelMappings:
+        - containerImage: 'image-registry.openshift-image-registry.svc:5000/openshift-kmm/bnxt-rdma:1.10.3-${KERNEL_FULL_VERSION}'
+          regexp: ^.*\.el9_\d+\.x86_64$
+      modprobe:
+        dirName: /opt
+        moduleName: bnxt_re
+        modulesLoadingOrder:
+          - bnxt_re
+          - ib_peer_mem
+          - bnxt_en
+  selector:
+    broadcom-bnxt: present
+status:
+  devicePlugin: {}
+  moduleLoader:
+    availableNumber: 2
+    desiredNumber: 2
+    nodesMatchingSelectorNumber: 2
