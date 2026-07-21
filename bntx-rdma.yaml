@@ -1,0 +1,54 @@
+apiVersion: kmm.sigs.x-k8s.io/v1beta1
+kind: ModuleImagesConfig
+metadata:
+  creationTimestamp: '2026-07-17T12:11:59Z'
+  generation: 1
+  managedFields:
+    - apiVersion: kmm.sigs.x-k8s.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:metadata':
+          'f:ownerReferences':
+            .: {}
+            'k:{"uid":"4c3f73b2-a88a-483a-9bf8-5f03f9dbfe9e"}': {}
+        'f:spec':
+          .: {}
+          'f:imagePullPolicy': {}
+          'f:images': {}
+          'f:pushBuiltImage': {}
+      manager: manager
+      operation: Update
+      time: '2026-07-17T12:11:59Z'
+    - apiVersion: kmm.sigs.x-k8s.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:status':
+          .: {}
+          'f:imagesStates': {}
+      manager: manager
+      operation: Update
+      subresource: status
+      time: '2026-07-17T12:12:01Z'
+  name: bnxt-rdma
+  namespace: openshift-kmm
+  ownerReferences:
+    - apiVersion: kmm.sigs.x-k8s.io/v1beta1
+      blockOwnerDeletion: true
+      controller: true
+      kind: Module
+      name: bnxt-rdma
+      uid: 4c3f73b2-a88a-483a-9bf8-5f03f9dbfe9e
+  resourceVersion: '2431938'
+  uid: 88426767-8820-499f-90e8-0b9c74c8eabf
+spec:
+  imagePullPolicy: ''
+  images:
+    - dirName: /opt
+      image: 'image-registry.openshift-image-registry.svc:5000/openshift-kmm/bnxt-rdma:1.10.3-5.14.0-570.124.1.el9_6.x86_64'
+      kernelVersion: 5.14.0-570.124.1.el9_6.x86_64
+      registryTLS: {}
+  pushBuiltImage: true
+status:
+  imagesStates:
+    - image: 'image-registry.openshift-image-registry.svc:5000/openshift-kmm/bnxt-rdma:1.10.3-5.14.0-570.124.1.el9_6.x86_64'
+      status: Exists
