@@ -1,3 +1,5 @@
+
+https://teams.microsoft.com/meet/317422687091780?p=eVKV1pZAirlLxxsj9Z
 ssht(){
   command ssh -t "$@" 'if command -v tmux &> /dev/null && [ -f ~/mgamasy/configs/tmux.conf ]; then tmux -L gamasy -f ~/mgamasy/cc
 onfigs/tmux.conf new -s gamasy || tmux -L gamasy a; else bash --rcfile ~/mgamasy/configs/bashrc || bash; fi'
