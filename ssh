@@ -1,3 +1,33 @@
+
+for nic in /sys/class/net/*; do
+
+    iface=$(basename "$nic")
+
+    vendor=$(cat "$nic/device/vendor" 2>/dev/null)
+
+    device=$(cat "$nic/device/device" 2>/dev/null)
+
+    case "$vendor" in
+
+        0x15b3) vendor_name="NVIDIA/Mellanox" ;;
+
+        0x14e4) vendor_name="Broadcom" ;;
+
+        0x8086) vendor_name="Intel" ;;
+
+        *)      vendor_name="Unknown" ;;
+
+    esac
+
+    printf "%-15s %-18s Vendor=%s Device=%s\n" \
+
+        "$iface" "$vendor_name" "$vendor" "$device"
+
+done
+
+
+
+
 for i in /sys/class/net/*; do
 
     iface=$(basename "$i")
