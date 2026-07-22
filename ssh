@@ -1,3 +1,53 @@
+
+sh-5.1# ibstatus
+Infiniband device 'bnxt_re0' port 1 status:
+        default gid:     fe80:0000:0000:0000:6e92:cfff:fead:b5e0
+        base lid:        0x0
+        sm lid:          0x0
+        state:           4: ACTIVE
+        phys state:      5: LinkUp
+        rate:            400 Gb/sec (4X NDR)
+        link_layer:      Ethernet
+
+Infiniband device 'bnxt_re1' port 1 status:
+        default gid:     fe80:0000:0000:0000:6e92:cfff:fead:5580
+        base lid:        0x0
+        sm lid:          0x0
+        state:           4: ACTIVE
+        phys state:      5: LinkUp
+        rate:            400 Gb/sec (4X NDR)
+        link_layer:      Ethernet
+
+Infiniband device 'mlx5_0' port 1 status:
+        default gid:     fe80:0000:0000:0000:625e:65ff:feb0:ef78
+        base lid:        0x0
+        sm lid:          0x0
+        state:           4: ACTIVE
+        phys state:      5: LinkUp
+        rate:            100 Gb/sec (4X EDR)
+        link_layer:      Ethernet
+
+Infiniband device 'mlx5_1' port 1 status:
+        default gid:     fe80:0000:0000:0000:625e:65ff:feb0:ef79
+        base lid:        0x0
+        sm lid:          0x0
+        state:           4: ACTIVE
+        phys state:      5: LinkUp
+        rate:            100 Gb/sec (4X EDR)
+        link_layer:      Ethernet
+
+sh-5.1#
+sh-5.1# ibv_devices
+    device                 node GUID
+    ------              ----------------
+    bnxt_re1            6e92cffffead5580
+sh-5.1#
+sh-5.1#
+
+
+
+
+
 Raw
 $ MYBASE64STRING=$(echo core:$(printf "MYPASSWORD" | openssl passwd -6 --stdin) | base64 -w0)
 
