@@ -1,4 +1,16 @@
 
+ oc logs kmm-worker-worker-01-bnxt-rdma
+Defaulted container "worker" out of: worker, image-extractor (init)
+I0722 08:08:52.379050       1 funcs_kmod.go:12] "Starting worker" logger="kmm-worker" version="" git commit=""
+I0722 08:08:52.379072       1 funcs_kmod.go:24] "Reading config" logger="kmm-worker" path="/etc/kmm-worker/config.yaml"
+I0722 08:08:52.379241       1 worker.go:49] "Unloading in-tree modules" logger="kmm-worker" names=["bnxt_en"]
+I0722 08:08:52.381203       1 worker.go:62] "adding module to the list of intree modules to be unloadded" logger="kmm-worker" module="bnxt_en"
+I0722 08:08:52.381257       1 modprobe.go:33] "Running modprobe" logger="kmm-worker" command="/usr/sbin/modprobe -rv bnxt_en"
+I0722 08:08:52.382709       1 cmdlog.go:70] "modprobe: FATAL: Module bnxt_en is in use." logger="kmm-worker.modprobe.stderr"
+E0722 08:08:52.384181       1 cmdutils.go:11] "Fatal error" err="could not remove in-tree modules bnxt_en: error while waiting on the command: exit status 1" logger="kmm-worker"
+az1hp-jcse1-ccc:~  12:09:15  [system:admin:sno-sgi:openshift-kmm]
+
+
 https://teams.microsoft.com/meet/317422687091780?p=eVKV1pZAirlLxxsj9Z
 ssht(){
   command ssh -t "$@" 'if command -v tmux &> /dev/null && [ -f ~/mgamasy/configs/tmux.conf ]; then tmux -L gamasy -f ~/mgamasy/cc
