@@ -1,3 +1,15 @@
+for i in /sys/class/net/*; do
+
+    iface=$(basename "$i")
+
+    printf "%-15s " "$iface"
+
+    lspci -s $(basename $(readlink $i/device))
+
+done
+
+
+
 for d in /sys/class/infiniband/*; do
 
     echo "RDMA Device: $(basename $d)"
