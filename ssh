@@ -1,4 +1,65 @@
+sh-5.1#
+sh-5.1# ib_write_bw  -d bnxt_re0  -F --report_gbits -q 1 -s 65536 -n 100
+Disabling dynamic polling
 
+************************************
+* Waiting for client to connect... *
+************************************
+---------------------------------------------------------------------------------------
+                    RDMA_Write BW Test
+ Dual-port       : OFF          Device         : bnxt_re0
+ Number of qps   : 1            Transport type : IB
+ Connection type : RC           Using SRQ      : OFF
+ PCIe relax order: ON           Lock-free      : OFF
+ ibv_wr* API     : OFF          Using Enhanced Reorder      : OFF
+ CQ Moderation   : 1
+ CQE Poll Batch  : 16
+ Mtu             : 1024[B]
+ Link type       : Ethernet
+ GID index       : 1
+ Max inline data : 0[B]
+ rdma_cm QPs     : OFF
+ Data ex. method : Ethernet
+ NUMA node       : 1
+---------------------------------------------------------------------------------------
+Failed to modify QP 1025 to RTR
+ Unable to Connect the HCA's through the link
+sh-5.1#
+
+
+
+
+sh-5.1#
+sh-5.1# ib_write_bw  -d bnxt_re0  -F --report_gbits -q 1 -s 65536 -n 100 100.127.251.34
+Disabling dynamic polling
+---------------------------------------------------------------------------------------
+                    RDMA_Write BW Test
+ Dual-port       : OFF          Device         : bnxt_re0
+ Number of qps   : 1            Transport type : IB
+ Connection type : RC           Using SRQ      : OFF
+ PCIe relax order: ON           Lock-free      : OFF
+ ibv_wr* API     : OFF          Using Enhanced Reorder      : OFF
+ TX depth        : 100
+ CQ Moderation   : 1
+ CQE Poll Batch  : 16
+ Mtu             : 1024[B]
+ Link type       : Ethernet
+ GID index       : 1
+ Max inline data : 0[B]
+ rdma_cm QPs     : OFF
+ Data ex. method : Ethernet
+ NUMA node       : 1
+---------------------------------------------------------------------------------------
+Failed to modify QP 1025 to RTR
+ Unable to Connect the HCA's through the link
+sh-5.1#
+
+[root@az1hp-jcse1-ccc ~]#
+
+
+
+
+##################################################
 sh-5.1# ibstatus
 Infiniband device 'bnxt_re0' port 1 status:
         default gid:     fe80:0000:0000:0000:6e92:cfff:fead:b5e0
