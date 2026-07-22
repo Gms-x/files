@@ -1,3 +1,45 @@
+for d in /sys/class/infiniband/*; do
+
+    echo "RDMA Device: $(basename $d)"
+
+    ls $d/device/net
+
+done
+
+
+
+ip -br link
+
+ip -br addr
+
+
+
+for dev in bnxt_re0 bnxt_re1; do
+
+    echo "========== $dev =========="
+
+    for file in /sys/class/infiniband/$dev/ports/1/gids/*; do
+
+        idx=$(basename "$file")
+
+        printf "index=%-3s type=%-10s netdev=%-15s gid=%s\n" \
+
+            "$idx" \
+
+            "$(cat /sys/class/infiniband/$dev/ports/1/gid_attrs/types/$idx 2>/dev/null)" \
+
+            "$(cat /sys/class/infiniband/$dev/ports/1/gid_attrs/ndevs/$idx 2>/dev/null)" \
+
+            "$(cat "$file")"
+
+    done
+
+done
+
+
+
+
+
 sh-5.1#
 sh-5.1# ib_write_bw  -d bnxt_re0  -F --report_gbits -q 1 -s 65536 -n 100
 Disabling dynamic polling
