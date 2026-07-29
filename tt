@@ -1,1 +1,55 @@
 https://us06web.zoom.us/launch/jc/88900630254
+
+
+ot@master-01 ~]#
+[root@master-01 ~]# nmcli conn show
+NAME                 UUID                                  TYPE           DEVICE
+ovs-if-br-ex         edea741f-4770-4520-9472-4631f7412f15  ovs-interface  br-ex
+br-ex                d22058a2-554d-4c0f-9ca6-845dab2bff9e  ovs-bridge     br-ex
+eno16895np0          a7d01527-7074-4ee8-99c5-9f1c439ac401  ethernet       eno16895np0
+ovs-if-phys0         34af0cd5-6ad0-473b-8fd6-4adbfa7e57df  vlan           eno16895np.1114
+ovs-port-br-ex       9375fa8c-59a1-4a16-a977-c6668710d24f  ovs-port       br-ex
+ovs-port-phys0       6fc6e1cf-1511-4061-9ace-f143b6103198  ovs-port       eno16895np.1114
+lo                   16515b86-888b-4381-814e-36d8e9cea99b  loopback       lo
+Wired connection 1   d0b61b7f-c5de-377b-9966-4223044de8bf  ethernet       --
+Wired connection 10  4e15176b-b144-3912-b574-6fbc954385fa  ethernet       --
+Wired connection 11  6301bd96-0b62-3be4-96aa-73ffc367ffc6  ethernet       --
+Wired connection 2   0b587b38-730e-3313-8ba0-dd3dd6da33bd  ethernet       --
+Wired connection 3   bea475ed-80df-3287-a039-e35b57d4413e  ethernet       --
+Wired connection 4   282dd3fd-23ba-3e4e-b8b6-25e1d841fff3  ethernet       --
+Wired connection 5   f1f6dfe6-5eb8-3c91-808f-0a1703771fe0  ethernet       --
+Wired connection 6   816fa742-0f5c-3a5b-a4e0-3a84cdd1c99c  ethernet       --
+Wired connection 7   ed737076-5212-3e19-abca-8b6125bc436e  ethernet       --
+Wired connection 8   4ec3229a-1da7-3c47-834a-a4ed6ddb8078  ethernet       --
+Wired connection 9   cfe8992e-774b-30c8-b6be-039260e753a9  ethernet       --
+eno16895np.1114      b7f00c2b-12ae-4243-8afa-44c699e3d7e0  vlan           --
+[root@master-01 ~]#
+
+
+
+ot@worker-01 ~]# nmcli conn show
+NAME                 UUID                                  TYPE           DEVICE
+ovs-if-br-ex         35584df6-033a-4a83-8311-9cd3ee3958cc  ovs-interface  br-ex
+br-ex                73b826d8-dc4a-454d-b184-79bdadb77d8a  ovs-bridge     br-ex
+eno16895np0          dfd202f5-562f-5f07-8f2a-a7717756fb70  ethernet       eno16895np0
+ovs-if-phys0         77883f8a-6242-4849-85da-54450100d10e  vlan           eno16895np.1114
+ovs-port-br-ex       b4ac856d-b333-4cc8-a2be-e15795bb549f  ovs-port       br-ex
+ovs-port-phys0       0e1bdb8b-1fe7-487a-af76-2581ec89676d  ovs-port       eno16895np.1114
+Wired connection 1   36f9da7f-3c27-3e3d-8eb7-8efc5fb71d5e  ethernet       eno16905np1
+Wired connection 10  8178f54d-2614-30be-a81d-2e3ac9d9a87c  ethernet       eno17295np0
+Wired connection 11  35259bfd-9675-3114-a4d0-a7ca0bb1f16e  ethernet       eno17305np1
+Wired connection 2   bbc62603-69ab-3b76-b725-a35b88e8f7ea  ethernet       eno16915np2
+Wired connection 3   d7a7038e-89cf-3e1f-b40a-84248b875c18  ethernet       eno16925np3
+Wired connection 4   9ebd565b-78f4-3b26-9dc2-c8675f90b8f6  ethernet       eno16995np0
+Wired connection 5   43c775f2-f0e6-3280-b371-a2316d8765f6  ethernet       eno17095np0
+Wired connection 9   44c4ef89-8fbd-3072-9dea-31bd82b4e74f  ethernet       eno17195np0
+lo                   18f750cf-6330-488a-9e94-f6a135b88236  loopback       lo
+Wired connection 6   c08b1e2f-2f25-3cea-b7cc-e9d068b5f5f3  ethernet       --
+Wired connection 7   b8d7fec8-aed4-3c72-bac3-7d1a184081a5  ethernet       --
+Wired connection 8   dc976fef-953e-3c08-8638-a3799e6a8264  ethernet       --
+eno16895np.1114      01082c96-2998-53a2-bd48-761337b23a49  vlan           --
+[root@worker-01 ~]#
+[root@worker-01 ~]#
+[root@worker-01 ~]#
+
+[root@az1hp-jcse1-ccc ~]# 
