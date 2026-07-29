@@ -1,0 +1,16 @@
+[ocpmgmtuser@az1-ocpbas01 ~]$ curl -kv http://api.az1-ocpai01.mgmt-ad.fednet.intra:22623/config/master
+* Uses proxy env variable no_proxy == '.fednet.gov.ae,.fednet.intra,.fedlabreports.intra,172.27.0.0/16,10.254.0.0/16,10.255.0.0/16,172.26.0.0/16,172.29.189.151'
+*   Trying 172.27.70.29:22623...
+* Connected to api.az1-ocpai01.mgmt-ad.fednet.intra (172.27.70.29) port 22623 (#0)
+> GET /config/master HTTP/1.1
+> Host: api.az1-ocpai01.mgmt-ad.fednet.intra:22623
+> User-Agent: curl/7.76.1
+> Accept: */*
+> 
+* Mark bundle as not supporting multiuse
+* HTTP 1.0, assume close after body
+< HTTP/1.0 400 Bad Request
+< 
+Client sent an HTTP request to an HTTPS server.
+* Closing connection 0
+[ocpmgmtuser@az1-ocpbas01 ~]$
