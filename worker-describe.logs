@@ -1,0 +1,305 @@
+[root@az1hp-jcse1-ccc ~]# 
+[root@az1hp-jcse1-ccc ~]# cat logs-collect/node.logs 
+Name:               worker-01
+Roles:              worker
+Labels:             beta.kubernetes.io/arch=amd64
+                    beta.kubernetes.io/os=linux
+                    broadcom-bnxt=present
+                    feature.node.kubernetes.io/cpu-cpuid.ADX=true
+                    feature.node.kubernetes.io/cpu-cpuid.AESNI=true
+                    feature.node.kubernetes.io/cpu-cpuid.AMXBF16=true
+                    feature.node.kubernetes.io/cpu-cpuid.AMXFP16=true
+                    feature.node.kubernetes.io/cpu-cpuid.AMXFP8=true
+                    feature.node.kubernetes.io/cpu-cpuid.AMXINT8=true
+                    feature.node.kubernetes.io/cpu-cpuid.AMXTILE=true
+                    feature.node.kubernetes.io/cpu-cpuid.AVX=true
+                    feature.node.kubernetes.io/cpu-cpuid.AVX10_128=true
+                    feature.node.kubernetes.io/cpu-cpuid.AVX10_256=true
+                    feature.node.kubernetes.io/cpu-cpuid.AVX10_512=true
+                    feature.node.kubernetes.io/cpu-cpuid.AVX10_VERSION=1
+                    feature.node.kubernetes.io/cpu-cpuid.AVX2=true
+                    feature.node.kubernetes.io/cpu-cpuid.AVX512BF16=true
+                    feature.node.kubernetes.io/cpu-cpuid.AVX512BITALG=true
+                    feature.node.kubernetes.io/cpu-cpuid.AVX512BW=true
+                    feature.node.kubernetes.io/cpu-cpuid.AVX512CD=true
+                    feature.node.kubernetes.io/cpu-cpuid.AVX512DQ=true
+                    feature.node.kubernetes.io/cpu-cpuid.AVX512F=true
+                    feature.node.kubernetes.io/cpu-cpuid.AVX512FP16=true
+                    feature.node.kubernetes.io/cpu-cpuid.AVX512IFMA=true
+                    feature.node.kubernetes.io/cpu-cpuid.AVX512VBMI=true
+                    feature.node.kubernetes.io/cpu-cpuid.AVX512VBMI2=true
+                    feature.node.kubernetes.io/cpu-cpuid.AVX512VL=true
+                    feature.node.kubernetes.io/cpu-cpuid.AVX512VNNI=true
+                    feature.node.kubernetes.io/cpu-cpuid.AVX512VPOPCNTDQ=true
+                    feature.node.kubernetes.io/cpu-cpuid.AVXVNNI=true
+                    feature.node.kubernetes.io/cpu-cpuid.BHI_CTRL=true
+                    feature.node.kubernetes.io/cpu-cpuid.CETIBT=true
+                    feature.node.kubernetes.io/cpu-cpuid.CETSS=true
+                    feature.node.kubernetes.io/cpu-cpuid.CLDEMOTE=true
+                    feature.node.kubernetes.io/cpu-cpuid.CMPSB_SCADBS_SHORT=true
+                    feature.node.kubernetes.io/cpu-cpuid.CMPXCHG8=true
+                    feature.node.kubernetes.io/cpu-cpuid.ENQCMD=true
+                    feature.node.kubernetes.io/cpu-cpuid.FLUSH_L1D=true
+                    feature.node.kubernetes.io/cpu-cpuid.FMA3=true
+                    feature.node.kubernetes.io/cpu-cpuid.FSRM=true
+                    feature.node.kubernetes.io/cpu-cpuid.FXSR=true
+                    feature.node.kubernetes.io/cpu-cpuid.FXSROPT=true
+                    feature.node.kubernetes.io/cpu-cpuid.GFNI=true
+                    feature.node.kubernetes.io/cpu-cpuid.HRESET=true
+                    feature.node.kubernetes.io/cpu-cpuid.IA32_ARCH_CAP=true
+                    feature.node.kubernetes.io/cpu-cpuid.IA32_CORE_CAP=true
+                    feature.node.kubernetes.io/cpu-cpuid.IBPB=true
+                    feature.node.kubernetes.io/cpu-cpuid.IDPRED_CTRL=true
+                    feature.node.kubernetes.io/cpu-cpuid.LAHF=true
+                    feature.node.kubernetes.io/cpu-cpuid.MCDT_NO=true
+                    feature.node.kubernetes.io/cpu-cpuid.MD_CLEAR=true
+                    feature.node.kubernetes.io/cpu-cpuid.MOVBE=true
+                    feature.node.kubernetes.io/cpu-cpuid.MOVDIR64B=true
+                    feature.node.kubernetes.io/cpu-cpuid.MOVDIRI=true
+                    feature.node.kubernetes.io/cpu-cpuid.MOVSB_ZL=true
+                    feature.node.kubernetes.io/cpu-cpuid.OSXSAVE=true
+                    feature.node.kubernetes.io/cpu-cpuid.PCONFIG=true
+                    feature.node.kubernetes.io/cpu-cpuid.PMU_FIXEDCOUNTER_CYCLES=true
+                    feature.node.kubernetes.io/cpu-cpuid.PMU_FIXEDCOUNTER_INSTRUCTIONS=true
+                    feature.node.kubernetes.io/cpu-cpuid.PMU_FIXEDCOUNTER_REFCYCLES=true
+                    feature.node.kubernetes.io/cpu-cpuid.PMU_FIXEDCOUNTER_TOPDOWN_SLOTS=true
+                    feature.node.kubernetes.io/cpu-cpuid.PREFETCHI=true
+                    feature.node.kubernetes.io/cpu-cpuid.PSFD=true
+                    feature.node.kubernetes.io/cpu-cpuid.RRSBA_CTRL=true
+                    feature.node.kubernetes.io/cpu-cpuid.SERIALIZE=true
+                    feature.node.kubernetes.io/cpu-cpuid.SHA=true
+                    feature.node.kubernetes.io/cpu-cpuid.SPEC_CTRL_SSBD=true
+                    feature.node.kubernetes.io/cpu-cpuid.STIBP=true
+                    feature.node.kubernetes.io/cpu-cpuid.STOSB_SHORT=true
+                    feature.node.kubernetes.io/cpu-cpuid.SYSCALL=true
+                    feature.node.kubernetes.io/cpu-cpuid.SYSEE=true
+                    feature.node.kubernetes.io/cpu-cpuid.TME=true
+                    feature.node.kubernetes.io/cpu-cpuid.TSXLDTRK=true
+                    feature.node.kubernetes.io/cpu-cpuid.VAES=true
+                    feature.node.kubernetes.io/cpu-cpuid.VMX=true
+                    feature.node.kubernetes.io/cpu-cpuid.VPCLMULQDQ=true
+                    feature.node.kubernetes.io/cpu-cpuid.WAITPKG=true
+                    feature.node.kubernetes.io/cpu-cpuid.WBNOINVD=true
+                    feature.node.kubernetes.io/cpu-cpuid.X87=true
+                    feature.node.kubernetes.io/cpu-cpuid.XGETBV1=true
+                    feature.node.kubernetes.io/cpu-cpuid.XSAVE=true
+                    feature.node.kubernetes.io/cpu-cpuid.XSAVEC=true
+                    feature.node.kubernetes.io/cpu-cpuid.XSAVEOPT=true
+                    feature.node.kubernetes.io/cpu-cpuid.XSAVES=true
+                    feature.node.kubernetes.io/cpu-cstate.enabled=true
+                    feature.node.kubernetes.io/cpu-hardware_multithreading=false
+                    feature.node.kubernetes.io/cpu-model.family=6
+                    feature.node.kubernetes.io/cpu-model.id=173
+                    feature.node.kubernetes.io/cpu-model.vendor_id=Intel
+                    feature.node.kubernetes.io/kernel-config.NO_HZ=true
+                    feature.node.kubernetes.io/kernel-config.NO_HZ_FULL=true
+                    feature.node.kubernetes.io/kernel-selinux.enabled=true
+                    feature.node.kubernetes.io/kernel-version.full=5.14.0-570.124.1.el9_6.x86_64
+                    feature.node.kubernetes.io/kernel-version.major=5
+                    feature.node.kubernetes.io/kernel-version.minor=14
+                    feature.node.kubernetes.io/kernel-version.revision=0
+                    feature.node.kubernetes.io/memory-numa=true
+                    feature.node.kubernetes.io/network-sriov.capable=true
+                    feature.node.kubernetes.io/pci-102b.present=true
+                    feature.node.kubernetes.io/pci-10de.present=true
+                    feature.node.kubernetes.io/pci-10de.sriov.capable=true
+                    feature.node.kubernetes.io/pci-14e4.present=true
+                    feature.node.kubernetes.io/pci-14e4.sriov.capable=true
+                    feature.node.kubernetes.io/pci-15b3.present=true
+                    feature.node.kubernetes.io/pci-15b3.sriov.capable=true
+                    feature.node.kubernetes.io/rdma.available=true
+                    feature.node.kubernetes.io/rdma.capable=true
+                    feature.node.kubernetes.io/storage-nonrotationaldisk=true
+                    feature.node.kubernetes.io/system-os_release.ID=rhel
+                    feature.node.kubernetes.io/system-os_release.OPENSHIFT_VERSION=4.21
+                    feature.node.kubernetes.io/system-os_release.OSTREE_VERSION=9.6.20260623-0
+                    feature.node.kubernetes.io/system-os_release.VERSION_ID=9.6
+                    feature.node.kubernetes.io/system-os_release.VERSION_ID.major=9
+                    feature.node.kubernetes.io/system-os_release.VERSION_ID.minor=6
+                    kubernetes.io/arch=amd64
+                    kubernetes.io/hostname=worker-01
+                    kubernetes.io/os=linux
+                    network.nvidia.com/operator.mofed.wait=false
+                    network.nvidia.com/operator.nic-configuration.wait=false
+                    node-role.kubernetes.io/worker=
+                    node.openshift.io/os_id=rhel
+                    nvidia.com/cuda.driver-version.full=580.126.20
+                    nvidia.com/cuda.driver-version.major=580
+                    nvidia.com/cuda.driver-version.minor=126
+                    nvidia.com/cuda.driver-version.revision=20
+                    nvidia.com/cuda.driver.major=580
+                    nvidia.com/cuda.driver.minor=126
+                    nvidia.com/cuda.driver.rev=20
+                    nvidia.com/cuda.runtime-version.full=13.0
+                    nvidia.com/cuda.runtime-version.major=13
+                    nvidia.com/cuda.runtime-version.minor=0
+                    nvidia.com/cuda.runtime.major=13
+                    nvidia.com/cuda.runtime.minor=0
+                    nvidia.com/gfd.timestamp=1784797089
+                    nvidia.com/gpu-driver-upgrade-state=upgrade-done
+                    nvidia.com/gpu.compute.major=9
+                    nvidia.com/gpu.compute.minor=0
+                    nvidia.com/gpu.count=4
+                    nvidia.com/gpu.deploy.container-toolkit=true
+                    nvidia.com/gpu.deploy.dcgm=true
+                    nvidia.com/gpu.deploy.dcgm-exporter=true
+                    nvidia.com/gpu.deploy.device-plugin=true
+                    nvidia.com/gpu.deploy.driver=true
+                    nvidia.com/gpu.deploy.gpu-feature-discovery=true
+                    nvidia.com/gpu.deploy.mig-manager=true
+                    nvidia.com/gpu.deploy.node-status-exporter=true
+                    nvidia.com/gpu.deploy.nvsm=
+                    nvidia.com/gpu.deploy.operator-validator=true
+                    nvidia.com/gpu.family=hopper
+                    nvidia.com/gpu.machine=PowerEdge-XE7740
+                    nvidia.com/gpu.memory=143771
+                    nvidia.com/gpu.mode=compute
+                    nvidia.com/gpu.present=true
+                    nvidia.com/gpu.product=NVIDIA-H200-NVL
+                    nvidia.com/gpu.replicas=1
+                    nvidia.com/gpu.sharing-strategy=none
+                    nvidia.com/mig.capable=true
+                    nvidia.com/mig.strategy=single
+                    nvidia.com/mps.capable=false
+                    nvidia.com/vgpu.present=false
+Annotations:        k8s.ovn.org/host-cidrs: ["10.236.41.35/24"]
+                    k8s.ovn.org/l3-gateway-config:
+                      {"default":{"mode":"shared","bridge-id":"br-ex","interface-id":"br-ex_worker-01","mac-address":"8c:84:74:f9:9b:10","ip-addresses":["10.236...
+                    k8s.ovn.org/layer2-topology-version: 2.0
+                    k8s.ovn.org/node-chassis-id: cd8becca-96c1-42d2-8407-5983e7c9f4ab
+                    k8s.ovn.org/node-encap-ips: ["10.236.41.35"]
+                    k8s.ovn.org/node-id: 3
+                    k8s.ovn.org/node-masquerade-subnet: {"ipv4":"169.254.0.0/17","ipv6":"fd69::/112"}
+                    k8s.ovn.org/node-primary-ifaddr: {"ipv4":"10.236.41.35/24"}
+                    k8s.ovn.org/node-subnets: {"default":["10.129.0.0/23"]}
+                    k8s.ovn.org/node-transit-switch-port-ifaddr: {"ipv4":"100.88.0.3/16"}
+                    k8s.ovn.org/zone-name: worker-01
+                    machineconfiguration.openshift.io/controlPlaneTopology: SingleReplica
+                    machineconfiguration.openshift.io/currentConfig: rendered-worker-7028248269eb8f26df6db01688374524
+                    machineconfiguration.openshift.io/desiredConfig: rendered-worker-7028248269eb8f26df6db01688374524
+                    machineconfiguration.openshift.io/desiredDrain: uncordon-rendered-worker-7028248269eb8f26df6db01688374524
+                    machineconfiguration.openshift.io/lastAppliedDrain: uncordon-rendered-worker-7028248269eb8f26df6db01688374524
+                    machineconfiguration.openshift.io/lastObservedServerCAAnnotation: false
+                    machineconfiguration.openshift.io/lastSyncedControllerConfigResourceVersion: 8934635
+                    machineconfiguration.openshift.io/post-config-action: 
+                    machineconfiguration.openshift.io/reason: 
+                    machineconfiguration.openshift.io/state: Done
+                    nfd.node.kubernetes.io/feature-labels:
+                      cpu-cpuid.ADX,cpu-cpuid.AESNI,cpu-cpuid.AMXBF16,cpu-cpuid.AMXFP16,cpu-cpuid.AMXFP8,cpu-cpuid.AMXINT8,cpu-cpuid.AMXTILE,cpu-cpuid.AVX,cpu-c...
+                    nvidia.com/gpu-driver-upgrade-enabled: true
+                    volumes.kubernetes.io/controller-managed-attach-detach: true
+CreationTimestamp:  Wed, 15 Jul 2026 13:03:17 +0400
+Taints:             node.kubernetes.io/not-ready:NoExecute
+                    node.kubernetes.io/not-ready:NoSchedule
+                    UpdateInProgress:PreferNoSchedule
+Unschedulable:      false
+Lease:
+  HolderIdentity:  worker-01
+  AcquireTime:     <unset>
+  RenewTime:       Wed, 29 Jul 2026 13:35:30 +0400
+Conditions:
+  Type             Status  LastHeartbeatTime                 LastTransitionTime                Reason                       Message
+  ----             ------  -----------------                 ------------------                ------                       -------
+  MemoryPressure   False   Wed, 29 Jul 2026 13:35:35 +0400   Wed, 29 Jul 2026 13:19:57 +0400   KubeletHasSufficientMemory   kubelet has sufficient memory available
+  DiskPressure     False   Wed, 29 Jul 2026 13:35:35 +0400   Wed, 29 Jul 2026 13:19:57 +0400   KubeletHasNoDiskPressure     kubelet has no disk pressure
+  PIDPressure      False   Wed, 29 Jul 2026 13:35:35 +0400   Wed, 29 Jul 2026 13:19:57 +0400   KubeletHasSufficientPID      kubelet has sufficient PID available
+  Ready            False   Wed, 29 Jul 2026 13:35:35 +0400   Wed, 29 Jul 2026 13:19:57 +0400   KubeletNotReady              container runtime network not ready: NetworkReady=false reason:NetworkPluginNotReady message:Network plugin returns error: no CNI configuration file in /etc/kubernetes/cni/net.d/. Has your network provider started?
+Addresses:
+  InternalIP:  10.236.41.35
+  Hostname:    worker-01
+Capacity:
+  cpu:                96
+  ephemeral-storage:  936643724Ki
+  hugepages-1Gi:      0
+  hugepages-2Mi:      0
+  memory:             2113442696Ki
+  nvidia.com/gpu:     0
+  pods:               250
+  rdma/rdmashared:    0
+  rdma/rdmashared1:   4
+  rdma/rdmashared2:   4
+Allocatable:
+  cpu:                94800m
+  ephemeral-storage:  862137112786
+  hugepages-1Gi:      0
+  hugepages-2Mi:      0
+  memory:             2065105800Ki
+  nvidia.com/gpu:     0
+  pods:               250
+  rdma/rdmashared:    0
+  rdma/rdmashared1:   4
+  rdma/rdmashared2:   4
+System Info:
+  Machine ID:                             1e3301e78eac4127999ff5886b550e17
+  System UUID:                            4c4c4544-0039-5110-8048-c8c04f544834
+  Boot ID:                                c45734ad-a6ac-4d81-91d1-5db74da192fb
+  Kernel Version:                         5.14.0-570.124.1.el9_6.x86_64
+  OS Image:                               Red Hat Enterprise Linux CoreOS 9.6.20260623-0 (Plow)
+  Operating System:                       linux
+  Architecture:                           amd64
+  Container Runtime Version:              cri-o://1.34.8-3.rhaos4.21.git91b4b0b.el9
+  Kubelet Version:                        v1.34.8
+  Kube-Proxy Version:                     
+Non-terminated Pods:                      (32 in total)
+  Namespace                               Name                                            CPU Requests  CPU Limits  Memory Requests  Memory Limits  Age
+  ---------                               ----                                            ------------  ----------  ---------------  -------------  ---
+  nvidia-gpu-operator                     gpu-feature-discovery-p9d24                     0 (0%)        0 (0%)      0 (0%)           0 (0%)         6d
+  nvidia-gpu-operator                     nvidia-container-toolkit-daemonset-98h7s        0 (0%)        0 (0%)      0 (0%)           0 (0%)         6d
+  nvidia-gpu-operator                     nvidia-dcgm-5jxbs                               0 (0%)        0 (0%)      0 (0%)           0 (0%)         6d
+  nvidia-gpu-operator                     nvidia-dcgm-exporter-r55tg                      0 (0%)        0 (0%)      0 (0%)           0 (0%)         6d
+  nvidia-gpu-operator                     nvidia-device-plugin-daemonset-qpkt9            0 (0%)        0 (0%)      0 (0%)           0 (0%)         6d
+  nvidia-gpu-operator                     nvidia-driver-daemonset-9.6.20260623-0-9hz6t    0 (0%)        0 (0%)      0 (0%)           0 (0%)         14d
+  nvidia-gpu-operator                     nvidia-mig-manager-rhrwn                        0 (0%)        0 (0%)      0 (0%)           0 (0%)         6d
+  nvidia-gpu-operator                     nvidia-node-status-exporter-7xml5               0 (0%)        0 (0%)      0 (0%)           0 (0%)         14d
+  nvidia-gpu-operator                     nvidia-operator-validator-9nxg6                 0 (0%)        0 (0%)      0 (0%)           0 (0%)         6d
+  nvidia-network-operator                 nv-ipam-node-c5km6                              100m (0%)     300m (0%)   50Mi (0%)        300Mi (0%)     13d
+  nvidia-network-operator                 rdma-shared-dp-ds-2dfrx                         0 (0%)        0 (0%)      0 (0%)           0 (0%)         13d
+  openshift-cluster-node-tuning-operator  tuned-nfjsr                                     10m (0%)      0 (0%)      50Mi (0%)        0 (0%)         14d
+  openshift-dns                           dns-default-cl45n                               60m (0%)      0 (0%)      110Mi (0%)       0 (0%)         14d
+  openshift-dns                           node-resolver-9mt7s                             5m (0%)       0 (0%)      21Mi (0%)        0 (0%)         14d
+  openshift-image-registry                node-ca-mtgx2                                   10m (0%)      0 (0%)      10Mi (0%)        0 (0%)         14d
+  openshift-ingress-canary                ingress-canary-d6j65                            10m (0%)      0 (0%)      20Mi (0%)        0 (0%)         14d
+  openshift-insights                      insights-runtime-extractor-l2j9f                30m (0%)      0 (0%)      500Mi (0%)       0 (0%)         14d
+  openshift-kmm                           bnxt-re-qos-loader-lv8xt                        0 (0%)        0 (0%)      0 (0%)           0 (0%)         7d1h
+  openshift-kmm                           niccli-provisioner-rvkhm                        0 (0%)        0 (0%)      0 (0%)           0 (0%)         7d1h
+  openshift-kmm                           nvidia-peermem-loader-sh9vs                     0 (0%)        0 (0%)      0 (0%)           0 (0%)         6d20h
+  openshift-lvm-storage                   vg-manager-xzxtf                                5m (0%)       0 (0%)      45Mi (0%)        0 (0%)         14d
+  openshift-machine-config-operator       kube-rbac-proxy-crio-worker-01                  20m (0%)      0 (0%)      50Mi (0%)        0 (0%)         5d23h
+  openshift-machine-config-operator       machine-config-daemon-x647v                     40m (0%)      0 (0%)      100Mi (0%)       0 (0%)         5d20h
+  openshift-monitoring                    node-exporter-5xxft                             9m (0%)       0 (0%)      47Mi (0%)        0 (0%)         14d
+  openshift-multus                        multus-additional-cni-plugins-wln95             10m (0%)      0 (0%)      10Mi (0%)        0 (0%)         14d
+  openshift-multus                        multus-hblzm                                    10m (0%)      0 (0%)      65Mi (0%)        0 (0%)         14d
+  openshift-multus                        network-metrics-daemon-bfvlk                    20m (0%)      0 (0%)      120Mi (0%)       0 (0%)         14d
+  openshift-must-gather-6mdpm             perf-node-gather-daemonset-cscwc                100m (0%)     100m (0%)   256Mi (0%)       256Mi (0%)     5d21h
+  openshift-network-diagnostics           network-check-target-rmbf7                      10m (0%)      0 (0%)      15Mi (0%)        0 (0%)         14d
+  openshift-network-operator              iptables-alerter-f4p65                          10m (0%)      10m (0%)    65Mi (0%)        0 (0%)         14d
+  openshift-nfd                           nfd-worker-jc5gd                                5m (0%)       200m (0%)   64Mi (0%)        512Mi (0%)     14d
+  openshift-ovn-kubernetes                ovnkube-node-8cdlx                              80m (0%)      0 (0%)      1630Mi (0%)      0 (0%)         14d
+Allocated resources:
+  (Total limits may be over 100 percent, i.e., overcommitted.)
+  Resource           Requests     Limits
+  --------           --------     ------
+  cpu                544m (0%)    610m (0%)
+  memory             3228Mi (0%)  1068Mi (0%)
+  ephemeral-storage  0 (0%)       0 (0%)
+  hugepages-1Gi      0 (0%)       0 (0%)
+  hugepages-2Mi      0 (0%)       0 (0%)
+  nvidia.com/gpu     0            0
+  rdma/rdmashared    0            0
+  rdma/rdmashared1   0            0
+  rdma/rdmashared2   0            0
+Events:
+  Type     Reason                   Age                      From             Message
+  ----     ------                   ----                     ----             -------
+  Normal   NodeHasNoDiskPressure    84m (x17534 over 5d18h)  kubelet          Node worker-01 status is now: NodeHasNoDiskPressure
+  Normal   NodeHasSufficientMemory  64m (x17600 over 5d18h)  kubelet          Node worker-01 status is now: NodeHasSufficientMemory
+  Normal   Starting                 58m                      kubelet          Starting kubelet.
+  Normal   NodeAllocatableEnforced  58m                      kubelet          Updated Node Allocatable limit across pods
+  Warning  Rebooted                 58m                      kubelet          Node worker-01 has been rebooted, boot id: c45734ad-a6ac-4d81-91d1-5db74da192fb
+  Normal   RegisteredNode           38m                      node-controller  Node worker-01 event: Registered Node worker-01 in Controller
+  Normal   RegisteredNode           15m                      node-controller  Node worker-01 event: Registered Node worker-01 in Controller
+  Normal   NodeHasSufficientMemory  15m (x4 over 58m)        kubelet          Node worker-01 status is now: NodeHasSufficientMemory
+  Normal   NodeHasNoDiskPressure    15m (x4 over 58m)        kubelet          Node worker-01 status is now: NodeHasNoDiskPressure
+  Normal   NodeHasSufficientPID     15m (x4 over 58m)        kubelet          Node worker-01 status is now: NodeHasSufficientPID
+  Normal   NodeNotReady             15m (x3 over 58m)        kubelet          Node worker-01 status is now: NodeNotReady
+[root@az1hp-jcse1-ccc ~]# 
