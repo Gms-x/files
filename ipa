@@ -1,0 +1,464 @@
+re@master-01 ~]$ ip a s
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host
+       valid_lft forever preferred_lft forever
+2: eno17095np0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP group default qlen 1000
+    link/ether 6c:83:75:00:b9:a0 brd ff:ff:ff:ff:ff:ff
+    altname enp105s0f0np0
+    altname ens7f0np0
+    inet6 fe80::294:8cea:f5b0:b1e6/64 scope link noprefixroute
+       valid_lft forever preferred_lft forever
+3: eno17105np1: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc mq state DOWN group default qlen 1000
+    link/ether 6c:83:75:00:b9:a1 brd ff:ff:ff:ff:ff:ff
+    altname enp105s0f1np1
+    altname ens7f1np1
+4: eno17096np2: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc mq state DOWN group default qlen 1000
+    link/ether 6c:83:75:00:b9:a2 brd ff:ff:ff:ff:ff:ff
+    altname enp105s0f2np2
+    altname ens7f2np2
+5: eno17106np3: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc mq state DOWN group default qlen 1000
+    link/ether 6c:83:75:00:b9:a3 brd ff:ff:ff:ff:ff:ff
+    altname enp105s0f3np3
+    altname ens7f3np3
+6: eno16895np0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9100 qdisc mq state UP group default qlen 1000
+    link/ether 8c:84:74:f9:ae:d4 brd ff:ff:ff:ff:ff:ff
+    altname enp179s0f0np0
+    altname ens5f0np0
+7: eno16905np1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP group default qlen 1000
+    link/ether 8c:84:74:f9:ae:d5 brd ff:ff:ff:ff:ff:ff
+    altname enp179s0f1np1
+    altname ens5f1np1
+    inet6 fe80::cf2:3373:9b31:88d1/64 scope link noprefixroute
+       valid_lft forever preferred_lft forever
+8: eno16915np2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP group default qlen 1000
+    link/ether 8c:84:74:f9:ae:d6 brd ff:ff:ff:ff:ff:ff
+    altname enp179s0f2np2
+    altname ens5f2np2
+    inet6 fe80::550a:7b05:98a8:cc38/64 scope link noprefixroute
+       valid_lft forever preferred_lft forever
+9: eno16925np3: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP group default qlen 1000
+    link/ether 8c:84:74:f9:ae:d7 brd ff:ff:ff:ff:ff:ff
+    altname enp179s0f3np3
+    altname ens5f3np3
+    inet6 fe80::615b:907a:a546:c5e/64 scope link noprefixroute
+       valid_lft forever preferred_lft forever
+10: eno16995np0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP group default qlen 1000
+    link/ether 6c:92:cf:ad:b6:40 brd ff:ff:ff:ff:ff:ff
+    altname enp181s0np0
+    inet6 fe80::cbfc:303a:edff:2c45/64 scope link noprefixroute
+       valid_lft forever preferred_lft forever
+11: eno17195np0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP group default qlen 1000
+    link/ether 6c:92:cf:ad:bd:50 brd ff:ff:ff:ff:ff:ff
+    altname enp219s0np0
+    inet6 fe80::d007:21f2:983:2a1e/64 scope link noprefixroute
+       valid_lft forever preferred_lft forever
+12: eno17295np0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP group default qlen 1000
+    link/ether 60:5e:65:b2:14:46 brd ff:ff:ff:ff:ff:ff
+    altname enp26s0f0np0
+    altname ens9f0np0
+    inet6 fe80::3481:117a:f76f:7f83/64 scope link noprefixroute
+       valid_lft forever preferred_lft forever
+13: eno17305np1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP group default qlen 1000
+    link/ether 60:5e:65:b2:14:47 brd ff:ff:ff:ff:ff:ff
+    altname enp26s0f1np1
+    altname ens9f1np1
+    inet6 fe80::73d0:22a:6dd1:bd2f/64 scope link noprefixroute
+       valid_lft forever preferred_lft forever
+14: ovs-system: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default qlen 1000
+    link/ether fe:1d:ac:d0:a5:eb brd ff:ff:ff:ff:ff:ff
+15: ovn-k8s-mp0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9000 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/ether 0a:58:0a:80:00:02 brd ff:ff:ff:ff:ff:ff
+    inet 10.128.0.2/23 brd 10.128.1.255 scope global ovn-k8s-mp0
+       valid_lft forever preferred_lft forever
+    inet6 fe80::858:aff:fe80:2/64 scope link proto kernel_ll
+       valid_lft forever preferred_lft forever
+16: genev_sys_6081: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 65000 qdisc noqueue master ovs-system state UNKNOWN group default qlen 1000
+    link/ether 62:db:10:6a:20:42 brd ff:ff:ff:ff:ff:ff
+    inet6 fe80::60db:10ff:fe6a:2042/64 scope link proto kernel_ll
+       valid_lft forever preferred_lft forever
+17: br-int: <BROADCAST,MULTICAST> mtu 9000 qdisc noop state DOWN group default qlen 1000
+    link/ether 0e:24:ec:1e:38:8e brd ff:ff:ff:ff:ff:ff
+18: eno16895np.1114@eno16895np0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9100 qdisc noqueue master ovs-system state UP group default qlen 1000
+    link/ether 8c:84:74:f9:ae:d4 brd ff:ff:ff:ff:ff:ff
+19: br-ex: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9100 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/ether 8c:84:74:f9:ae:d4 brd ff:ff:ff:ff:ff:ff
+    inet 10.236.41.34/24 brd 10.236.41.255 scope global noprefixroute br-ex
+       valid_lft forever preferred_lft forever
+    inet 169.254.0.2/17 brd 169.254.127.255 scope global br-ex
+       valid_lft forever preferred_lft forever
+21: 6b315acd2c8c32f@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9000 qdisc noqueue master ovs-system state UP group default
+    link/ether 16:79:ef:2a:c5:ec brd ff:ff:ff:ff:ff:ff link-netns 69b2ff7c-e339-4643-9a91-7c12d48bbd61
+    inet6 fe80::1479:efff:fe2a:c5ec/64 scope link proto kernel_ll
+       valid_lft forever preferred_lft forever
+22: 6f357f534b8b252@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9000 qdisc noqueue master ovs-system state UP group default
+    link/ether 62:95:19:a3:3f:5c brd ff:ff:ff:ff:ff:ff link-netns a3f8e174-d0c7-4e49-a038-dedabd4b5bf3
+    inet6 fe80::6095:19ff:fea3:3f5c/64 scope link proto kernel_ll
+       valid_lft forever preferred_lft forever
+23: d874c8fafd52b2a@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9000 qdisc noqueue master ovs-system state UP group default
+    link/ether ee:48:af:ac:f2:79 brd ff:ff:ff:ff:ff:ff link-netns 67996193-b03a-4d33-820a-30c8049c8486
+    inet6 fe80::ec48:afff:feac:f279/64 scope link proto kernel_ll
+       valid_lft forever preferred_lft forever
+24: 42064b7a817a899@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9000 qdisc noqueue master ovs-system state UP group default
+    link/ether 8e:1d:c8:d8:be:9d brd ff:ff:ff:ff:ff:ff link-netns 5cdf8206-a0ed-4de5-800f-2f13cb7f3844
+    inet6 fe80::8c1d:c8ff:fed8:be9d/64 scope link proto kernel_ll
+       valid_lft forever preferred_lft forever
+25: f8ae15b07cc8180@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9000 qdisc noqueue master ovs-system state UP group default
+    link/ether 9e:e0:33:33:ed:64 brd ff:ff:ff:ff:ff:ff link-netns 47de3e81-4f10-4e3e-a8c6-70d0276ff057
+    inet6 fe80::9ce0:33ff:fe33:ed64/64 scope link proto kernel_ll
+       valid_lft forever preferred_lft forever
+26: abd9559f5a2c149@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9000 qdisc noqueue master ovs-system state UP group default
+    link/ether 2a:04:58:3e:74:fd brd ff:ff:ff:ff:ff:ff link-netns 5746525e-67ec-449f-b3af-20bf6a78c4cf
+    inet6 fe80::2804:58ff:fe3e:74fd/64 scope link proto kernel_ll
+       valid_lft forever preferred_lft forever
+27: 9a846a537125340@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9000 qdisc noqueue master ovs-system state UP group default
+    link/ether 86:6e:5c:da:88:aa brd ff:ff:ff:ff:ff:ff link-netns 644df7ef-b7ef-46e0-9777-589ae70ffea0
+    inet6 fe80::846e:5cff:feda:88aa/64 scope link proto kernel_ll
+       valid_lft forever preferred_lft forever
+28: e5ab50ba7d1ae35@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9000 qdisc noqueue master ovs-system state UP group default
+    link/ether 8e:09:fd:b7:95:a1 brd ff:ff:ff:ff:ff:ff link-netns 52fcf0d2-0202-4353-a233-b0bac9f96728
+    inet6 fe80::8c09:fdff:feb7:95a1/64 scope link proto kernel_ll
+       valid_lft forever preferred_lft forever
+29: cf432436ed39b80@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9000 qdisc noqueue master ovs-system state UP group default
+    link/ether 86:c9:78:02:58:07 brd ff:ff:ff:ff:ff:ff link-netns ea18a1dd-0517-4de8-9fb9-b0a1d54ba488
+    inet6 fe80::84c9:78ff:fe02:5807/64 scope link proto kernel_ll
+       valid_lft forever preferred_lft forever
+30: 2e81f3caf697377@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9000 qdisc noqueue master ovs-system state UP group default
+    link/ether 8a:03:c4:d0:e5:6c brd ff:ff:ff:ff:ff:ff link-netns f6a5510d-2045-46f0-9bae-e09e31d902d6
+    inet6 fe80::8803:c4ff:fed0:e56c/64 scope link proto kernel_ll
+       valid_lft forever preferred_lft forever
+31: 87f4567e50065e1@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9000 qdisc noqueue master ovs-system state UP group default
+    link/ether 7e:7a:42:e7:81:6f brd ff:ff:ff:ff:ff:ff link-netns 3b8da23a-a702-420a-a746-581946831adc
+    inet6 fe80::7c7a:42ff:fee7:816f/64 scope link proto kernel_ll
+       valid_lft forever preferred_lft forever
+32: e33e837dc0ae8bc@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9000 qdisc noqueue master ovs-system state UP group default
+    link/ether be:fb:91:be:f3:03 brd ff:ff:ff:ff:ff:ff link-netns c4b074e2-f5d0-4a1c-a94a-c38299b49c78
+    inet6 fe80::bcfb:91ff:febe:f303/64 scope link proto kernel_ll
+       valid_lft forever preferred_lft forever
+33: 862ea641a7d09b0@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9000 qdisc noqueue master ovs-system state UP group default
+    link/ether ae:76:50:9f:7c:44 brd ff:ff:ff:ff:ff:ff link-netns 0b25f371-bf00-4a77-b670-b940943de99e
+    inet6 fe80::ac76:50ff:fe9f:7c44/64 scope link proto kernel_ll
+       valid_lft forever preferred_lft forever
+34: bc2ea8408768ce3@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9000 qdisc noqueue master ovs-system state UP group default
+    link/ether 1a:dc:80:4f:73:70 brd ff:ff:ff:ff:ff:ff link-netns ababadc8-a3a7-4ec3-89bf-fff8f6d36110
+    inet6 fe80::18dc:80ff:fe4f:7370/64 scope link proto kernel_ll
+       valid_lft forever preferred_lft forever
+35: f5eabf69546d638@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9000 qdisc noqueue master ovs-system state UP group default
+    link/ether c6:bf:86:18:94:15 brd ff:ff:ff:ff:ff:ff link-netns 5373fdb1-523a-4590-9635-d4ab7eb43961
+    inet6 fe80::c4bf:86ff:fe18:9415/64 scope link proto kernel_ll
+       valid_lft forever preferred_lft forever
+36: 309a334ec1feddf@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9000 qdisc noqueue master ovs-system state UP group default
+    link/ether 96:71:9f:27:ba:1a brd ff:ff:ff:ff:ff:ff link-netns cff1212d-8842-475c-9f08-17853082c908
+    inet6 fe80::9471:9fff:fe27:ba1a/64 scope link proto kernel_ll
+       valid_lft forever preferred_lft forever
+37: 66f5823b9d68b97@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9000 qdisc noqueue master ovs-system state UP group default
+    link/ether 92:69:04:31:0c:7c brd ff:ff:ff:ff:ff:ff link-netns 7ea32694-1e2d-40d7-92c7-b7729154b830
+    inet6 fe80::9069:4ff:fe31:c7c/64 scope link proto kernel_ll
+       valid_lft forever preferred_lft forever
+38: e9c453375b934db@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9000 qdisc noqueue master ovs-system state UP group default
+    link/ether e6:3e:25:2a:85:89 brd ff:ff:ff:ff:ff:ff link-netns e05f98a1-a8cb-4ec4-81c7-8a235f4f6672
+    inet6 fe80::e43e:25ff:fe2a:8589/64 scope link proto kernel_ll
+       valid_lft forever preferred_lft forever
+39: f02fbe604f5c8a9@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9000 qdisc noqueue master ovs-system state UP group default
+    link/ether 6e:1f:20:3c:78:19 brd ff:ff:ff:ff:ff:ff link-netns e09ea963-a378-49ad-b354-0619464bb4ea
+    inet6 fe80::6c1f:20ff:fe3c:7819/64 scope link proto kernel_ll
+       valid_lft forever preferred_lft forever
+40: 30a9102166ec452@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9000 qdisc noqueue master ovs-system state UP group default
+    link/ether 2e:66:1f:21:25:af brd ff:ff:ff:ff:ff:ff link-netns 957c4a8d-885d-429d-9aab-0bc382df508b
+    inet6 fe80::2c66:1fff:fe21:25af/64 scope link proto kernel_ll
+       valid_lft forever preferred_lft forever
+41: d905b13906d1d40@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9000 qdisc noqueue master ovs-system state UP group default
+    link/ether de:90:66:51:18:61 brd ff:ff:ff:ff:ff:ff link-netns 4fbbeca3-7894-492a-9561-1842b54a567b
+    inet6 fe80::dc90:66ff:fe51:1861/64 scope link proto kernel_ll
+       valid_lft forever preferred_lft forever
+42: cbfad677d5a69d8@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9000 qdisc noqueue master ovs-system state UP group default
+    link/ether a6:35:fb:19:ba:e0 brd ff:ff:ff:ff:ff:ff link-netns 6714643f-5824-449d-9c62-e3fab3d321f6
+    inet6 fe80::a435:fbff:fe19:bae0/64 scope link proto kernel_ll
+       valid_lft forever preferred_lft forever
+43: a0312d0b8f6a967@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9000 qdisc noqueue master ovs-system state UP group default
+    link/ether 76:14:60:12:6c:0a brd ff:ff:ff:ff:ff:ff link-netns da3adac6-c37c-461c-8bee-776c245a38ef
+    inet6 fe80::7414:60ff:fe12:6c0a/64 scope link proto kernel_ll
+       valid_lft forever preferred_lft forever
+44: 30226878653efaf@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9000 qdisc noqueue master ovs-system state UP group default
+    link/ether 0a:74:58:ba:81:21 brd ff:ff:ff:ff:ff:ff link-netns f44483a8-2182-4a6f-b267-8c9cccad861d
+    inet6 fe80::874:58ff:feba:8121/64 scope link proto kernel_ll
+       valid_lft forever preferred_lft forever
+45: 9b8db8679bff561@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9000 qdisc noqueue master ovs-system state UP group default
+    link/ether 3a:fe:00:df:6f:58 brd ff:ff:ff:ff:ff:ff link-netns 71e2464f-e8f0-4fc4-be88-bd8d4574dc1b
+    inet6 fe80::38fe:ff:fedf:6f58/64 scope link proto kernel_ll
+       valid_lft forever preferred_lft forever
+46: 437eb0a5f2a9843@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9000 qdisc noqueue master ovs-system state UP group default
+    link/ether c2:d4:72:5e:77:aa brd ff:ff:ff:ff:ff:ff link-netns 06e01ef4-0825-48c1-8db2-0663db4b39f5
+    inet6 fe80::c0d4:72ff:fe5e:77aa/64 scope link proto kernel_ll
+       valid_lft forever preferred_lft forever
+47: e9f580499d40e89@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9000 qdisc noqueue master ovs-system state UP group default
+    link/ether 0a:97:55:eb:27:40 brd ff:ff:ff:ff:ff:ff link-netns 3dcb1a4e-d91d-4830-8d1d-824f46e7265a
+    inet6 fe80::897:55ff:feeb:2740/64 scope link proto kernel_ll
+       valid_lft forever preferred_lft forever
+48: d90acbe71e80cd3@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9000 qdisc noqueue master ovs-system state UP group default
+    link/ether 76:35:4a:b8:7f:27 brd ff:ff:ff:ff:ff:ff link-netns 8fcc040f-a673-4c57-a5b0-5a24d00db9ed
+    inet6 fe80::7435:4aff:feb8:7f27/64 scope link proto kernel_ll
+       valid_lft forever preferred_lft forever
+49: edb2a0d3dfd9684@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9000 qdisc noqueue master ovs-system state UP group default
+    link/ether 56:7a:99:e3:9f:08 brd ff:ff:ff:ff:ff:ff link-netns d062d0a1-f034-42bf-88c5-050e3a3e5633
+    inet6 fe80::547a:99ff:fee3:9f08/64 scope link proto kernel_ll
+       valid_lft forever preferred_lft forever
+50: d6a2334cb5ae7eb@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9000 qdisc noqueue master ovs-system state UP group default
+    link/ether 02:ca:54:37:72:05 brd ff:ff:ff:ff:ff:ff link-netns 72021c34-da33-4aa1-8e17-42f9f185fa42
+    inet6 fe80::ca:54ff:fe37:7205/64 scope link proto kernel_ll
+       valid_lft forever preferred_lft forever
+51: bdce69107277ab4@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9000 qdisc noqueue master ovs-system state UP group default
+    link/ether 6a:ec:53:eb:7d:14 brd ff:ff:ff:ff:ff:ff link-netns b32c2248-50ff-4a5b-96d4-ecd2a7343659
+    inet6 fe80::68ec:53ff:feeb:7d14/64 scope link proto kernel_ll
+       valid_lft forever preferred_lft forever
+52: fdd07e56dd1551e@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9000 qdisc noqueue master ovs-system state UP group default
+    link/ether 3e:33:7f:88:7e:5f brd ff:ff:ff:ff:ff:ff link-netns a86d7d48-5943-4a46-a93e-6e99a59a6d0b
+    inet6 fe80::3c33:7fff:fe88:7e5f/64 scope link proto kernel_ll
+       valid_lft forever preferred_lft forever
+53: 03b508e34645a80@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9000 qdisc noqueue master ovs-system state UP group default
+    link/ether 26:6e:9a:87:0e:e6 brd ff:ff:ff:ff:ff:ff link-netns 96c2755b-e605-486e-a0f1-8bd34552e023
+    inet6 fe80::246e:9aff:fe87:ee6/64 scope link proto kernel_ll
+       valid_lft forever preferred_lft forever
+54: 13275c26a73143d@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9000 qdisc noqueue master ovs-system state UP group default
+    link/ether c2:f9:4d:d7:d2:28 brd ff:ff:ff:ff:ff:ff link-netns 415eb014-569a-4aab-ba6a-42679ac210ac
+    inet6 fe80::c0f9:4dff:fed7:d228/64 scope link proto kernel_ll
+       valid_lft forever preferred_lft forever
+55: 0af036ec4ac02a7@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9000 qdisc noqueue master ovs-system state UP group default
+    link/ether de:ce:75:50:9b:7a brd ff:ff:ff:ff:ff:ff link-netns 05db3eb7-1207-4a0d-858f-3a216724cda0
+    inet6 fe80::dcce:75ff:fe50:9b7a/64 scope link proto kernel_ll
+       valid_lft forever preferred_lft forever
+56: 56adec0dded4371@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9000 qdisc noqueue master ovs-system state UP group default
+    link/ether 7e:9b:26:df:80:59 brd ff:ff:ff:ff:ff:ff link-netns 40297154-e44e-4d9c-a099-524f3fa50201
+    inet6 fe80::7c9b:26ff:fedf:8059/64 scope link proto kernel_ll
+       valid_lft forever preferred_lft forever
+57: 9d163e6b596628c@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9000 qdisc noqueue master ovs-system state UP group default
+    link/ether 62:38:f7:e7:10:51 brd ff:ff:ff:ff:ff:ff link-netns 40d8c853-a157-496b-9ac8-897f0a129089
+    inet6 fe80::6038:f7ff:fee7:1051/64 scope link proto kernel_ll
+       valid_lft forever preferred_lft forever
+58: e2ab4eb4c713684@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9000 qdisc noqueue master ovs-system state UP group default
+    link/ether 66:3e:da:db:24:63 brd ff:ff:ff:ff:ff:ff link-netns ed1904f5-f076-45db-8c9c-f51f63e8a4b0
+    inet6 fe80::643e:daff:fedb:2463/64 scope link proto kernel_ll
+       valid_lft forever preferred_lft forever
+59: 944e3713011ece6@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9000 qdisc noqueue master ovs-system state UP group default
+    link/ether 82:09:b9:dd:49:62 brd ff:ff:ff:ff:ff:ff link-netns beed9568-53a9-4fd3-9a2d-446e1addacd9
+    inet6 fe80::8009:b9ff:fedd:4962/64 scope link proto kernel_ll
+       valid_lft forever preferred_lft forever
+60: d9160284357d6da@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9000 qdisc noqueue master ovs-system state UP group default
+    link/ether 6e:c0:16:f0:c9:a2 brd ff:ff:ff:ff:ff:ff link-netns 4c35732e-c6a6-4560-b7ab-a418d3431e98
+    inet6 fe80::6cc0:16ff:fef0:c9a2/64 scope link proto kernel_ll
+       valid_lft forever preferred_lft forever
+61: 392873e8a7303f3@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9000 qdisc noqueue master ovs-system state UP group default
+    link/ether 0e:6f:ab:52:ed:7a brd ff:ff:ff:ff:ff:ff link-netns 201f53d5-5eda-417e-8f72-8172a7e31b7d
+    inet6 fe80::c6f:abff:fe52:ed7a/64 scope link proto kernel_ll
+       valid_lft forever preferred_lft forever
+62: 551a1109407de03@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9000 qdisc noqueue master ovs-system state UP group default
+    link/ether ba:cd:32:7d:28:ea brd ff:ff:ff:ff:ff:ff link-netns 3bd716e2-886e-46e6-8e5f-e3aa637f3d1e
+    inet6 fe80::b8cd:32ff:fe7d:28ea/64 scope link proto kernel_ll
+       valid_lft forever preferred_lft forever
+63: 969120a8cc10dce@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9000 qdisc noqueue master ovs-system state UP group default
+    link/ether fe:c6:98:c2:32:12 brd ff:ff:ff:ff:ff:ff link-netns 9aab9b76-defe-46b3-9b1c-f7bfb4810ae0
+    inet6 fe80::fcc6:98ff:fec2:3212/64 scope link proto kernel_ll
+       valid_lft forever preferred_lft forever
+64: 572ce100399314d@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9000 qdisc noqueue master ovs-system state UP group default
+    link/ether 5e:9e:fb:82:d1:96 brd ff:ff:ff:ff:ff:ff link-netns c73b90ef-1c45-44c5-9671-f4d44af9d3da
+    inet6 fe80::5c9e:fbff:fe82:d196/64 scope link proto kernel_ll
+       valid_lft forever preferred_lft forever
+65: c5c4a657b7da2e0@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9000 qdisc noqueue master ovs-system state UP group default
+    link/ether 82:02:45:c7:d9:53 brd ff:ff:ff:ff:ff:ff link-netns 83caea72-830f-4f72-be67-40b92c9a9010
+    inet6 fe80::8002:45ff:fec7:d953/64 scope link proto kernel_ll
+       valid_lft forever preferred_lft forever
+66: 6be339239e0ee58@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9000 qdisc noqueue master ovs-system state UP group default
+    link/ether 86:ce:15:a6:f2:09 brd ff:ff:ff:ff:ff:ff link-netns 98226ffa-b587-43d2-8ead-15e32203a2d5
+    inet6 fe80::84ce:15ff:fea6:f209/64 scope link proto kernel_ll
+       valid_lft forever preferred_lft forever
+67: ca68cab5ba616f6@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9000 qdisc noqueue master ovs-system state UP group default
+    link/ether 86:30:0e:83:c3:b9 brd ff:ff:ff:ff:ff:ff link-netns 3d9652d9-8b83-4f3a-8514-def974ab50bd
+    inet6 fe80::8430:eff:fe83:c3b9/64 scope link proto kernel_ll
+       valid_lft forever preferred_lft forever
+68: 801674f3abe198b@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9000 qdisc noqueue master ovs-system state UP group default
+    link/ether d2:41:44:2d:56:e0 brd ff:ff:ff:ff:ff:ff link-netns 83de1231-b88c-470a-9614-8a3f4e050a27
+    inet6 fe80::d041:44ff:fe2d:56e0/64 scope link proto kernel_ll
+       valid_lft forever preferred_lft forever
+69: 606b2634c9f16d2@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9000 qdisc noqueue master ovs-system state UP group default
+    link/ether 52:a5:39:5a:94:1c brd ff:ff:ff:ff:ff:ff link-netns fefe7375-0dd1-473f-864c-91b0b844a3d2
+    inet6 fe80::50a5:39ff:fe5a:941c/64 scope link proto kernel_ll
+       valid_lft forever preferred_lft forever
+70: 49c9c4c7de4a60f@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9000 qdisc noqueue master ovs-system state UP group default
+    link/ether 72:f0:6b:64:18:4d brd ff:ff:ff:ff:ff:ff link-netns d11eb775-d837-4a4e-aef8-f5dbbecab290
+    inet6 fe80::70f0:6bff:fe64:184d/64 scope link proto kernel_ll
+       valid_lft forever preferred_lft forever
+71: 7598fb9f93f3e01@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9000 qdisc noqueue master ovs-system state UP group default
+    link/ether 4e:77:99:41:3e:23 brd ff:ff:ff:ff:ff:ff link-netns ccff8b2b-7210-4b05-a230-3f0061f85321
+    inet6 fe80::4c77:99ff:fe41:3e23/64 scope link proto kernel_ll
+       valid_lft forever preferred_lft forever
+72: ce1ce4390213716@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9000 qdisc noqueue master ovs-system state UP group default
+    link/ether d2:95:ea:65:dc:ee brd ff:ff:ff:ff:ff:ff link-netns 922b7d9b-49bb-479f-bd57-895a04f00e47
+    inet6 fe80::d095:eaff:fe65:dcee/64 scope link proto kernel_ll
+       valid_lft forever preferred_lft forever
+76: db6e6c96b3f0346@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9000 qdisc noqueue master ovs-system state UP group default
+    link/ether 1a:e0:cc:67:de:f8 brd ff:ff:ff:ff:ff:ff link-netns eb511b4e-6419-4e58-acd6-15d10c329aa7
+    inet6 fe80::18e0:ccff:fe67:def8/64 scope link proto kernel_ll
+       valid_lft forever preferred_lft forever
+77: 2601f935dd2233b@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9000 qdisc noqueue master ovs-system state UP group default
+    link/ether 82:0d:66:d9:f7:20 brd ff:ff:ff:ff:ff:ff link-netns 204457c3-5d11-4795-be66-c233bc011cd7
+    inet6 fe80::800d:66ff:fed9:f720/64 scope link proto kernel_ll
+       valid_lft forever preferred_lft forever
+78: 66da4f6ac0efbe8@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9000 qdisc noqueue master ovs-system state UP group default
+    link/ether 7e:5c:60:55:ff:8e brd ff:ff:ff:ff:ff:ff link-netns 66d76dce-099f-4922-b795-49ccb8bc4b50
+    inet6 fe80::7c5c:60ff:fe55:ff8e/64 scope link proto kernel_ll
+       valid_lft forever preferred_lft forever
+79: 999baa7dabe1f56@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9000 qdisc noqueue master ovs-system state UP group default
+    link/ether ae:14:50:6f:a5:ed brd ff:ff:ff:ff:ff:ff link-netns cd262dd1-28cb-4126-be1f-e52049abd728
+    inet6 fe80::ac14:50ff:fe6f:a5ed/64 scope link proto kernel_ll
+       valid_lft forever preferred_lft forever
+80: aeb06d61bc4e9cb@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9000 qdisc noqueue master ovs-system state UP group default
+    link/ether 0e:15:5b:54:43:79 brd ff:ff:ff:ff:ff:ff link-netns 436a162b-4953-4b77-b60e-e216ff10f239
+    inet6 fe80::c15:5bff:fe54:4379/64 scope link proto kernel_ll
+       valid_lft forever preferred_lft forever
+81: d704714f474fabc@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9000 qdisc noqueue master ovs-system state UP group default
+    link/ether 2e:2c:1b:61:7e:4e brd ff:ff:ff:ff:ff:ff link-netns 17690af8-1d3e-4097-9f96-a6bd06b004be
+    inet6 fe80::2c2c:1bff:fe61:7e4e/64 scope link proto kernel_ll
+       valid_lft forever preferred_lft forever
+82: 0f539054501ffc0@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9000 qdisc noqueue master ovs-system state UP group default
+    link/ether 0a:e9:32:7b:19:0c brd ff:ff:ff:ff:ff:ff link-netns 81bf6574-ead4-4cb6-8e93-d34ffd96e61c
+    inet6 fe80::8e9:32ff:fe7b:190c/64 scope link proto kernel_ll
+       valid_lft forever preferred_lft forever
+84: fd71d99aa26e71a@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9000 qdisc noqueue master ovs-system state UP group default
+    link/ether 6a:25:58:42:5b:a1 brd ff:ff:ff:ff:ff:ff link-netns f224a832-f2f5-4f1b-909e-89f0de65e269
+    inet6 fe80::6825:58ff:fe42:5ba1/64 scope link proto kernel_ll
+       valid_lft forever preferred_lft forever
+85: b23459b8788e748@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9000 qdisc noqueue master ovs-system state UP group default
+    link/ether be:23:98:06:8e:98 brd ff:ff:ff:ff:ff:ff link-netns f6cda736-1bb0-49f8-a887-e00ac0d93b29
+    inet6 fe80::bc23:98ff:fe06:8e98/64 scope link proto kernel_ll
+       valid_lft forever preferred_lft forever
+86: b1934ca10c5ae99@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9000 qdisc noqueue master ovs-system state UP group default
+    link/ether 1a:cc:a3:1f:34:e4 brd ff:ff:ff:ff:ff:ff link-netns 2deb4482-d4a8-4f36-9364-f34d70cd8f58
+    inet6 fe80::18cc:a3ff:fe1f:34e4/64 scope link proto kernel_ll
+       valid_lft forever preferred_lft forever
+87: a2bffb65389989c@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9000 qdisc noqueue master ovs-system state UP group default
+    link/ether 66:1b:6a:c7:dd:af brd ff:ff:ff:ff:ff:ff link-netns 29050037-4cc5-4519-98cb-c6c3a88c9e70
+    inet6 fe80::641b:6aff:fec7:ddaf/64 scope link proto kernel_ll
+       valid_lft forever preferred_lft forever
+88: 601955499df667d@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9000 qdisc noqueue master ovs-system state UP group default
+    link/ether 62:e6:e9:57:f0:ea brd ff:ff:ff:ff:ff:ff link-netns a95ff0ef-358d-490d-9417-f9156d236307
+    inet6 fe80::60e6:e9ff:fe57:f0ea/64 scope link proto kernel_ll
+       valid_lft forever preferred_lft forever
+89: 365bdaf517dc1e8@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9000 qdisc noqueue master ovs-system state UP group default
+    link/ether 9e:c7:66:38:ee:7a brd ff:ff:ff:ff:ff:ff link-netns 287d4b93-7767-42b9-9cb0-918d86e2ab2b
+    inet6 fe80::9cc7:66ff:fe38:ee7a/64 scope link proto kernel_ll
+       valid_lft forever preferred_lft forever
+90: aee1b03ebdaabfc@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9000 qdisc noqueue master ovs-system state UP group default
+    link/ether 7a:52:ee:2d:f5:6d brd ff:ff:ff:ff:ff:ff link-netns 0473b81c-f0ef-4fed-830a-ad2a38630d92
+    inet6 fe80::7852:eeff:fe2d:f56d/64 scope link proto kernel_ll
+       valid_lft forever preferred_lft forever
+91: 116bef032d06ebf@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9000 qdisc noqueue master ovs-system state UP group default
+    link/ether f6:7d:78:4a:51:37 brd ff:ff:ff:ff:ff:ff link-netns 4ab8b7fe-58cb-4024-a2c4-114a24ea8e1d
+    inet6 fe80::f47d:78ff:fe4a:5137/64 scope link proto kernel_ll
+       valid_lft forever preferred_lft forever
+92: d2469b902557ce2@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9000 qdisc noqueue master ovs-system state UP group default
+    link/ether 7a:f7:ac:9b:a8:e8 brd ff:ff:ff:ff:ff:ff link-netns bae26846-1394-4488-8f9c-100213872015
+    inet6 fe80::78f7:acff:fe9b:a8e8/64 scope link proto kernel_ll
+       valid_lft forever preferred_lft forever
+94: 28112627cab8ccb@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9000 qdisc noqueue master ovs-system state UP group default
+    link/ether 92:58:e7:b3:2c:af brd ff:ff:ff:ff:ff:ff link-netns af843871-62b9-46f5-8bf5-e14ca0440aca
+    inet6 fe80::9058:e7ff:feb3:2caf/64 scope link proto kernel_ll
+       valid_lft forever preferred_lft forever
+95: e81600e455724c4@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9000 qdisc noqueue master ovs-system state UP group default
+    link/ether 8e:9f:77:7b:9b:59 brd ff:ff:ff:ff:ff:ff link-netns c6d9f81c-50c5-47a4-b81d-4b9f981522c0
+    inet6 fe80::8c9f:77ff:fe7b:9b59/64 scope link proto kernel_ll
+       valid_lft forever preferred_lft forever
+96: 08c0f17ffd64040@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9000 qdisc noqueue master ovs-system state UP group default
+    link/ether 32:8a:77:a5:4c:dd brd ff:ff:ff:ff:ff:ff link-netns 85258bb0-18e1-429a-b32b-e89601100a66
+    inet6 fe80::308a:77ff:fea5:4cdd/64 scope link proto kernel_ll
+       valid_lft forever preferred_lft forever
+98: 7a2feb7f0cfdde7@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9000 qdisc noqueue master ovs-system state UP group default
+    link/ether 2a:17:0f:66:38:c8 brd ff:ff:ff:ff:ff:ff link-netns d530998d-61a6-4f45-9d35-ca173de3cba3
+    inet6 fe80::2817:fff:fe66:38c8/64 scope link proto kernel_ll
+       valid_lft forever preferred_lft forever
+99: dbdaad0c8ec0b06@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9000 qdisc noqueue master ovs-system state UP group default
+    link/ether 16:58:a2:37:2c:ba brd ff:ff:ff:ff:ff:ff link-netns e471809b-a9e1-42a1-a103-0d868887a707
+    inet6 fe80::1458:a2ff:fe37:2cba/64 scope link proto kernel_ll
+       valid_lft forever preferred_lft forever
+100: d7c9405097062a6@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9000 qdisc noqueue master ovs-system state UP group default
+    link/ether da:95:4c:e5:cc:6b brd ff:ff:ff:ff:ff:ff link-netns 7e8ae748-c696-4013-ad7b-3bea6cd5059c
+    inet6 fe80::d895:4cff:fee5:cc6b/64 scope link proto kernel_ll
+       valid_lft forever preferred_lft forever
+101: fda1e5658513dd8@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9000 qdisc noqueue master ovs-system state UP group default
+    link/ether a2:0d:4f:22:54:e5 brd ff:ff:ff:ff:ff:ff link-netns da7f51be-c055-4d98-97ab-91400db0ab7c
+    inet6 fe80::a00d:4fff:fe22:54e5/64 scope link proto kernel_ll
+       valid_lft forever preferred_lft forever
+102: 1f0b77387206344@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9000 qdisc noqueue master ovs-system state UP group default
+    link/ether 5e:06:5e:f3:47:c4 brd ff:ff:ff:ff:ff:ff link-netns f02f12a1-ba33-45e3-a01a-d5432bd64954
+    inet6 fe80::5c06:5eff:fef3:47c4/64 scope link proto kernel_ll
+       valid_lft forever preferred_lft forever
+103: 077c2f200f715fa@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9000 qdisc noqueue master ovs-system state UP group default
+    link/ether a2:da:6d:a8:de:86 brd ff:ff:ff:ff:ff:ff link-netns 74b8af89-e251-4c3c-ba57-0de5779b01d7
+    inet6 fe80::a0da:6dff:fea8:de86/64 scope link proto kernel_ll
+       valid_lft forever preferred_lft forever
+104: e40344f3ca7d724@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9000 qdisc noqueue master ovs-system state UP group default
+    link/ether 76:4f:ea:32:00:bb brd ff:ff:ff:ff:ff:ff link-netns 00a47e1d-2b0c-49be-8d84-256071993031
+    inet6 fe80::744f:eaff:fe32:bb/64 scope link proto kernel_ll
+       valid_lft forever preferred_lft forever
+105: f8eeb4d59cea9a0@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9000 qdisc noqueue master ovs-system state UP group default
+    link/ether 96:fd:04:a3:9b:48 brd ff:ff:ff:ff:ff:ff link-netns f8b43154-b6a3-4aa1-bd3b-59a322b6a13e
+    inet6 fe80::94fd:4ff:fea3:9b48/64 scope link proto kernel_ll
+       valid_lft forever preferred_lft forever
+106: 1d0c0fdb748c40f@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9000 qdisc noqueue master ovs-system state UP group default
+    link/ether 36:7d:2a:b4:a6:ec brd ff:ff:ff:ff:ff:ff link-netns 26316120-3e18-460a-9cb6-93b396b41d1c
+    inet6 fe80::347d:2aff:feb4:a6ec/64 scope link proto kernel_ll
+       valid_lft forever preferred_lft forever
+107: 4c85e80223ad4c3@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9000 qdisc noqueue master ovs-system state UP group default
+    link/ether c2:ce:00:33:71:37 brd ff:ff:ff:ff:ff:ff link-netns 5f7446a1-2bb0-4427-93cb-e255741497cf
+    inet6 fe80::c0ce:ff:fe33:7137/64 scope link proto kernel_ll
+       valid_lft forever preferred_lft forever
+108: a953b202c457223@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9000 qdisc noqueue master ovs-system state UP group default
+    link/ether 6e:b5:29:c2:56:5b brd ff:ff:ff:ff:ff:ff link-netns 8367f23f-524f-4f22-926d-5e346969706e
+    inet6 fe80::6cb5:29ff:fec2:565b/64 scope link proto kernel_ll
+       valid_lft forever preferred_lft forever
+109: 79c6b2eea45a3bf@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9000 qdisc noqueue master ovs-system state UP group default
+    link/ether 92:6a:66:4f:8a:46 brd ff:ff:ff:ff:ff:ff link-netns aac6a29d-b7be-4994-88d2-e71d1d5f2731
+    inet6 fe80::906a:66ff:fe4f:8a46/64 scope link proto kernel_ll
+       valid_lft forever preferred_lft forever
+110: ef286448dcbb258@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9000 qdisc noqueue master ovs-system state UP group default
+    link/ether 9a:cd:90:38:c6:c4 brd ff:ff:ff:ff:ff:ff link-netns d2e9dfd9-0daf-40c0-bbd8-d7f8c98df826
+    inet6 fe80::98cd:90ff:fe38:c6c4/64 scope link proto kernel_ll
+       valid_lft forever preferred_lft forever
+111: 98b46572fd78d3e@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9000 qdisc noqueue master ovs-system state UP group default
+    link/ether 0e:e8:03:96:f7:0c brd ff:ff:ff:ff:ff:ff link-netns 29558b03-d266-4e83-bb23-37262af14997
+    inet6 fe80::ce8:3ff:fe96:f70c/64 scope link proto kernel_ll
+       valid_lft forever preferred_lft forever
+112: 80f7407ac5f03ce@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9000 qdisc noqueue master ovs-system state UP group default
+    link/ether 16:0f:bf:cc:b2:58 brd ff:ff:ff:ff:ff:ff link-netns cbd4fa91-be88-4e2b-8c74-0ccadabdac77
+    inet6 fe80::140f:bfff:fecc:b258/64 scope link proto kernel_ll
+       valid_lft forever preferred_lft forever
+113: d58643bbecca287@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9000 qdisc noqueue master ovs-system state UP group default
+    link/ether 1a:a0:fd:bb:00:b8 brd ff:ff:ff:ff:ff:ff link-netns fb3106a9-6f0a-4d78-adfc-739eb049989f
+    inet6 fe80::18a0:fdff:febb:b8/64 scope link proto kernel_ll
+       valid_lft forever preferred_lft forever
+114: d23d8ffdf146e2f@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9000 qdisc noqueue master ovs-system state UP group default
+    link/ether 02:a5:dc:f1:c7:37 brd ff:ff:ff:ff:ff:ff link-netns 24c59cb1-5a2a-454e-a816-60e5f1779a4f
+    inet6 fe80::a5:dcff:fef1:c737/64 scope link proto kernel_ll
+       valid_lft forever preferred_lft forever
+115: c45372c64eef7cd@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9000 qdisc noqueue master ovs-system state UP group default
+    link/ether 6a:dd:73:ec:88:55 brd ff:ff:ff:ff:ff:ff link-netns 041445f7-2e39-4b50-9935-5fbdbc9fd5c7
+    inet6 fe80::68dd:73ff:feec:8855/64 scope link proto kernel_ll
+       valid_lft forever preferred_lft forever
+116: f38747e6823c9b0@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9000 qdisc noqueue master ovs-system state UP group default
+    link/ether de:87:b0:ea:6c:94 brd ff:ff:ff:ff:ff:ff link-netns 816ce8a4-b004-45dd-af95-2501db34b23f
+    inet6 fe80::dc87:b0ff:feea:6c94/64 scope link proto kernel_ll
+       valid_lft forever preferred_lft forever
+117: 5577aceea118929@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9000 qdisc noqueue master ovs-system state UP group default
+    link/ether 6e:67:5d:80:3c:13 brd ff:ff:ff:ff:ff:ff link-netns 8845ee90-f826-4d07-9b94-1460d064146f
+    inet6 fe80::6c67:5dff:fe80:3c13/64 scope link proto kernel_ll
+       valid_lft forever preferred_lft forever
+118: 32d742675c5ba0a@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9000 qdisc noqueue master ovs-system state UP group default
+    link/ether 56:83:30:96:bc:69 brd ff:ff:ff:ff:ff:ff link-netns c4af3a92-c0bc-4aa7-90c5-34c1df2659ad
+    inet6 fe80::5483:30ff:fe96:bc69/64 scope link proto kernel_ll
+       valid_lft forever preferred_lft forever
+119: e526967bf38dcbf@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9000 qdisc noqueue master ovs-system state UP group default
+    link/ether 6a:4e:12:21:54:5e brd ff:ff:ff:ff:ff:ff link-netns 2f31ce5d-78bf-42bd-9434-b88b76cb3d5c
+    inet6 fe80::684e:12ff:fe21:545e/64 scope link proto kernel_ll
+       valid_lft forever preferred_lft forever
+[core@master-01 ~]$
