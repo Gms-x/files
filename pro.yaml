@@ -1,0 +1,253 @@
+---
+#Worker3
+dns-resolver:
+ config:
+   server:
+     - 10.234.161.139
+     - 10.234.161.144
+interfaces:
+ - name: pri
+   type: vlan
+   state: up
+   ipv4:
+     address:
+     - ip: 10.254.191.4
+       prefix-length: 25
+     dhcp: false
+     enabled: true
+   ipv6:
+     enabled: false
+   vlan:
+     base-iface: bond0
+     id: 1243
+
+ - name: bond0
+   description: Primary bond
+   type: bond
+   state: up
+   mtu: 1500
+   ipv4:
+     enabled: false
+     dhcp: false
+   ipv6:
+     enabled: false   
+   link-aggregation:
+     mode: 4 #LACP
+     options:
+       miimon: '100'
+     port:
+     - eno16895np0
+     - eno16925np3
+ - name: eno16895np0
+   mac-address: 8c:84:74:f9:93:2c #nic1
+   state: up
+   type: ethernet
+   ipv4:
+     enabled: false
+   ipv6:
+     enabled: false   
+ - name: eno16925np3
+   mac-address: 8c:84:74:f9:93:2f #nic2
+   state: up
+   type: ethernet
+   ipv4:
+     enabled: false
+   ipv6:
+     enabled: false    
+routes: 
+ config:
+   - destination: 0.0.0.0/0
+     next-hop-address: 10.254.191.1
+     next-hop-interface: pri
+     table-id: 254
+
+
+---
+#Worker4
+dns-resolver:
+ config:
+   server:
+     - 10.234.161.139
+     - 10.234.161.144
+interfaces:
+ - name: pri
+   type: vlan
+   state: up
+   ipv4:
+     address:
+     - ip: 10.254.191.5
+       prefix-length: 25
+     dhcp: false
+     enabled: true
+   ipv6:
+     enabled: false
+   vlan:
+     base-iface: bond0
+     id: 1243
+
+ - name: bond0
+   description: Primary bond
+   type: bond
+   state: up
+   mtu: 1500
+   ipv4:
+     enabled: false
+     dhcp: false
+   ipv6:
+     enabled: false   
+   link-aggregation:
+     mode: 4 #LACP
+     options:
+       miimon: '100'
+     port:
+     - eno16895np0
+     - eno16925np3
+ - name: eno16895np0
+   mac-address: 8c:84:74:f9:e2:8c #nic1
+   state: up
+   type: ethernet
+   ipv4:
+     enabled: false
+   ipv6:
+     enabled: false   
+ - name: eno16925np3
+   mac-address: 8c:84:74:f9:e2:8f #nic2
+   state: up
+   type: ethernet
+   ipv4:
+     enabled: false
+   ipv6:
+     enabled: false    
+routes: 
+ config:
+   - destination: 0.0.0.0/0
+     next-hop-address: 10.254.191.1
+     next-hop-interface: pri
+     table-id: 254
+
+---
+#Worker5
+dns-resolver:
+ config:
+   server:
+     - 10.234.161.139
+     - 10.234.161.144
+interfaces:
+ - name: pri
+   type: vlan
+   state: up
+   ipv4:
+     address:
+     - ip: 10.254.191.6
+       prefix-length: 25
+     dhcp: false
+     enabled: true
+   ipv6:
+     enabled: false
+   vlan:
+     base-iface: bond0
+     id: 1243
+
+ - name: bond0
+   description: Primary bond
+   type: bond
+   state: up
+   mtu: 1500
+   ipv4:
+     enabled: false
+     dhcp: false
+   ipv6:
+     enabled: false   
+   link-aggregation:
+     mode: 4 #LACP
+     options:
+       miimon: '100'
+     port:
+     - eno16895np0
+     - eno16925np3
+ - name: eno16895np0
+   mac-address: 8c:84:74:f9:cc:e8 #nic1
+   state: up
+   type: ethernet
+   ipv4:
+     enabled: false
+   ipv6:
+     enabled: false   
+ - name: eno16925np3
+   mac-address: 8c:84:74:f9:cc:eb #nic2
+   state: up
+   type: ethernet
+   ipv4:
+     enabled: false
+   ipv6:
+     enabled: false    
+routes: 
+ config:
+   - destination: 0.0.0.0/0
+     next-hop-address: 10.254.191.1
+     next-hop-interface: pri
+     table-id: 254
+
+---
+#Worker6
+dns-resolver:
+ config:
+   server:
+     - 10.234.161.139
+     - 10.234.161.144
+interfaces:
+ - name: pri
+   type: vlan
+   state: up
+   ipv4:
+     address:
+     - ip: 10.254.191.7
+       prefix-length: 25
+     dhcp: false
+     enabled: true
+   ipv6:
+     enabled: false
+   vlan:
+     base-iface: bond0
+     id: 1243
+
+ - name: bond0
+   description: Primary bond
+   type: bond
+   state: up
+   mtu: 1500
+   ipv4:
+     enabled: false
+     dhcp: false
+   ipv6:
+     enabled: false   
+   link-aggregation:
+     mode: 4 #LACP
+     options:
+       miimon: '100'
+     port:
+     - eno16895np0
+     - eno16925np3
+ - name: eno16895np0
+   mac-address: 8c:84:74:f9:99:1c #nic1
+   state: up
+   type: ethernet
+   ipv4:
+     enabled: false
+   ipv6:
+     enabled: false   
+ - name: eno16925np3
+   mac-address: :8c:84:74:f9:99:1f #nic2
+   state: up
+   type: ethernet
+   ipv4:
+     enabled: false
+   ipv6:
+     enabled: false    
+routes: 
+ config:
+   - destination: 0.0.0.0/0
+     next-hop-address: 10.254.191.1
+     next-hop-interface: pri
+     table-id: 254
+
