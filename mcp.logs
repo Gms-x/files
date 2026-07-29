@@ -1,0 +1,225 @@
+apiVersion: machineconfiguration.openshift.io/v1
+kind: MachineConfigPool
+metadata:
+  creationTimestamp: "2026-07-10T12:43:30Z"
+  generation: 20
+  labels:
+    machineconfiguration.openshift.io/mco-built-in: ""
+    pools.operator.machineconfiguration.openshift.io/worker: ""
+  name: worker
+  resourceVersion: "8927575"
+  uid: 7c5794fe-c98d-4302-85fc-a5127faee0fd
+spec:
+  configuration:
+    name: rendered-worker-2b6b4ce2a0d8e4b9ba1d5fc9f8fd66be
+    source:
+    - apiVersion: machineconfiguration.openshift.io/v1
+      kind: MachineConfig
+      name: 00-worker
+    - apiVersion: machineconfiguration.openshift.io/v1
+      kind: MachineConfig
+      name: 01-worker-container-runtime
+    - apiVersion: machineconfiguration.openshift.io/v1
+      kind: MachineConfig
+      name: 01-worker-kubelet
+    - apiVersion: machineconfiguration.openshift.io/v1
+      kind: MachineConfig
+      name: 50-workers-chrony-configuration
+    - apiVersion: machineconfiguration.openshift.io/v1
+      kind: MachineConfig
+      name: 97-worker-generated-kubelet
+    - apiVersion: machineconfiguration.openshift.io/v1
+      kind: MachineConfig
+      name: 98-worker-generated-kubelet
+    - apiVersion: machineconfiguration.openshift.io/v1
+      kind: MachineConfig
+      name: 99-worker-blacklist-irdma
+    - apiVersion: machineconfiguration.openshift.io/v1
+      kind: MachineConfig
+      name: 99-worker-chrony
+    - apiVersion: machineconfiguration.openshift.io/v1
+      kind: MachineConfig
+      name: 99-worker-generated-registries
+    - apiVersion: machineconfiguration.openshift.io/v1
+      kind: MachineConfig
+      name: 99-worker-set-core-passwd
+    - apiVersion: machineconfiguration.openshift.io/v1
+      kind: MachineConfig
+      name: 99-worker-ssh
+  machineConfigSelector:
+    matchLabels:
+      machineconfiguration.openshift.io/role: worker
+  nodeSelector:
+    matchLabels:
+      node-role.kubernetes.io/worker: ""
+  paused: false
+status:
+  certExpirys:
+  - bundle: KubeAPIServerServingCAData
+    expiry: "2036-07-07T11:37:39Z"
+    subject: CN=admin-kubeconfig-signer,OU=openshift
+  - bundle: KubeAPIServerServingCAData
+    expiry: "2026-08-10T07:19:16Z"
+    subject: CN=kube-csr-signer_@1783754356
+  - bundle: KubeAPIServerServingCAData
+    expiry: "2026-09-09T07:14:16Z"
+    subject: CN=openshift-kube-controller-manager-operator_csr-signer-signer@1783754056
+  - bundle: KubeAPIServerServingCAData
+    expiry: "2026-08-25T07:19:57Z"
+    subject: CN=kube-csr-signer_@1785050397
+  - bundle: KubeAPIServerServingCAData
+    expiry: "2027-07-10T12:01:23Z"
+    subject: CN=kube-apiserver-to-kubelet-signer,OU=openshift
+  - bundle: KubeAPIServerServingCAData
+    expiry: "2027-07-10T12:01:23Z"
+    subject: CN=kube-control-plane-signer,OU=openshift
+  - bundle: KubeAPIServerServingCAData
+    expiry: "2036-07-07T12:01:21Z"
+    subject: CN=kubelet-bootstrap-kubeconfig-signer,OU=openshift
+  - bundle: KubeAPIServerServingCAData
+    expiry: "2029-07-09T12:25:28Z"
+    subject: CN=openshift-kube-apiserver-operator_node-system-admin-signer@1783686327
+  conditions:
+  - lastTransitionTime: "2026-07-10T12:44:36Z"
+    message: ""
+    reason: ""
+    status: "False"
+    type: PinnedImageSetsDegraded
+  - lastTransitionTime: "2026-07-10T12:46:18Z"
+    message: ""
+    reason: ""
+    status: "False"
+    type: RenderDegraded
+  - lastTransitionTime: "2026-07-23T09:03:22Z"
+    message: ""
+    reason: ""
+    status: "False"
+    type: Updated
+  - lastTransitionTime: "2026-07-29T08:37:34Z"
+    message: ""
+    reason: ""
+    status: "False"
+    type: NodeDegraded
+  - lastTransitionTime: "2026-07-29T08:37:34Z"
+    message: ""
+    reason: ""
+    status: "False"
+    type: Degraded
+  - lastTransitionTime: "2026-07-23T09:03:22Z"
+    message: All nodes are updating to MachineConfig rendered-worker-2b6b4ce2a0d8e4b9ba1d5fc9f8fd66be
+    reason: ""
+    status: "True"
+    type: Updating
+  configuration:
+    name: rendered-worker-1fdd2626678b5eee7bc6f9cd49e30b73
+    source:
+    - apiVersion: machineconfiguration.openshift.io/v1
+      kind: MachineConfig
+      name: 00-worker
+    - apiVersion: machineconfiguration.openshift.io/v1
+      kind: MachineConfig
+      name: 01-worker-container-runtime
+    - apiVersion: machineconfiguration.openshift.io/v1
+      kind: MachineConfig
+      name: 01-worker-interface
+    - apiVersion: machineconfiguration.openshift.io/v1
+      kind: MachineConfig
+      name: 01-worker-kubelet
+    - apiVersion: machineconfiguration.openshift.io/v1
+      kind: MachineConfig
+      name: 50-workers-chrony-configuration
+    - apiVersion: machineconfiguration.openshift.io/v1
+      kind: MachineConfig
+      name: 97-worker-generated-kubelet
+    - apiVersion: machineconfiguration.openshift.io/v1
+      kind: MachineConfig
+      name: 98-worker-generated-kubelet
+    - apiVersion: machineconfiguration.openshift.io/v1
+      kind: MachineConfig
+      name: 99-worker-blacklist-irdma
+    - apiVersion: machineconfiguration.openshift.io/v1
+      kind: MachineConfig
+      name: 99-worker-chrony
+    - apiVersion: machineconfiguration.openshift.io/v1
+      kind: MachineConfig
+      name: 99-worker-generated-registries
+    - apiVersion: machineconfiguration.openshift.io/v1
+      kind: MachineConfig
+      name: 99-worker-set-core-passwd
+    - apiVersion: machineconfiguration.openshift.io/v1
+      kind: MachineConfig
+      name: 99-worker-ssh
+  degradedMachineCount: 0
+  machineCount: 1
+  observedGeneration: 20
+  poolSynchronizersStatus:
+  - availableMachineCount: 0
+    machineCount: 1
+    poolSynchronizerType: PinnedImageSets
+    readyMachineCount: 0
+    unavailableMachineCount: 1
+    updatedMachineCount: 1
+  readyMachineCount: 0
+  unavailableMachineCount: 1
+  updatedMachineCount: 0
+NAME                                               GENERATEDBYCONTROLLER                      IGNITIONVERSION   AGE
+00-master                                          45a196b7ba10a6175895db65a81d08e88fdfd5f2   3.5.0             18d
+00-worker                                          45a196b7ba10a6175895db65a81d08e88fdfd5f2   3.5.0             18d
+01-master-container-runtime                        45a196b7ba10a6175895db65a81d08e88fdfd5f2   3.5.0             18d
+01-master-kubelet                                  45a196b7ba10a6175895db65a81d08e88fdfd5f2   3.5.0             18d
+01-worker-container-runtime                        45a196b7ba10a6175895db65a81d08e88fdfd5f2   3.5.0             18d
+01-worker-kubelet                                  45a196b7ba10a6175895db65a81d08e88fdfd5f2   3.5.0             18d
+50-master-dnsmasq-configuration                                                               3.1.0             18d
+50-masters-chrony-configuration                                                               3.1.0             18d
+50-workers-chrony-configuration                                                               3.1.0             18d
+97-master-generated-kubelet                        45a196b7ba10a6175895db65a81d08e88fdfd5f2   3.5.0             18d
+97-worker-generated-kubelet                        45a196b7ba10a6175895db65a81d08e88fdfd5f2   3.5.0             18d
+98-master-generated-kubelet                        45a196b7ba10a6175895db65a81d08e88fdfd5f2   3.5.0             18d
+98-worker-generated-kubelet                        45a196b7ba10a6175895db65a81d08e88fdfd5f2   3.5.0             18d
+99-master-blacklist-irdma                                                                                       13d
+99-master-chrony                                                                              3.2.0             16d
+99-master-generated-registries                     45a196b7ba10a6175895db65a81d08e88fdfd5f2   3.5.0             18d
+99-master-set-core-passwd                                                                     3.2.0             6d1h
+99-master-ssh                                                                                 3.2.0             18d
+99-worker-blacklist-irdma                                                                                       13d
+99-worker-chrony                                                                              3.2.0             15d
+99-worker-generated-registries                     45a196b7ba10a6175895db65a81d08e88fdfd5f2   3.5.0             18d
+99-worker-set-core-passwd                                                                     3.2.0             7d
+99-worker-ssh                                                                                 3.2.0             18d
+rendered-master-09ed7797a7143acd3a300e28e53a9abf   45a196b7ba10a6175895db65a81d08e88fdfd5f2   3.5.0             14d
+rendered-master-0db8e123df4e8e691fc8520eb2320481   45a196b7ba10a6175895db65a81d08e88fdfd5f2   3.5.0             16d
+rendered-master-27217e85e8967d8f00224510a7e653c6   45a196b7ba10a6175895db65a81d08e88fdfd5f2   3.5.0             6d1h
+rendered-master-28d4427e34a2ed5b0c71441a9d2a5617   45a196b7ba10a6175895db65a81d08e88fdfd5f2   3.5.0             18d
+rendered-master-29e0aef486d3c3a586857b3307f3ac1c   45a196b7ba10a6175895db65a81d08e88fdfd5f2   3.5.0             5d21h
+rendered-master-2e6171a1b5a6f986636fd32cf829f106   45a196b7ba10a6175895db65a81d08e88fdfd5f2   3.5.0             15d
+rendered-master-346691dbe81cb7e8ee931771e668119f   45a196b7ba10a6175895db65a81d08e88fdfd5f2   3.5.0             6d
+rendered-master-37e7af55e0c0a7e75b59b600554b0bf5   45a196b7ba10a6175895db65a81d08e88fdfd5f2   3.5.0             13d
+rendered-master-38764b78fe0fdc96491c0cdfcc0dc676   45a196b7ba10a6175895db65a81d08e88fdfd5f2   3.5.0             6d2h
+rendered-master-5af92f995ba9040343f502acf39532f5   45a196b7ba10a6175895db65a81d08e88fdfd5f2   3.5.0             16d
+rendered-master-78c3681609e5ffd4376f9cd63e689e8c   45a196b7ba10a6175895db65a81d08e88fdfd5f2   3.5.0             16d
+rendered-master-7d6709df0afe162fb21e9ff836304546   45a196b7ba10a6175895db65a81d08e88fdfd5f2   3.5.0             14d
+rendered-master-8599efb730d3210251a2106392e14cce   45a196b7ba10a6175895db65a81d08e88fdfd5f2   3.5.0             16d
+rendered-master-96d06d92587ee0f021aca44ab8a55b39   45a196b7ba10a6175895db65a81d08e88fdfd5f2   3.5.0             15d
+rendered-master-96df1017d4aa1efe25afbd3bcb2a1952   45a196b7ba10a6175895db65a81d08e88fdfd5f2   3.5.0             6d
+rendered-master-a673a5a40a955b4ce96637a1838f8e40   45a196b7ba10a6175895db65a81d08e88fdfd5f2   3.5.0             16d
+rendered-master-ca9d9202632e676db9102f35499b9098   45a196b7ba10a6175895db65a81d08e88fdfd5f2   3.5.0             13d
+rendered-master-e6e1b4fc2c5871a06b40460b0fb5b256   45a196b7ba10a6175895db65a81d08e88fdfd5f2   3.5.0             35m
+rendered-worker-072f6ad9f9cb91f46b95ef7aab9a30f4   45a196b7ba10a6175895db65a81d08e88fdfd5f2   3.5.0             16d
+rendered-worker-0953041e80ba266b7c12656e211e7356   45a196b7ba10a6175895db65a81d08e88fdfd5f2   3.5.0             16d
+rendered-worker-0ca90376491124e895d1a5d52c521afe   45a196b7ba10a6175895db65a81d08e88fdfd5f2   3.5.0             15d
+rendered-worker-0d07ee1c416f417d554460c18ce7c708   45a196b7ba10a6175895db65a81d08e88fdfd5f2   3.5.0             16d
+rendered-worker-186e667365ae48eef37bfe8c70e22486   45a196b7ba10a6175895db65a81d08e88fdfd5f2   3.5.0             15d
+rendered-worker-18ac21c5424c24b097376732ed723bf5   45a196b7ba10a6175895db65a81d08e88fdfd5f2   3.5.0             15d
+rendered-worker-1fdd2626678b5eee7bc6f9cd49e30b73   45a196b7ba10a6175895db65a81d08e88fdfd5f2   3.5.0             6d
+rendered-worker-2b6b4ce2a0d8e4b9ba1d5fc9f8fd66be   45a196b7ba10a6175895db65a81d08e88fdfd5f2   3.5.0             35m
+rendered-worker-41838ffc3e330139621804847b3d7ea4   45a196b7ba10a6175895db65a81d08e88fdfd5f2   3.5.0             16d
+rendered-worker-64bb78cd388bf19fd693c70db760e51f   45a196b7ba10a6175895db65a81d08e88fdfd5f2   3.5.0             15d
+rendered-worker-6861e28c10b72bd524aa13ff133bb142   45a196b7ba10a6175895db65a81d08e88fdfd5f2   3.5.0             14d
+rendered-worker-7028248269eb8f26df6db01688374524   45a196b7ba10a6175895db65a81d08e88fdfd5f2   3.5.0             6d
+rendered-worker-7e1cadb3bad5088a766372175b645bca   45a196b7ba10a6175895db65a81d08e88fdfd5f2   3.5.0             7d
+rendered-worker-84197169fce7d7d0cb20c77995d4a1b1   45a196b7ba10a6175895db65a81d08e88fdfd5f2   3.5.0             14d
+rendered-worker-94c0cff2d94b7ffb87006e37bd4d403c   45a196b7ba10a6175895db65a81d08e88fdfd5f2   3.5.0             13d
+rendered-worker-b115e156f3c3d05d7775d562fbbf0cb2   45a196b7ba10a6175895db65a81d08e88fdfd5f2   3.5.0             6d2h
+rendered-worker-cc117379f7c45a26a36313ec8cf259b8   45a196b7ba10a6175895db65a81d08e88fdfd5f2   3.5.0             18d
+rendered-worker-e11f3e8d9585793c8eedc25a8ae3b0da   45a196b7ba10a6175895db65a81d08e88fdfd5f2   3.5.0             13d
+[root@az1hp-jcse1-ccc ~]# 
