@@ -1,3 +1,43 @@
+
+
+ot@worker-01 ~]# nmcli -t -f NAME connection show | while IFS= read -r profile; do
+
+    iface=$(nmcli -g connection.interface-name connection show "$profile")
+
+    printf "%-30s -> %s\n" "$profile" "${iface:---}"
+
+done | egrep "eno16995np0|eno17195np0"
+Wired connection 7             -> eno16995np0
+Wired connection 9             -> eno17195np0
+[root@worker-01 ~]#
+[root@worker-01 ~]#
+[root@worker-01 ~]#
+
+
+
+ot@master-01 ~]#
+[root@master-01 ~]#
+[root@master-01 ~]# nmcli -t -f NAME connection show | while IFS= read -r profile; do
+
+    iface=$(nmcli -g connection.interface-name connection show "$profile")
+
+    printf "%-30s -> %s\n" "$profile" "${iface:---}"
+
+done | egrep "eno16995np0|eno17195np0"
+Wired connection 7             -> eno16995np0
+Wired connection 8             -> eno17195np0
+[root@master-01 ~]#
+[root@master-01 ~]#
+
+[root@az1hp-jcse1-ccc ~]#
+
+
+
+
+
+
+
+
 https://us06web.zoom.us/launch/jc/88900630254
 
 
