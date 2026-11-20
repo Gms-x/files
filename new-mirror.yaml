@@ -1,0 +1,12 @@
+kind: ImageSetConfiguration
+apiVersion: mirror.openshift.io/v2alpha1
+archiveSize: 2
+mirror:
+  operators:
+  - catalog: registry.redhat.io/redhat/certified-operator-index:v4.20
+    packages:
+      - name: gpu-operator-certified
+        channels:
+          - name: v26.7
+            minVersion: 26.7.2
+            maxVersion: 25.7.2
