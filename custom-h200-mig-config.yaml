@@ -7,6 +7,9 @@ data:
   config.yaml: |
     version: v1
     mig-configs:
+      all-disabled:
+        - devices: all
+          mig-enabled: false
       h200-balanced:
         - devices: [0, 1, 2, 3]
           mig-enabled: false
