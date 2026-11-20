@@ -1,0 +1,33 @@
+SRC="nvcr.io/nvidia/k8s/dcgm-exporter:4.6.1-4.8.4-distroless"
+
+DST="dai-cldp04.ocp-prod.dubaipolice.com:8443"
+
+skopeo inspect --raw \
+  "docker://$SRC" |
+jq '{
+  mediaType,
+  manifests: [
+    .manifests[]? |
+    {
+      mediaType,
+      platform,
+      digest
+    }
+  ]
+}'
+
+
+skopeo copy --all \
+  --preserve-digests \
+  --debug \
+  "docker://$SRC" \
+  "docker://$DST/test/dcgm-exporter:manifest-test" \
+  2>&1 | tee dcgm-copy-debug.log
+
+
+curl -skI \
+  https://dai-cldp04.ocp-prod.dubaipolice.com:8443/v2/
+
+podman info --format '{{.Host.Arch}}'
+oc-mirror version
+skopeo --version
