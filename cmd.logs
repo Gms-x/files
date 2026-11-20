@@ -1,0 +1,33 @@
+oc patch clusterpolicy "$CP" \
+  --type=merge \
+  -p '{
+    "spec": {
+      "migManager": {
+        "enabled": true,
+        "config": {
+          "name": "custom-h200-equal-mig"
+        }
+      }
+    }
+  }'
+
+
+  oc label node "$H100_NODE" \
+  workload-type=druid \
+  --overwrite
+
+  oc label node "$H100_NODE" \
+  nvidia.com/mig.config=all-disabled \
+  --overwrite
+
+
+  oc label node "$H200_NODE" \
+  workload-type=genai \
+  --overwrite
+
+  oc label node "$H200_NODE" \
+  nvidia.com/mig.config=h200-equal \
+  --overwrite
+
+
+  
