@@ -1,1 +1,50 @@
 tar -czf - /path/to/directory | split -b 1G - backup.tar.gz.part.
+
+
+ ⠋   (3s)  certified-operator-index:v4.20 ➡️  dai-cldp04.ocp-prod.dubaipolice.com:8443/ocp-stg/redhat/
+18 / 19 (29s) [==============================================================================================================================================================================>----------] 95 %
+Copying blob 8ccf01bc23f2 skipped: already exists
+Copying blob 278ce228e7fb skipped: already exists
+Copying blob 5ee1af9548df skipped: already exists
+Copying blob dde266c8957e skipped: already exists
+Copying blob 9b9029db4583 skipped: already exists
+ ⠙   (3s)  certified-operator-index:v4.20 ➡️  dai-cldp04.ocp-prod.dubaipolice.com:8443/ocp-stg/redhat/
+18 / 19 (29s) [==============================================================================================================================================================================>----------] 95 %
+Copying config 8e2a2be929 done   |
+ ⠹   (3s)  certified-operator-index:v4.20 ➡️  dai-cldp04.ocp-prod.dubaipolice.com:8443/ocp-stg/redhat/
+19 / 19 (30s) [========================================================================================================================================================================================] 100 %
+ ✓   (3s)  certified-operator-index:v4.20 ➡️  dai-cldp04.ocp-prod.dubaipolice.com:8443/ocp-stg/redhat/
+2026/11/23 11:53:31  [INFO]   : === Results ===
+2026/11/23 11:53:31  [INFO]   :  ✗  13 / 19 operator images mirrored: Some operator images failed to be mirrored - please check the logs
+2026/11/23 11:53:31  [ERROR]  : [Worker] error mirroring image docker://nvcr.io/nvidia/cloud-native/gdrdrv@sha256:eef1b6663d78555f0e5c49c156196b67e8a3008bc22aaa02b03dad53887ee0f1 (Operator bundles: [gpu-operator-certified.v26.7.2] - Operators: [gpu-operator-certified]) error: Manifest list must be converted to type "application/vnd.docker.distribution.manifest.list.v2+json" to be written to destination, but we cannot modify it: "Instructed to preserve digests"
+2026/11/23 11:53:31  [ERROR]  : [Worker] error mirroring image docker://nvcr.io/nvidia/cloud-native/nvidia-sandbox-device-plugin:v0.0.5@sha256:5b59e2e534c804381eb0055f7e2511eea812bae33f1ea67e306dab64870454bb (Operator bundles: [gpu-operator-certified.v26.7.2] - Operators: [gpu-operator-certified]) error: copying image 1/2 from manifest list: writing manifest: uploading manifest sha256:6abc29b47c86448fefbdd6731b604fdf3d53f1eb363ded7cb127aa3376779f16 to dai-cldp04.ocp-prod.dubaipolice.com:8443/ocp-stg/nvidia/cloud-native/nvidia-sandbox-device-plugin: manifest invalid
+2026/11/23 11:53:31  [ERROR]  : [Worker] error mirroring image docker://nvcr.io/nvidia/dra-driver-nvidia-gpu:v0.5.1@sha256:ae591dbc8e630b49181b40dfddf8f0a3f0890b883acb7b2b420f5b207fda253e (Operator bundles: [gpu-operator-certified.v26.7.2] - Operators: [gpu-operator-certified]) error: copying image 1/2 from manifest list: writing manifest: uploading manifest sha256:444b1a9a04b86653798ff769a678960f4c0fea3ac43f416e68536c4d7d75a811 to dai-cldp04.ocp-prod.dubaipolice.com:8443/ocp-stg/nvidia/dra-driver-nvidia-gpu: manifest invalid
+2026/11/23 11:53:31  [ERROR]  : [Worker] error mirroring image docker://nvcr.io/nvidia/k8s/dcgm-exporter:4.6.1-4.8.4-distroless@sha256:148b0c025e5f2850256816fa33754fbf4733b7a086697a95613fc0ba3db5b003 (Operator bundles: [gpu-operator-certified.v26.7.2] - Operators: [gpu-operator-certified]) error: copying image 1/2 from manifest list: writing manifest: uploading manifest sha256:804c17f67ab63e8a4dd5301546beefaa104129f833dae4a68f5ff7c4819f471b to dai-cldp04.ocp-prod.dubaipolice.com:8443/ocp-stg/nvidia/k8s/dcgm-exporter: manifest invalid
+2026/11/23 11:53:31  [ERROR]  : [Worker] error mirroring image docker://registry.connect.redhat.com/nvidia/gpu-operator-bundle@sha256:e10b75b0a107270dd0665dc9b392288b361d1340f2eb2cfe6cc3fe3bf0a9331e error: skipping operator bundle docker://registry.connect.redhat.com/nvidia/gpu-operator-bundle@sha256:e10b75b0a107270dd0665dc9b392288b361d1340f2eb2cfe6cc3fe3bf0a9331e because one of its related images failed to mirror
+2026/11/23 11:53:31  [ERROR]  : [Worker] error mirroring image docker://nvcr.io/nvidia/kubevirt-gpu-device-plugin:v1.6.0@sha256:367c597799aa6925f5bd2bc4bcdc45c26f018d13cdc2ce9aaf1ca07c492c6d9e (Operator bundles: [gpu-operator-certified.v26.7.2] - Operators: [gpu-operator-certified]) error: copying image 1/2 from manifest list: writing manifest: uploading manifest sha256:f9f4eb81f63bcd1290569a1d2ca2b66936b5a91b0b9a245d641667666561b269 to dai-cldp04.ocp-prod.dubaipolice.com:8443/ocp-stg/nvidia/kubevirt-gpu-device-plugin: manifest invalid
+2026/11/23 11:53:31  [INFO]   : 📄 Generating cluster resources...
+2026/11/23 11:53:31  [INFO]   : 📄 Generating IDMS file...
+2026/11/23 11:53:31  [DEBUG]  : /mirror-files/working-dir/cluster-resources/idms-oc-mirror.yaml does not exist, creating it
+2026/11/23 11:53:31  [DEBUG]  : /mirror-files/working-dir/cluster-resources dir created
+2026/11/23 11:53:31  [INFO]   : /mirror-files/working-dir/cluster-resources/idms-oc-mirror.yaml file created
+2026/11/23 11:53:31  [INFO]   : 📄 Generating ITMS file...
+2026/11/23 11:53:31  [DEBUG]  : /mirror-files/working-dir/cluster-resources/itms-oc-mirror.yaml does not exist, creating it
+2026/11/23 11:53:31  [DEBUG]  : /mirror-files/working-dir/cluster-resources dir created
+2026/11/23 11:53:31  [INFO]   : /mirror-files/working-dir/cluster-resources/itms-oc-mirror.yaml file created
+2026/11/23 11:53:31  [INFO]   : 📄 Generating CatalogSource file...
+2026/11/23 11:53:31  [DEBUG]  : /mirror-files/working-dir/cluster-resources/cs-certified-operator-index-v4-20.yaml does not exist, creating it
+2026/11/23 11:53:31  [DEBUG]  : /mirror-files/working-dir/cluster-resources dir created
+2026/11/23 11:53:31  [INFO]   : /mirror-files/working-dir/cluster-resources/cs-certified-operator-index-v4-20.yaml file created
+2026/11/23 11:53:31  [INFO]   : 📄 Generating ClusterCatalog file...
+2026/11/23 11:53:31  [DEBUG]  : /mirror-files/working-dir/cluster-resources/cc-certified-operator-index-v4-20.yaml does not exist, creating it
+2026/11/23 11:53:31  [DEBUG]  : /mirror-files/working-dir/cluster-resources dir created
+2026/11/23 11:53:31  [INFO]   : /mirror-files/working-dir/cluster-resources/cc-certified-operator-index-v4-20.yaml file created
+2026/11/23 11:53:31  [INFO]   : mirror time     : 1m43.202854638s
+2026/11/23 11:53:31  [INFO]   : 👋 Goodbye, thank you for using oc-mirror
+2026/11/23 11:53:31  [ERROR]  : [Executor] [Worker] some errors occurred during the mirroring.
+         Please review /mirror-files/working-dir/logs/mirroring_errors_20261123_115148.txt for a list of mirroring errors.
+         You may consider:
+         * removing images or operators that cause the error from the image set config, and retrying
+         * keeping the image set config (images are mandatory for you), and retrying
+         * mirroring the failing images manually, if retries also fail.
+[root@dai-cldp04 andrew-day1]#
