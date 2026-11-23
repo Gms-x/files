@@ -1,3 +1,27 @@
+oc get mcp
+oc get nodes
+
+oc get node dai-gensrv01.ocp-stg.staging.dubaipolice.com \
+  -o jsonpath='{.metadata.annotations.machineconfiguration\.openshift\.io/currentConfig}{"\n"}{.metadata.annotations.machineconfiguration\.openshift\.io/desiredConfig}{"\n"}{.metadata.annotations.machineconfiguration\.openshift\.io/state}{"\n"}{.metadata.annotations.machineconfiguration\.openshift\.io/reason}{"\n"}'
+
+
+oc get catalogsource mirrored-certified-operators \
+  -n openshift-marketplace \
+  -o jsonpath='{.spec.image}{"\n"}{.status.connectionState}{"\n"}'
+
+
+skopeo inspect --raw \
+  docker://dai-cldp04.ocp-prod.dubaipolice.com:8443/ocp-stg/nvidia/k8s/dcgm-exporter@sha256:2490e1dfb5baaee6765ef2841813af7d978bb459a566c22c326a8fc27c64eea9 \
+  >/dev/null && echo "26.7.3 exporter manifest exists"
+
+
+
+
+
+
+
+
+
 [root@dai-cldp04 andrew-day1]# oc get mcp
 
 oc debug node/dai-gensrv01.ocp-stg.staging.dubaipolice.com \
