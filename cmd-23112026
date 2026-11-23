@@ -1,0 +1,1 @@
+tar -czf - /path/to/directory | split -b 1G - backup.tar.gz.part.
