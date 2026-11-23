@@ -1,5 +1,23 @@
 
 
+oc get subscription,installplan,csv -n nvidia-gpu-operator
+
+oc get pods -n nvidia-gpu-operator -o wide
+
+oc get events -n nvidia-gpu-operator \
+  --sort-by=.metadata.creationTimestamp | tail -n 30
+
+oc get subscription gpu-operator-certified \
+  -n nvidia-gpu-operator -o yaml
+
+
+oc get pods,jobs -n openshift-marketplace
+
+
+
+
+
+
 [root@dai-cldp04 andrew-day1]# oc-mirror -c new-mirror.yaml file://mirror-files2 --authfile ~/.docker/config.json  --v2
 2026/11/23 13:41:08  [INFO]   : 👋 Hello, welcome to oc-mirror
 2026/11/23 13:41:08  [INFO]   : ⚙️  setting up the environment for you...
