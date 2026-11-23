@@ -1,0 +1,842 @@
+[root@dai-cldp04 andrew-day1]# oc get mcp
+
+oc debug node/dai-gensrv01.ocp-stg.staging.dubaipolice.com \
+  -- chroot /host cat /etc/containers/registries.conf
+
+
+oc get subscription gpu-operator-certified \
+  -n nvidia-gpu-operator -o yaml
+
+oc get catalogsource -A
+
+oc get packagemanifest gpu-operator-certified \
+  -n openshift-marketplace -o yaml
+NAME     CONFIG                                             UPDATED   UPDATING   DEGRADED   MACHINECOUNT   READYMACHINECOUNT   UPDATEDMACHINECOUNT   DEGRADEDMACHINECOUNT   AGE
+master   rendered-master-8c6e4e6aa7c3aa358aa282efdeef7188   False     True       False      3              2                   2                     0                      27d
+worker   rendered-worker-817a16fc66890d7b654872a86aa11416   False     True       False      1              0                   0                     0                      27d
+Temporary namespace openshift-debug-mk75l is created for debugging node...
+Starting pod/dai-gensrv01ocp-stgstagingdubaipolicecom-debug-bbscd ...
+To use host binaries, run `chroot /host`
+unqualified-search-registries = ["registry.access.redhat.com", "docker.io"]
+short-name-mode = ""
+additional-layer-store-auth-helper = ""
+
+[[registry]]
+  prefix = ""
+  location = "ghcr.io/cloudnative-pg"
+  blocked = true
+
+  [[registry.mirror]]
+    location = "dai-cldp04.ocp-prod.dubaipolice.com:8443/metrumai-ops/cloudnative-pg"
+    pull-from-mirror = "digest-only"
+
+[[registry]]
+  prefix = ""
+  location = "ghcr.io/mellanox"
+  blocked = true
+
+  [[registry.mirror]]
+    location = "dai-cldp04.ocp-prod.dubaipolice.com:8443/mellanox"
+    pull-from-mirror = "digest-only"
+
+[[registry]]
+  prefix = ""
+  location = "nvcr.io/nvidia"
+  blocked = true
+
+  [[registry.mirror]]
+    location = "dai-cldp04.ocp-prod.dubaipolice.com:8443/nvidia"
+    pull-from-mirror = "digest-only"
+
+  [[registry.mirror]]
+    location = "dai-cldp04.ocp-prod.dubaipolice.com:8443/nvidia"
+    pull-from-mirror = "tag-only"
+
+[[registry]]
+  prefix = ""
+  location = "quay.io/dell"
+  blocked = true
+
+  [[registry.mirror]]
+    location = "dai-cldp04.ocp-prod.dubaipolice.com:8443/dell"
+    pull-from-mirror = "digest-only"
+
+[[registry]]
+  prefix = ""
+  location = "quay.io/openshift-release-dev/ocp-release"
+  blocked = true
+
+  [[registry.mirror]]
+    location = "dai-cldp04.ocp-prod.dubaipolice.com:8443/ocp-stg/openshift/release-images"
+    pull-from-mirror = "digest-only"
+
+  [[registry.mirror]]
+    location = "dai-cldp04.ocp-prod.dubaipolice.com:8443/ocp-stg/openshift/release-images"
+    pull-from-mirror = "tag-only"
+
+[[registry]]
+  prefix = ""
+  location = "quay.io/openshift-release-dev/ocp-v4.0-art-dev"
+  blocked = true
+
+  [[registry.mirror]]
+    location = "dai-cldp04.ocp-prod.dubaipolice.com:8443/ocp-stg/openshift/release"
+    pull-from-mirror = "digest-only"
+
+[[registry]]
+  prefix = ""
+  location = "quay.io/sail-dev"
+  blocked = true
+
+  [[registry.mirror]]
+    location = "dai-cldp04.ocp-prod.dubaipolice.com:8443/metrumai-ops/sail-dev"
+    pull-from-mirror = "digest-only"
+
+[[registry]]
+  prefix = ""
+  location = "registry.connect.redhat.com/dell-emc"
+  blocked = true
+
+  [[registry.mirror]]
+    location = "dai-cldp04.ocp-prod.dubaipolice.com:8443/dell-emc"
+    pull-from-mirror = "digest-only"
+
+[[registry]]
+  prefix = ""
+  location = "registry.connect.redhat.com/enterprisedb"
+  blocked = true
+
+  [[registry.mirror]]
+    location = "dai-cldp04.ocp-prod.dubaipolice.com:8443/metrumai-ops/enterprisedb"
+    pull-from-mirror = "digest-only"
+
+[[registry]]
+  prefix = ""
+  location = "registry.gitlab.com/gitlab-org/build/cng"
+
+  [[registry.mirror]]
+    location = "dai-cldp04.ocp-prod.dubaipolice.com:8443/gitlab-org/build/cng"
+    pull-from-mirror = "digest-only"
+
+[[registry]]
+  prefix = ""
+  location = "registry.istio.io/release"
+  blocked = true
+
+  [[registry.mirror]]
+    location = "dai-cldp04.ocp-prod.dubaipolice.com:8443/metrumai-ops/release"
+    pull-from-mirror = "digest-only"
+
+[[registry]]
+  prefix = ""
+  location = "registry.k8s.io/sig-storage"
+  blocked = true
+
+  [[registry.mirror]]
+    location = "dai-cldp04.ocp-prod.dubaipolice.com:8443/sig-storage"
+    pull-from-mirror = "digest-only"
+
+[[registry]]
+  prefix = ""
+  location = "registry.redhat.io/cert-manager"
+
+  [[registry.mirror]]
+    location = "dai-cldp04.ocp-prod.dubaipolice.com:8443/cert-manager"
+    pull-from-mirror = "digest-only"
+
+[[registry]]
+  prefix = ""
+  location = "registry.redhat.io/cluster-observability-operator"
+  blocked = true
+
+  [[registry.mirror]]
+    location = "dai-cldp04.ocp-prod.dubaipolice.com:8443/cluster-observability-operator"
+    pull-from-mirror = "digest-only"
+
+[[registry]]
+  prefix = ""
+  location = "registry.redhat.io/compliance"
+  blocked = true
+
+  [[registry.mirror]]
+    location = "dai-cldp04.ocp-prod.dubaipolice.com:8443/ocp-stg/compliance"
+    pull-from-mirror = "digest-only"
+
+[[registry]]
+  prefix = ""
+  location = "registry.redhat.io/crunchydata"
+  blocked = true
+
+  [[registry.mirror]]
+    location = "dai-cldp04.ocp-prod.dubaipolice.com:8443/crunchydata"
+    pull-from-mirror = "digest-only"
+
+[[registry]]
+  prefix = ""
+  location = "registry.redhat.io/external-secrets-operator"
+  blocked = true
+
+  [[registry.mirror]]
+    location = "dai-cldp04.ocp-prod.dubaipolice.com:8443/external-secrets-operator"
+    pull-from-mirror = "digest-only"
+
+[[registry]]
+  prefix = ""
+  location = "registry.redhat.io/network-observability"
+  blocked = true
+
+  [[registry.mirror]]
+    location = "dai-cldp04.ocp-prod.dubaipolice.com:8443/ocp-stg/network-observability"
+    pull-from-mirror = "digest-only"
+
+[[registry]]
+  prefix = ""
+  location = "registry.redhat.io/openshift-gitops-1"
+  blocked = true
+
+  [[registry.mirror]]
+    location = "dai-cldp04.ocp-prod.dubaipolice.com:8443/openshift-gitops-1"
+    pull-from-mirror = "digest-only"
+
+[[registry]]
+  prefix = ""
+  location = "registry.redhat.io/openshift-logging"
+  blocked = true
+
+  [[registry.mirror]]
+    location = "dai-cldp04.ocp-prod.dubaipolice.com:8443/ocp-stg/openshift-logging"
+    pull-from-mirror = "digest-only"
+
+[[registry]]
+  prefix = ""
+  location = "registry.redhat.io/openshift-service-mesh"
+  blocked = true
+
+  [[registry.mirror]]
+    location = "dai-cldp04.ocp-prod.dubaipolice.com:8443/metrumai-ops/openshift-service-mesh"
+    pull-from-mirror = "digest-only"
+
+[[registry]]
+  prefix = ""
+  location = "registry.redhat.io/openshift-service-mesh-tech-preview"
+  blocked = true
+
+  [[registry.mirror]]
+    location = "dai-cldp04.ocp-prod.dubaipolice.com:8443/metrumai-ops/openshift-service-mesh-tech-preview"
+    pull-from-mirror = "digest-only"
+
+[[registry]]
+  prefix = ""
+  location = "registry.redhat.io/openshift4"
+  blocked = true
+
+  [[registry.mirror]]
+    location = "dai-cldp04.ocp-prod.dubaipolice.com:8443/ocp-stg/openshift4"
+    pull-from-mirror = "digest-only"
+
+[[registry]]
+  prefix = ""
+  location = "registry.redhat.io/redhat"
+  blocked = true
+
+  [[registry.mirror]]
+    location = "dai-cldp04.ocp-prod.dubaipolice.com:8443/ocp-stg/redhat"
+    pull-from-mirror = "digest-only"
+
+[[registry]]
+  prefix = ""
+  location = "registry.redhat.io/rhel9"
+  blocked = true
+
+  [[registry.mirror]]
+    location = "dai-cldp04.ocp-prod.dubaipolice.com:8443/rhel9"
+    pull-from-mirror = "digest-only"
+
+[[registry]]
+  prefix = ""
+  location = "registry.redhat.io/workload-availability"
+
+  [[registry.mirror]]
+    location = "dai-cldp04.ocp-prod.dubaipolice.com:8443/workload-availability"
+    pull-from-mirror = "digest-only"
+
+[[registry]]
+  prefix = ""
+  location = "docker.io/greptime"
+  blocked = true
+
+  [[registry.mirror]]
+    location = "dai-cldp04.ocp-prod.dubaipolice.com:8443/metrumai-ops/greptime"
+    pull-from-mirror = "tag-only"
+
+[[registry]]
+  prefix = ""
+  location = "ghcr.io/open-telemetry/opentelemetry-collector-releases/opentelemetry-collector"
+  blocked = true
+
+  [[registry.mirror]]
+    location = "dai-cldp04.ocp-prod.dubaipolice.com:8443/open-telemetry/opentelemetry-collector-releases/opentelemetry-collector"
+    pull-from-mirror = "tag-only"
+
+[[registry]]
+  prefix = ""
+  location = "harbor.calypsoai.app/calypsoai"
+  blocked = true
+
+  [[registry.mirror]]
+    location = "dai-cldp04.ocp-prod.dubaipolice.com:8443/calypsoai"
+    pull-from-mirror = "tag-only"
+
+[[registry]]
+  prefix = ""
+  location = "quay.io/community-operator-pipeline-prod"
+  blocked = true
+
+  [[registry.mirror]]
+    location = "dai-cldp04.ocp-prod.dubaipolice.com:8443/metrumai-ops/community-operator-pipeline-prod"
+    pull-from-mirror = "tag-only"
+
+[[registry]]
+  prefix = ""
+  location = "quay.io/coreos"
+  blocked = true
+
+  [[registry.mirror]]
+    location = "dai-cldp04.ocp-prod.dubaipolice.com:8443/metrumai-ops/coreos"
+    pull-from-mirror = "tag-only"
+
+[[registry]]
+  prefix = ""
+  location = "quay.io/dell/container-storage-modules/csi-metadata-retriever"
+  blocked = true
+
+  [[registry.mirror]]
+    location = "dai-cldp04.ocp-prod.dubaipolice.com:8443/dell-emc/dell-csm-metadata-retriever"
+    pull-from-mirror = "tag-only"
+
+[[registry]]
+  prefix = ""
+  location = "quay.io/dell/container-storage-modules/csi-powerstore"
+  blocked = true
+
+  [[registry.mirror]]
+    location = "dai-cldp04.ocp-prod.dubaipolice.com:8443/dell/container-storage-modules/csi-powerstore"
+    pull-from-mirror = "tag-only"
+
+[[registry]]
+  prefix = ""
+  location = "quay.io/dell/container-storage-modules/csm-authorization-sidecar"
+  blocked = true
+
+  [[registry.mirror]]
+    location = "dai-cldp04.ocp-prod.dubaipolice.com:8443/dell-emc/dell-csm-authorization-sidecar"
+    pull-from-mirror = "tag-only"
+
+[[registry]]
+  prefix = ""
+  location = "quay.io/dell/container-storage-modules/csm-metrics-powerstore"
+  blocked = true
+
+  [[registry.mirror]]
+    location = "dai-cldp04.ocp-prod.dubaipolice.com:8443/dell-emc/dell-csm-metrics-powerstore"
+    pull-from-mirror = "tag-only"
+
+[[registry]]
+  prefix = ""
+  location = "quay.io/dell/container-storage-modules/dell-csi-replicator"
+  blocked = true
+
+  [[registry.mirror]]
+    location = "dai-cldp04.ocp-prod.dubaipolice.com:8443/dell-emc/dell-csm-replicator"
+    pull-from-mirror = "tag-only"
+
+[[registry]]
+  prefix = ""
+  location = "quay.io/dell/container-storage-modules/dell-replication-controller"
+  blocked = true
+
+  [[registry.mirror]]
+    location = "dai-cldp04.ocp-prod.dubaipolice.com:8443/dell/container-storage-modules/dell-replication-controller"
+    pull-from-mirror = "tag-only"
+
+[[registry]]
+  prefix = ""
+  location = "quay.io/dell/container-storage-modules/podmon"
+  blocked = true
+
+  [[registry.mirror]]
+    location = "dai-cldp04.ocp-prod.dubaipolice.com:8443/dell-emc/dell-csm-podmon"
+    pull-from-mirror = "tag-only"
+
+[[registry]]
+  prefix = ""
+  location = "quay.io/nginx/nginx-unprivileged"
+  blocked = true
+
+  [[registry.mirror]]
+    location = "dai-cldp04.ocp-prod.dubaipolice.com:8443/nginx/nginx-unprivileged"
+    pull-from-mirror = "tag-only"
+
+[[registry]]
+  prefix = ""
+  location = "registry.k8s.io/sig-storage/csi-attacher"
+  blocked = true
+
+  [[registry.mirror]]
+    location = "dai-cldp04.ocp-prod.dubaipolice.com:8443/sig-storage/csi-attacher"
+    pull-from-mirror = "tag-only"
+
+[[registry]]
+  prefix = ""
+  location = "registry.k8s.io/sig-storage/csi-external-health-monitor-controller"
+  blocked = true
+
+  [[registry.mirror]]
+    location = "dai-cldp04.ocp-prod.dubaipolice.com:8443/sig-storage/csi-external-health-monitor-controller"
+    pull-from-mirror = "tag-only"
+
+[[registry]]
+  prefix = ""
+  location = "registry.k8s.io/sig-storage/csi-node-driver-registrar"
+  blocked = true
+
+  [[registry.mirror]]
+    location = "dai-cldp04.ocp-prod.dubaipolice.com:8443/sig-storage/csi-node-driver-registrar"
+    pull-from-mirror = "tag-only"
+
+[[registry]]
+  prefix = ""
+  location = "registry.k8s.io/sig-storage/csi-provisioner"
+  blocked = true
+
+  [[registry.mirror]]
+    location = "dai-cldp04.ocp-prod.dubaipolice.com:8443/sig-storage/csi-provisioner"
+    pull-from-mirror = "tag-only"
+
+[[registry]]
+  prefix = ""
+  location = "registry.k8s.io/sig-storage/csi-resizer"
+  blocked = true
+
+  [[registry.mirror]]
+    location = "dai-cldp04.ocp-prod.dubaipolice.com:8443/sig-storage/csi-resizer"
+    pull-from-mirror = "tag-only"
+
+[[registry]]
+  prefix = ""
+  location = "registry.k8s.io/sig-storage/csi-snapshotter"
+  blocked = true
+
+  [[registry.mirror]]
+    location = "dai-cldp04.ocp-prod.dubaipolice.com:8443/sig-storage/csi-snapshotter"
+    pull-from-mirror = "tag-only"
+
+Removing debug pod ...
+Temporary namespace openshift-debug-mk75l was removed.
+apiVersion: operators.coreos.com/v1alpha1
+kind: Subscription
+metadata:
+  creationTimestamp: "2026-11-23T08:32:27Z"
+  generation: 1
+  labels:
+    operators.coreos.com/gpu-operator-certified.nvidia-gpu-operator: ""
+  name: gpu-operator-certified
+  namespace: nvidia-gpu-operator
+  resourceVersion: "24703271"
+  uid: 432b8407-0bb0-48e3-a9ff-de6ebf83a98e
+spec:
+  channel: v26.7
+  installPlanApproval: Automatic
+  name: gpu-operator-certified
+  source: mirrored-certified-operators
+  sourceNamespace: openshift-marketplace
+  startingCSV: gpu-operator-certified.v26.7.2
+status:
+  catalogHealth:
+  - catalogSourceRef:
+      apiVersion: operators.coreos.com/v1alpha1
+      kind: CatalogSource
+      name: mirrored-certified-operators
+      namespace: openshift-marketplace
+      resourceVersion: "24699129"
+      uid: 962f1095-e3f7-4813-8c2e-3ae2bd13a328
+    healthy: true
+    lastUpdated: "2026-11-23T08:32:28Z"
+  - catalogSourceRef:
+      apiVersion: operators.coreos.com/v1alpha1
+      kind: CatalogSource
+      name: mirrored-redhat-operators
+      namespace: openshift-marketplace
+      resourceVersion: "24699141"
+      uid: ba887d7b-a8d1-4f38-882f-7dee92381daf
+    healthy: true
+    lastUpdated: "2026-11-23T08:32:28Z"
+  conditions:
+  - lastTransitionTime: "2026-11-23T08:32:28Z"
+    message: all available catalogsources are healthy
+    reason: AllCatalogSourcesHealthy
+    status: "False"
+    type: CatalogSourcesUnhealthy
+  currentCSV: gpu-operator-certified.v26.7.2
+  installPlanGeneration: 1
+  installPlanRef:
+    apiVersion: operators.coreos.com/v1alpha1
+    kind: InstallPlan
+    name: install-zs748
+    namespace: nvidia-gpu-operator
+    resourceVersion: "24699484"
+    uid: 806693ca-6cf8-4333-a9f7-d31fa0f285d7
+  installedCSV: gpu-operator-certified.v26.7.2
+  installplan:
+    apiVersion: operators.coreos.com/v1alpha1
+    kind: InstallPlan
+    name: install-zs748
+    uuid: 806693ca-6cf8-4333-a9f7-d31fa0f285d7
+  lastUpdated: "2026-11-23T08:34:52Z"
+  state: AtLatestKnown
+NAMESPACE               NAME                           DISPLAY                        TYPE   PUBLISHER   AGE
+openshift-marketplace   mirrored-certified-operators   Mirrored Certified Operators   grpc   oc-mirror   19d
+openshift-marketplace   mirrored-redhat-operators      Mirrored Red Hat Operators     grpc   oc-mirror   19d
+apiVersion: packages.operators.coreos.com/v1
+kind: PackageManifest
+metadata:
+  creationTimestamp: "2026-11-03T11:19:09Z"
+  labels:
+    catalog: mirrored-certified-operators
+    catalog-namespace: openshift-marketplace
+    operatorframework.io/arch.amd64: supported
+    operatorframework.io/arch.arm64: supported
+    operatorframework.io/os.linux: supported
+    pod-security.kubernetes.io/audit: privileged
+    pod-security.kubernetes.io/enforce: privileged
+    pod-security.kubernetes.io/warn: privileged
+    provider: NVIDIA Corporation
+    provider-url: ""
+  name: gpu-operator-certified
+  namespace: openshift-marketplace
+spec: {}
+status:
+  catalogSource: mirrored-certified-operators
+  catalogSourceDisplayName: Mirrored Certified Operators
+  catalogSourceNamespace: openshift-marketplace
+  catalogSourcePublisher: oc-mirror
+  channels:
+  - currentCSV: gpu-operator-certified.v26.7.2
+    currentCSVDesc:
+      annotations:
+        alm-examples: |-
+          [
+            {
+              "apiVersion": "nvidia.com/v1",
+              "kind": "ClusterPolicy",
+              "metadata": {
+                "name": "gpu-cluster-policy"
+              },
+              "spec": {
+                "operator": {
+                  "use_ocp_driver_toolkit": true
+                },
+                "cdi": {
+                  "enabled": true,
+                  "nriPluginEnabled": false
+                },
+                "sandboxWorkloads": {
+                  "enabled": false,
+                  "defaultWorkload": "container",
+                  "mode": "kubevirt"
+                },
+                "driver": {
+                  "enabled": true,
+                  "useNvidiaDriverCRD": false,
+                  "kernelModuleType": "auto",
+                  "upgradePolicy": {
+                    "autoUpgrade": true,
+                    "drain": {
+                      "deleteEmptyDir": false,
+                      "enable": false,
+                      "force": false,
+                      "timeoutSeconds": 300
+                    },
+                    "maxParallelUpgrades": 1,
+                    "maxUnavailable": "25%",
+                    "podDeletion": {
+                      "deleteEmptyDir": false,
+                      "force": false,
+                      "timeoutSeconds": 300
+                    },
+                    "waitForCompletion": {
+                      "timeoutSeconds": 0
+                    }
+                  },
+                  "repoConfig": {
+                    "configMapName": ""
+                  },
+                  "certConfig": {
+                    "name": ""
+                  },
+                  "licensingConfig": {
+                    "nlsEnabled": true,
+                    "secretName": ""
+                  },
+                  "virtualTopology": {
+                    "config": ""
+                  },
+                  "kernelModuleConfig": {
+                    "name": ""
+                  }
+                },
+                "dcgmExporter": {
+                  "enabled": true,
+                  "config": {
+                    "name": ""
+                  },
+                  "serviceMonitor": {
+                    "enabled": true
+                  }
+                },
+                "dcgm": {
+                  "enabled": true
+                },
+                "daemonsets": {
+                  "updateStrategy": "RollingUpdate",
+                  "rollingUpdate": {
+                    "maxUnavailable": "1"
+                  }
+                },
+                "devicePlugin": {
+                  "enabled": true,
+                  "config": {
+                    "name": "",
+                    "default": ""
+                  },
+                  "mps": {
+                    "root": "/run/nvidia/mps"
+                  }
+                },
+                "gfd": {
+                  "enabled": true
+                },
+                "migManager": {
+                  "enabled": true
+                },
+                "nodeStatusExporter": {
+                  "enabled": true
+                },
+                "mig": {
+                  "strategy": "single"
+                },
+                "toolkit": {
+                  "enabled": true
+                },
+                "validator": {
+                  "plugin": {
+                    "env": []
+                  }
+                },
+                "vgpuManager": {
+                  "enabled": false
+                },
+                "vgpuDeviceManager": {
+                  "enabled": true
+                },
+                "sandboxDevicePlugin": {
+                  "enabled": true
+                },
+                "kataSandboxDevicePlugin": {
+                  "enabled": true
+                },
+                "vfioManager": {
+                  "enabled": true
+                },
+                "ccManager": {
+                  "enabled": true
+                },
+                "gds": {
+                  "enabled": false
+                },
+                "gdrcopy": {
+                  "enabled": false
+                }
+              }
+            },
+            {
+              "apiVersion": "nvidia.com/v1alpha1",
+              "kind": "GPUCluster",
+              "metadata": {
+                "name": "gpu-cluster"
+              },
+              "spec": {
+                "draDriver": {
+                  "computeDomains": {
+                    "enabled": true
+                  }
+                },
+                "dcgm": {
+                  "enabled": false
+                },
+                "dcgmExporter": {
+                  "enabled": true
+                }
+              }
+            },
+            {
+              "apiVersion": "nvidia.com/v1alpha1",
+              "kind": "NVIDIADriver",
+              "metadata": {
+                "name": "gpu-driver"
+              },
+              "spec": {
+                "driverType": "gpu",
+                "repository": "nvcr.io/nvidia",
+                "image": "driver",
+                "version": "sha256:e243d778bd83de47668e7629d78f673317a130fedc99941be12aad7fc6bdfa85",
+                "nodeSelector": {},
+                "manager": {},
+                "upgradePolicy": {
+                    "autoUpgrade": true,
+                    "drain": {
+                      "deleteEmptyDir": false,
+                      "enable": false,
+                      "force": false,
+                      "timeoutSeconds": 300
+                    },
+                    "maxParallelUpgrades": 1,
+                    "maxUnavailable": "25%",
+                    "podDeletion": {
+                      "deleteEmptyDir": false,
+                      "force": false,
+                      "timeoutSeconds": 300
+                    },
+                    "waitForCompletion": {
+                      "timeoutSeconds": 0
+                    }
+                },
+                "repoConfig": {
+                  "name": ""
+                },
+                "certConfig": {
+                  "name": ""
+                },
+                "licensingConfig": {
+                  "nlsEnabled": true,
+                  "secretName": ""
+                },
+                "virtualTopologyConfig": {
+                  "name": ""
+                },
+                "kernelModuleConfig": {
+                  "name": ""
+                }
+              }
+            }
+          ]
+        capabilities: Deep Insights
+        categories: AI/Machine Learning, OpenShift Optional
+        certified: "true"
+        containerImage: nvcr.io/nvidia/gpu-operator:v26.7.2@sha256:02933b43d286d1321cd0dadd460b9ae8f5e5c0ee99a087e2d10254febc94ba45
+        createdAt: Mon Oct 12 19:10:43 PDT 2026
+        description: Automate the management and monitoring of NVIDIA GPUs.
+        features.operators.openshift.io/cnf: "false"
+        features.operators.openshift.io/cni: "false"
+        features.operators.openshift.io/csi: "false"
+        features.operators.openshift.io/disconnected: "true"
+        features.operators.openshift.io/fips-compliant: "false"
+        features.operators.openshift.io/proxy-aware: "true"
+        features.operators.openshift.io/tls-profiles: "false"
+        features.operators.openshift.io/token-auth-aws: "false"
+        features.operators.openshift.io/token-auth-azure: "false"
+        features.operators.openshift.io/token-auth-gcp: "false"
+        olm.skipRange: '>=1.9.0 <26.7.2'
+        operatorframework.io/suggested-namespace: nvidia-gpu-operator
+        operators.operatorframework.io/builder: operator-sdk-v1.4.0
+        operators.operatorframework.io/project_layout: go.kubebuilder.io/v3
+        provider: NVIDIA
+        repository: http://github.com/NVIDIA/gpu-operator
+        support: NVIDIA
+      apiservicedefinitions: {}
+      customresourcedefinitions:
+        owned:
+        - description: NVIDIADriver allows you to deploy the NVIDIA driver
+          displayName: NVIDIADriver
+          kind: NVIDIADriver
+          name: nvidiadrivers.nvidia.com
+          version: v1alpha1
+        - description: GPUCluster allows you to configure the DRA-based GPU software
+            stack
+          displayName: GPUCluster
+          kind: GPUCluster
+          name: gpuclusters.nvidia.com
+          version: v1alpha1
+        - description: ComputeDomain prepares a set of nodes to run a multi-node workload
+            in.
+          displayName: ComputeDomain
+          kind: ComputeDomain
+          name: computedomains.resource.nvidia.com
+          version: v1beta1
+        - description: ComputeDomainClique describes a clique within a ComputeDomain.
+          displayName: ComputeDomainClique
+          kind: ComputeDomainClique
+          name: computedomaincliques.resource.nvidia.com
+          version: v1beta1
+        - description: ClusterPolicy allows you to configure the GPU Operator
+          displayName: ClusterPolicy
+          kind: ClusterPolicy
+          name: clusterpolicies.nvidia.com
+          version: v1
+      description: |
+        Kubernetes provides access to special hardware resources such as NVIDIA GPUs, NICs, Infiniband adapters and other devices through the [device plugin framework](https://kubernetes.io/docs/concepts/extend-kubernetes/compute-storage-net/device-plugins/). However, configuring and managing nodes with these hardware resources requires configuration of multiple software components such as drivers, container runtimes or other libraries which are difficult and prone to errors.
+        The NVIDIA GPU Operator uses the [operator framework](https://cloud.redhat.com/blog/introducing-the-operator-framework) within Kubernetes to automate the management of all NVIDIA software components needed to provision and monitor GPUs. These components include the NVIDIA drivers (to enable CUDA), Kubernetes device plugin for GPUs, the NVIDIA Container Runtime, automatic node labelling and NVIDIA DCGM exporter.
+        Visit the official site of the [GPU Operator](https://github.com/NVIDIA/gpu-operator) for more information. For getting started with using the GPU Operator with OpenShift, see the instructions [here](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/openshift/contents.html).
+      displayName: NVIDIA GPU Operator
+      installModes:
+      - supported: true
+        type: OwnNamespace
+      - supported: true
+        type: SingleNamespace
+      - supported: false
+        type: MultiNamespace
+      - supported: false
+        type: AllNamespaces
+      keywords:
+      - gpu
+      - cuda
+      - compute
+      - operator
+      - deep learning
+      - monitoring
+      - tesla
+      maintainers:
+      - email: operator_feedback@nvidia.com
+        name: NVIDIA
+      maturity: stable
+      provider:
+        name: NVIDIA Corporation
+      relatedImages:
+      - nvcr.io/nvidia/cloud-native/k8s-mig-manager:v0.15.1@sha256:c1674fa2f46012dc425539f7fcac6445dce13bc81a05e4f91e311c7b8c27bcaf
+      - nvcr.io/nvidia/driver@sha256:a35d05d5b984ad18713af957f87380ccbefd8f0bb5e6771fc7856e6a9e1d201f
+      - nvcr.io/nvidia/gpu-operator:v26.7.2@sha256:02933b43d286d1321cd0dadd460b9ae8f5e5c0ee99a087e2d10254febc94ba45
+      - nvcr.io/nvidia/k8s/container-toolkit:v1.20.1@sha256:00a422252dd875b112f5974321c2feebbdf11c338f8ad131e5ce18e5b3a3bfac
+      - nvcr.io/nvidia/cloud-native/k8s-driver-manager:v0.12.1@sha256:37e6bf0cf02b5888288a173353b858da8823cc9f9fb9c6e8d6d1e2cf5bfb16c8
+      - nvcr.io/nvidia/driver@sha256:54d5e96cd981acf4525dc1d0bcc4f27acde1fe199bb739dc7cf5923517db66b5
+      - nvcr.io/nvidia/cloud-native/nvidia-sandbox-device-plugin:v0.0.5@sha256:5b59e2e534c804381eb0055f7e2511eea812bae33f1ea67e306dab64870454bb
+      - registry.connect.redhat.com/nvidia/gpu-operator-bundle@sha256:e10b75b0a107270dd0665dc9b392288b361d1340f2eb2cfe6cc3fe3bf0a9331e
+      - nvcr.io/nvidia/k8s-device-plugin:v0.20.1@sha256:27c1b2553a690ca3d29889dcd61df97525d46f58272c0be8dc63c2b18f120075
+      - nvcr.io/nvidia/cloud-native/dcgm:4.6.1-1-ubi10@sha256:e27d66b5b7a7a56a95fc7fe8538fadd73122aa22cbec02ab1543f1d5d01b48a1
+      - nvcr.io/nvidia/cloud-native/k8s-cc-manager:v0.4.4@sha256:09b376f2bb829819549a4b27086b532047ec51ea5585ca22b96c26c2939e92bd
+      - nvcr.io/nvidia/k8s/dcgm-exporter:4.6.1-4.8.4-distroless@sha256:148b0c025e5f2850256816fa33754fbf4733b7a086697a95613fc0ba3db5b003
+      - nvcr.io/nvidia/cloud-native/vgpu-device-manager:v0.5.1@sha256:a846793e78fac0d88156ee08f9835b9e29d99b0b316a165ea4a3acf0e27ad0fd
+      - nvcr.io/nvidia/driver@sha256:fbbd829db234885d6f0026ca6fb6369f6875b0b91fc5e98d7752f31aeab5e470
+      - nvcr.io/nvidia/cloud-native/gdrdrv@sha256:eef1b6663d78555f0e5c49c156196b67e8a3008bc22aaa02b03dad53887ee0f1
+      - nvcr.io/nvidia/dra-driver-nvidia-gpu:v0.5.1@sha256:ae591dbc8e630b49181b40dfddf8f0a3f0890b883acb7b2b420f5b207fda253e
+      - nvcr.io/nvidia/kubevirt-gpu-device-plugin:v1.6.0@sha256:367c597799aa6925f5bd2bc4bcdc45c26f018d13cdc2ce9aaf1ca07c492c6d9e
+      - nvcr.io/nvidia/driver@sha256:e243d778bd83de47668e7629d78f673317a130fedc99941be12aad7fc6bdfa85
+      version: 26.7.2
+    entries:
+    - name: gpu-operator-certified.v26.7.2
+      version: 26.7.2
+    name: v26.7
+  defaultChannel: v26.7
+  packageName: gpu-operator-certified
+  provider:
+    name: NVIDIA Corporation
+[root@dai-cldp04 andrew-day1]#
