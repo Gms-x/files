@@ -1,4 +1,14 @@
 
+[root@dai-cldp04 ~]# oc describe node dai-cldp03.ocp-stg.staging.dubaipolice.com | grep rendered-master
+                    machineconfiguration.openshift.io/currentConfig: rendered-master-8c6e4e6aa7c3aa358aa282efdeef7188
+                    machineconfiguration.openshift.io/desiredConfig: rendered-master-696b3ab441f7a3daecce5feb638b60c9
+                    machineconfiguration.openshift.io/desiredDrain: drain-rendered-master-696b3ab441f7a3daecce5feb638b60c9
+                    machineconfiguration.openshift.io/lastAppliedDrain: drain-rendered-master-696b3ab441f7a3daecce5feb638b60c9
+[root@dai-cldp04 ~]#
+[root@dai-cldp04 ~]#
+[root@dai-cldp04 ~]#
+[root@dai-cldp04 ~]#
+
 
 
 [root@dai-cldp04 andrew-day1]#
