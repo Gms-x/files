@@ -1,5 +1,194 @@
 
 
+[root@dai-cldp04 andrew-day1]#
+
+oc describe job \
+  51f9ac9f1c23778d67510ae3f51eb6d3870ea92dfdefaacc61fbb28f27f921b \
+  -n openshift-marketplace
+
+oc get events -n openshift-marketplace \
+  --sort-by=.metadata.creationTimestamp | tail -n 50
+
+skopeo inspect --raw \
+  docker://dai-cldp04.ocp-prod.dubaipolice.com:8443/ocp-stg/nvidia/gpu-operator-bundle@sha256:564773582b725a7746c211e4f780ee86bb52c9a8f34243580fd21bbe4448f335 \
+  >/dev/null && echo "26.7.3 bundle manifest exists"
+
+oc get imagedigestmirrorset -o yaml \
+  | grep -B 5 -A 3 'source: registry.connect.redhat.com/nvidia'
+Name:                     51f9ac9f1c23778d67510ae3f51eb6d3870ea92dfdefaacc61fbb28f27f921b
+Namespace:                openshift-marketplace
+Selector:                 batch.kubernetes.io/controller-uid=cf2201af-8447-4865-b459-7cde3894739f
+Labels:                   olm.managed=true
+                          operatorframework.io/bundle-unpack-ref=51f9ac9f1c23778d67510ae3f51eb6d3870ea92dfdefaacc61fbb28f27f921b
+Annotations:              <none>
+Parallelism:              1
+Completions:              1
+Completion Mode:          NonIndexed
+Suspend:                  false
+Backoff Limit:            3
+Start Time:               Mon, 23 Nov 2026 13:35:42 +0400
+Active Deadline Seconds:  600s
+Pods Statuses:            0 Active (0 Ready) / 0 Succeeded / 1 Failed
+Pod Template:
+  Labels:  batch.kubernetes.io/controller-uid=cf2201af-8447-4865-b459-7cde3894739f
+           batch.kubernetes.io/job-name=51f9ac9f1c23778d67510ae3f51eb6d3870ea92dfdefaacc61fbb28f27f921b
+           controller-uid=cf2201af-8447-4865-b459-7cde3894739f
+           job-name=51f9ac9f1c23778d67510ae3f51eb6d3870ea92dfdefaacc61fbb28f27f921b
+           olm.managed=true
+           operatorframework.io/bundle-unpack-ref=51f9ac9f1c23778d67510ae3f51eb6d3870ea92dfdefaacc61fbb28f27f921b
+  Init Containers:
+   util:
+    Image:      quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:da73d81bb7da0c083d1216570596e4a86a6fadfef941888accef6b91a5170d0d
+    Port:       <none>
+    Host Port:  <none>
+    Command:
+      /bin/cp
+      -Rv
+      /bin/cpb
+      /util/cpb
+    Requests:
+      cpu:        10m
+      memory:     50Mi
+    Environment:  <none>
+    Mounts:
+      /util from util (rw)
+   pull:
+    Image:      registry.connect.redhat.com/nvidia/gpu-operator-bundle@sha256:564773582b725a7746c211e4f780ee86bb52c9a8f34243580fd21bbe4448f335
+    Port:       <none>
+    Host Port:  <none>
+    Command:
+      /util/cpb
+      /bundle
+    Requests:
+      cpu:        10m
+      memory:     50Mi
+    Environment:  <none>
+    Mounts:
+      /bundle from bundle (rw)
+      /util from util (rw)
+  Containers:
+   extract:
+    Image:      quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:f338009ff52effefa38a56dafe351a92f49627e164599ea9d80192caca97dd21
+    Port:       <none>
+    Host Port:  <none>
+    Command:
+      opm
+      alpha
+      bundle
+      extract
+      -m
+      /bundle/
+      -n
+      openshift-marketplace
+      -c
+      51f9ac9f1c23778d67510ae3f51eb6d3870ea92dfdefaacc61fbb28f27f921b
+      -z
+    Requests:
+      cpu:     10m
+      memory:  50Mi
+    Environment:
+      CONTAINER_IMAGE:  registry.connect.redhat.com/nvidia/gpu-operator-bundle@sha256:564773582b725a7746c211e4f780ee86bb52c9a8f34243580fd21bbe4448f335
+    Mounts:
+      /bundle from bundle (rw)
+  Volumes:
+   bundle:
+    Type:       EmptyDir (a temporary directory that shares a pod's lifetime)
+    Medium:
+    SizeLimit:  <unset>
+   util:
+    Type:          EmptyDir (a temporary directory that shares a pod's lifetime)
+    Medium:
+    SizeLimit:     <unset>
+  Node-Selectors:  kubernetes.io/os=linux
+  Tolerations:     kubernetes.io/arch=amd64
+                   kubernetes.io/arch=arm64
+                   kubernetes.io/arch=ppc64le
+                   kubernetes.io/arch=s390x
+                   node-role.kubernetes.io/master:NoSchedule op=Exists
+                   node.kubernetes.io/not-ready:NoExecute op=Exists for 120s
+                   node.kubernetes.io/unreachable:NoExecute op=Exists for 120s
+Events:
+  Type     Reason            Age    From            Message
+  ----     ------            ----   ----            -------
+  Normal   SuccessfulCreate  16m    job-controller  Created pod: 51f9ac9f1c23778d67510ae3f51eb6d3870ea92dfdefaacc61fbb28f27vwndw
+  Normal   SuccessfulDelete  6m22s  job-controller  Deleted pod: 51f9ac9f1c23778d67510ae3f51eb6d3870ea92dfdefaacc61fbb28f27vwndw
+  Warning  DeadlineExceeded  6m21s  job-controller  Job was active longer than specified deadline
+76m         Normal    Scheduled          pod/mirrored-certified-operators-chvpk                                Successfully assigned openshift-marketplace/mirrored-certified-operators-chvpk to dai-cldp01.ocp-stg.staging.dubaipolice.com
+73m         Normal    Scheduled          pod/mirrored-redhat-operators-289vd                                   Successfully assigned openshift-marketplace/mirrored-redhat-operators-289vd to dai-cldp02.ocp-stg.staging.dubaipolice.com
+73m         Normal    Killing            pod/mirrored-redhat-operators-k7lkv                                   Stopping container registry-server
+73m         Normal    AddedInterface     pod/mirrored-redhat-operators-289vd                                   Add eth0 [10.52.5.249/23] from ovn-kubernetes
+73m         Normal    Pulled             pod/mirrored-redhat-operators-289vd                                   Container image "dai-cldp04.ocp-prod.dubaipolice.com:8443/ocp-stg/redhat/redhat-operator-index@sha256:7d868d476b137cfb440ce603be9b59d3722cc9145d9e230ad4c1e1806dd3eb67" already present on machine
+73m         Normal    Created            pod/mirrored-redhat-operators-289vd                                   Created container: registry-server
+73m         Normal    Started            pod/mirrored-redhat-operators-289vd                                   Started container registry-server
+73m         Warning   Unhealthy          pod/mirrored-redhat-operators-k7lkv                                   Readiness probe errored and resulted in unknown state: rpc error: code = NotFound desc = container is not created or running: checking if PID of 8402c21fa91c14dbe58f680c2cd3c626c8774b73700b74763683d12f9744d542 is running failed: container process not found
+22m         Normal    Scheduled          pod/marketplace-operator-587f879-vqnrp                                Successfully assigned openshift-marketplace/marketplace-operator-587f879-vqnrp to dai-cldp03.ocp-stg.staging.dubaipolice.com
+22m         Normal    Killing            pod/mirrored-redhat-operators-289vd                                   Stopping container registry-server
+22m         Normal    Started            pod/marketplace-operator-587f879-vqnrp                                Started container marketplace-operator
+22m         Normal    Killing            pod/marketplace-operator-587f879-jctx2                                Stopping container marketplace-operator
+22m         Normal    Killing            pod/mirrored-certified-operators-chvpk                                Stopping container registry-server
+22m         Normal    AddedInterface     pod/marketplace-operator-587f879-vqnrp                                Add eth0 [10.52.2.28/23] from ovn-kubernetes
+22m         Normal    SuccessfulCreate   replicaset/marketplace-operator-587f879                               Created pod: marketplace-operator-587f879-vqnrp
+22m         Normal    Pulled             pod/marketplace-operator-587f879-vqnrp                                Container image "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:934f57a0d2c3cd072ece9772414955de45ac83e03d4f142d8f54d14989d4afd4" already present on machine
+22m         Normal    Created            pod/marketplace-operator-587f879-vqnrp                                Created container: marketplace-operator
+22m         Normal    Started            pod/mirrored-redhat-operators-8kgtg                                   Started container registry-server
+22m         Normal    Scheduled          pod/mirrored-certified-operators-m4xxw                                Successfully assigned openshift-marketplace/mirrored-certified-operators-m4xxw to dai-cldp03.ocp-stg.staging.dubaipolice.com
+22m         Normal    Created            pod/mirrored-redhat-operators-8kgtg                                   Created container: registry-server
+22m         Normal    Pulled             pod/mirrored-redhat-operators-8kgtg                                   Container image "dai-cldp04.ocp-prod.dubaipolice.com:8443/ocp-stg/redhat/redhat-operator-index@sha256:7d868d476b137cfb440ce603be9b59d3722cc9145d9e230ad4c1e1806dd3eb67" already present on machine
+22m         Normal    AddedInterface     pod/mirrored-redhat-operators-8kgtg                                   Add eth0 [10.52.2.29/23] from ovn-kubernetes
+22m         Normal    Scheduled          pod/mirrored-redhat-operators-8kgtg                                   Successfully assigned openshift-marketplace/mirrored-redhat-operators-8kgtg to dai-cldp03.ocp-stg.staging.dubaipolice.com
+22m         Normal    Created            pod/mirrored-certified-operators-m4xxw                                Created container: registry-server
+22m         Normal    Started            pod/mirrored-certified-operators-m4xxw                                Started container registry-server
+22m         Normal    Pulled             pod/mirrored-certified-operators-m4xxw                                Container image "dai-cldp04.ocp-prod.dubaipolice.com:8443/ocp-stg/redhat/certified-operator-index@sha256:5bb80495b780780a706777878cc619b4956989b99b89ec9160d106cfa19d328c" already present on machine
+22m         Normal    AddedInterface     pod/mirrored-certified-operators-m4xxw                                Add eth0 [10.52.2.30/23] from ovn-kubernetes
+17m         Normal    Scheduled          pod/mirrored-certified-operators-s4f2m                                Successfully assigned openshift-marketplace/mirrored-certified-operators-s4f2m to dai-cldp03.ocp-stg.staging.dubaipolice.com
+17m         Normal    Killing            pod/mirrored-certified-operators-m4xxw                                Stopping container registry-server
+17m         Normal    Pulling            pod/mirrored-certified-operators-s4f2m                                Pulling image "dai-cldp04.ocp-prod.dubaipolice.com:8443/ocp-stg/redhat/certified-operator-index:v4.20"
+17m         Normal    AddedInterface     pod/mirrored-certified-operators-s4f2m                                Add eth0 [10.52.2.35/23] from ovn-kubernetes
+17m         Normal    Pulled             pod/mirrored-certified-operators-s4f2m                                Successfully pulled image "dai-cldp04.ocp-prod.dubaipolice.com:8443/ocp-stg/redhat/certified-operator-index:v4.20" in 11.115s (11.115s including waiting). Image size: 1226228034 bytes.
+17m         Normal    Started            pod/mirrored-certified-operators-s4f2m                                Started container registry-server
+17m         Normal    Created            pod/mirrored-certified-operators-s4f2m                                Created container: registry-server
+16m         Normal    SuccessfulCreate   job/51f9ac9f1c23778d67510ae3f51eb6d3870ea92dfdefaacc61fbb28f27f921b   Created pod: 51f9ac9f1c23778d67510ae3f51eb6d3870ea92dfdefaacc61fbb28f27vwndw
+16m         Normal    Scheduled          pod/51f9ac9f1c23778d67510ae3f51eb6d3870ea92dfdefaacc61fbb28f27vwndw   Successfully assigned openshift-marketplace/51f9ac9f1c23778d67510ae3f51eb6d3870ea92dfdefaacc61fbb28f27vwndw to dai-cldp03.ocp-stg.staging.dubaipolice.com
+9m22s       Normal    Pulling            pod/51f9ac9f1c23778d67510ae3f51eb6d3870ea92dfdefaacc61fbb28f27vwndw   Pulling image "registry.connect.redhat.com/nvidia/gpu-operator-bundle@sha256:564773582b725a7746c211e4f780ee86bb52c9a8f34243580fd21bbe4448f335"
+16m         Normal    Started            pod/51f9ac9f1c23778d67510ae3f51eb6d3870ea92dfdefaacc61fbb28f27vwndw   Started container util
+16m         Normal    Created            pod/51f9ac9f1c23778d67510ae3f51eb6d3870ea92dfdefaacc61fbb28f27vwndw   Created container: util
+16m         Normal    Pulled             pod/51f9ac9f1c23778d67510ae3f51eb6d3870ea92dfdefaacc61fbb28f27vwndw   Container image "quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:da73d81bb7da0c083d1216570596e4a86a6fadfef941888accef6b91a5170d0d" already present on machine
+16m         Normal    AddedInterface     pod/51f9ac9f1c23778d67510ae3f51eb6d3870ea92dfdefaacc61fbb28f27vwndw   Add eth0 [10.52.2.38/23] from ovn-kubernetes
+8m20s       Warning   Failed             pod/51f9ac9f1c23778d67510ae3f51eb6d3870ea92dfdefaacc61fbb28f27vwndw   Error: ErrImagePull
+15m         Warning   Failed             pod/51f9ac9f1c23778d67510ae3f51eb6d3870ea92dfdefaacc61fbb28f27vwndw   Failed to pull image "registry.connect.redhat.com/nvidia/gpu-operator-bundle@sha256:564773582b725a7746c211e4f780ee86bb52c9a8f34243580fd21bbe4448f335": rpc error: code = DeadlineExceeded desc = unable to pull image or OCI artifact: pull image err: initializing source docker://registry.connect.redhat.com/nvidia/gpu-operator-bundle@sha256:564773582b725a7746c211e4f780ee86bb52c9a8f34243580fd21bbe4448f335: pinging container registry registry.connect.redhat.com: Get "https://registry.connect.redhat.com/v2/": dial tcp 3.237.52.125:443: i/o timeout; artifact err: get manifest: build image source: pinging container registry registry.connect.redhat.com: Get "https://registry.connect.redhat.com/v2/": dial tcp 44.221.21.46:443: i/o timeout
+6m49s       Normal    BackOff            pod/51f9ac9f1c23778d67510ae3f51eb6d3870ea92dfdefaacc61fbb28f27vwndw   Back-off pulling image "registry.connect.redhat.com/nvidia/gpu-operator-bundle@sha256:564773582b725a7746c211e4f780ee86bb52c9a8f34243580fd21bbe4448f335"
+7m12s       Warning   Failed             pod/51f9ac9f1c23778d67510ae3f51eb6d3870ea92dfdefaacc61fbb28f27vwndw   Error: ImagePullBackOff
+14m         Warning   Failed             pod/51f9ac9f1c23778d67510ae3f51eb6d3870ea92dfdefaacc61fbb28f27vwndw   Failed to pull image "registry.connect.redhat.com/nvidia/gpu-operator-bundle@sha256:564773582b725a7746c211e4f780ee86bb52c9a8f34243580fd21bbe4448f335": rpc error: code = DeadlineExceeded desc = unable to pull image or OCI artifact: pull image err: initializing source docker://registry.connect.redhat.com/nvidia/gpu-operator-bundle@sha256:564773582b725a7746c211e4f780ee86bb52c9a8f34243580fd21bbe4448f335: pinging container registry registry.connect.redhat.com: Get "https://registry.connect.redhat.com/v2/": dial tcp 44.193.48.194:443: i/o timeout; artifact err: get manifest: build image source: pinging container registry registry.connect.redhat.com: Get "https://registry.connect.redhat.com/v2/": dial tcp 3.237.52.125:443: i/o timeout
+12m         Warning   Failed             pod/51f9ac9f1c23778d67510ae3f51eb6d3870ea92dfdefaacc61fbb28f27vwndw   Failed to pull image "registry.connect.redhat.com/nvidia/gpu-operator-bundle@sha256:564773582b725a7746c211e4f780ee86bb52c9a8f34243580fd21bbe4448f335": rpc error: code = DeadlineExceeded desc = unable to pull image or OCI artifact: pull image err: initializing source docker://registry.connect.redhat.com/nvidia/gpu-operator-bundle@sha256:564773582b725a7746c211e4f780ee86bb52c9a8f34243580fd21bbe4448f335: pinging container registry registry.connect.redhat.com: Get "https://registry.connect.redhat.com/v2/": dial tcp 44.221.21.46:443: i/o timeout; artifact err: get manifest: build image source: pinging container registry registry.connect.redhat.com: Get "https://registry.connect.redhat.com/v2/": dial tcp 44.193.48.194:443: i/o timeout
+8m20s       Warning   Failed             pod/51f9ac9f1c23778d67510ae3f51eb6d3870ea92dfdefaacc61fbb28f27vwndw   Failed to pull image "registry.connect.redhat.com/nvidia/gpu-operator-bundle@sha256:564773582b725a7746c211e4f780ee86bb52c9a8f34243580fd21bbe4448f335": rpc error: code = DeadlineExceeded desc = unable to pull image or OCI artifact: pull image err: initializing source docker://registry.connect.redhat.com/nvidia/gpu-operator-bundle@sha256:564773582b725a7746c211e4f780ee86bb52c9a8f34243580fd21bbe4448f335: pinging container registry registry.connect.redhat.com: Get "https://registry.connect.redhat.com/v2/": dial tcp 44.221.21.46:443: i/o timeout; artifact err: get manifest: build image source: pinging container registry registry.connect.redhat.com: Get "https://registry.connect.redhat.com/v2/": dial tcp 3.237.52.125:443: i/o timeout
+6m22s       Normal    SuccessfulDelete   job/51f9ac9f1c23778d67510ae3f51eb6d3870ea92dfdefaacc61fbb28f27f921b   Deleted pod: 51f9ac9f1c23778d67510ae3f51eb6d3870ea92dfdefaacc61fbb28f27vwndw
+6m21s       Warning   DeadlineExceeded   job/51f9ac9f1c23778d67510ae3f51eb6d3870ea92dfdefaacc61fbb28f27f921b   Job was active longer than specified deadline
+FATA[0000] Error parsing image name "docker://dai-cldp04.ocp-prod.dubaipolice.com:8443/ocp-stg/nvidia/gpu-operator-bundle@sha256:564773582b725a7746c211e4f780ee86bb52c9a8f34243580fd21bbe4448f335": reading manifest sha256:564773582b725a7746c211e4f780ee86bb52c9a8f34243580fd21bbe4448f335 in dai-cldp04.ocp-prod.dubaipolice.com:8443/ocp-stg/nvidia/gpu-operator-bundle: name unknown: repository not found
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 oc describe job \
   51f9ac9f1c23778d67510ae3f51eb6d3870ea92dfdefaacc61fbb28f27f921b \
   -n openshift-marketplace
