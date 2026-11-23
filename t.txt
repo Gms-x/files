@@ -1,5 +1,24 @@
 
 
+oc describe job \
+  51f9ac9f1c23778d67510ae3f51eb6d3870ea92dfdefaacc61fbb28f27f921b \
+  -n openshift-marketplace
+
+oc get events -n openshift-marketplace \
+  --sort-by=.metadata.creationTimestamp | tail -n 50
+
+skopeo inspect --raw \
+  docker://dai-cldp04.ocp-prod.dubaipolice.com:8443/ocp-stg/nvidia/gpu-operator-bundle@sha256:564773582b725a7746c211e4f780ee86bb52c9a8f34243580fd21bbe4448f335 \
+  >/dev/null && echo "26.7.3 bundle manifest exists"
+
+oc get imagedigestmirrorset -o yaml \
+  | grep -B 5 -A 3 'source: registry.connect.redhat.com/nvidia'
+
+
+
+
+
+
 [root@dai-cldp04 andrew-day1]#
 
 oc get subscription,installplan,csv -n nvidia-gpu-operator
