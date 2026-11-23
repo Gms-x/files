@@ -1,4 +1,63 @@
 
+
+
+[root@dai-cldp04 andrew-day1]#
+[root@dai-cldp04 andrew-day1]# find ./mirror-files2 -type f -name 'cs-*.yaml' -print
+./mirror-files2/working-dir/cluster-resources/cs-certified-operator-index-v4-20.yaml
+[root@dai-cldp04 andrew-day1]#
+[root@dai-cldp04 andrew-day1]#
+[root@dai-cldp04 andrew-day1]# cat ./mirror-files2/working-dir/cluster-resources/cs-certified-operator-index-v4-20.yaml
+apiVersion: operators.coreos.com/v1alpha1
+kind: CatalogSource
+metadata:
+  annotations:
+    createdAt: Monday, 23-Nov-26 08:26:42 UTC
+    createdBy: oc-mirror v2
+    oc-mirror_version: 4.22.0-202609301304.p2.g3f66eda.assembly.stream.el9-3f66eda
+  name: cs-certified-operator-index-v4-20
+  namespace: openshift-marketplace
+spec:
+  image: dai-cldp04.ocp-prod.dubaipolice.com:8443/ocp-stg/redhat/certified-operator-index:v4.20
+  sourceType: grpc
+[root@dai-cldp04 andrew-day1]#
+[root@dai-cldp04 andrew-day1]#
+oc debug node/dai-gensrv01.ocp-stg.staging.dubaipolice.com \
+  -- chroot /host cat /etc/containers/registries.conf \
+  | sed -n '/location = "nvcr.io\/nvidia"/,+12p'
+
+Temporary namespace openshift-debug-bghnm is created for debugging node...
+Starting pod/dai-gensrv01ocp-stgstagingdubaipolicecom-debug-lsmbh ...
+To use host binaries, run `chroot /host`
+  location = "nvcr.io/nvidia"
+  blocked = true
+
+  [[registry.mirror]]
+    location = "dai-cldp04.ocp-prod.dubaipolice.com:8443/nvidia"
+    pull-from-mirror = "digest-only"
+
+  [[registry.mirror]]
+    location = "dai-cldp04.ocp-prod.dubaipolice.com:8443/nvidia"
+    pull-from-mirror = "tag-only"
+
+[[registry]]
+  prefix = ""
+
+Removing debug pod ...
+Temporary namespace openshift-debug-bghnm was removed.
+[root@dai-cldp04 andrew-day1]#
+
+
+
+
+
+
+
+
+
+
+
+
+
 find ./mirror-files2 -type f -name 'cs-*.yaml' -print
 
 
