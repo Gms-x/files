@@ -1,3 +1,11 @@
+ndrew-day1]#
+[root@dai-cldp04 andrew-day1]# oc-mirror -v
+F1123 11:57:02.203972  437262 main.go:54] ⚠️  the use of the flag --v1 or --v2 is mandatory, please use --v2 for the supported oc-mirror version or --v1 to continue using the deprecated version
+[root@dai-cldp04 andrew-day1]#
+
+
+
+
 tar -czf - /path/to/directory | split -b 1G - backup.tar.gz.part.
 
 
