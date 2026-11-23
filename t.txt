@@ -1,3 +1,57 @@
+
+
+
+[root@dai-cldp04 andrew-day1]#
+[root@dai-cldp04 andrew-day1]# oc get mcp
+oc get nodes
+
+oc get node dai-gensrv01.ocp-stg.staging.dubaipolice.com \
+  -o jsonpath='{.metadata.annotations.machineconfiguration\.openshift\.io/currentConfig}{"\n"}{.metadata.annotations.machineconfiguration\.openshift\.io/desiredConfig}{"\n"}{.metadata.annotations.machineconfiguration\.openshift\.io/state}{"\n"}{.metadata.annotations.machineconfiguration\.openshift\.io/reason}{"\n"}'
+
+
+oc get catalogsource mirrored-certified-operators \
+  -n openshift-marketplace \
+  -o jsonpath='{.spec.image}{"\n"}{.status.connectionState}{"\n"}'
+
+
+skopeo inspect --raw \
+  docker://dai-cldp04.ocp-prod.dubaipolice.com:8443/ocp-stg/nvidia/k8s/dcgm-exporter@sha256:2490e1dfb5baaee6765ef2841813af7d978bb459a566c22c326a8fc27c64eea9 \
+  >/dev/null && echo "26.7.3 exporter manifest exists"
+NAME     CONFIG                                             UPDATED   UPDATING   DEGRADED   MACHINECOUNT   READYMACHINECOUNT   UPDATEDMACHINECOUNT   DEGRADEDMACHINECOUNT   AGE
+master   rendered-master-8c6e4e6aa7c3aa358aa282efdeef7188   False     True       False      3              2                   2                     0                      27d
+worker   rendered-worker-817a16fc66890d7b654872a86aa11416   False     True       False      1              0                   0                     0                      27d
+NAME                                           STATUS                     ROLES                         AGE   VERSION
+dai-cldp01.ocp-stg.staging.dubaipolice.com     Ready                      control-plane,master,worker   27d   v1.33.13
+dai-cldp02.ocp-stg.staging.dubaipolice.com     Ready                      control-plane,master,worker   27d   v1.33.13
+dai-cldp03.ocp-stg.staging.dubaipolice.com     Ready,SchedulingDisabled   control-plane,master,worker   27d   v1.33.13
+dai-gensrv01.ocp-stg.staging.dubaipolice.com   Ready,SchedulingDisabled   app,worker                    11d   v1.33.13
+rendered-worker-817a16fc66890d7b654872a86aa11416
+rendered-worker-817a16fc66890d7b654872a86aa11416
+Done
+
+dai-cldp04.ocp-prod.dubaipolice.com:8443/ocp-stg/redhat/certified-operator-index@sha256:5bb80495b780780a706777878cc619b4956989b99b89ec9160d106cfa19d328c
+{"address":"mirrored-certified-operators.openshift-marketplace.svc:50051","lastConnect":"2026-11-23T08:35:24Z","lastObservedState":"READY"}
+26.7.3 exporter manifest exists
+[root@dai-cldp04 andrew-day1]#
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 oc get mcp
 oc get nodes
 
