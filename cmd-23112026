@@ -1,4 +1,17 @@
 
+oc get csv,subscription,installplan -n nvidia-gpu-operator
+
+oc get imagedigestmirrorset -o yaml
+
+oc get imagecontentsourcepolicy -o yaml
+
+
+skopeo inspect --raw \
+  docker://dai-cldp04.ocp-prod.dubaipolice.com:8443/ocp-stg/nvidia/k8s/dcgm-exporter@sha256:148b0c025e5f2850256816fa33754fbf4733b7a086697a95613fc0ba3db5b003 \
+  >/dev/null
+
+
+££££
 
 [root@dai-cldp04 andrew-day1]# oc describe pod   nvidia-dcgm-exporter-gdmdv
 Name:                 nvidia-dcgm-exporter-gdmdv
