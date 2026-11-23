@@ -1,4 +1,12 @@
 
+oc-mirror -c new-mirror.yaml \
+  --from "file://$(pwd)/mirror-files2" \
+  --authfile ~/.docker/config.json \
+  docker://dai-cldp04.ocp-prod.dubaipolice.com:8443/ocp-stg \
+  --v2
+
+
+
 
 [root@dai-cldp04 andrew-day1]#
 [root@dai-cldp04 andrew-day1]# oc-mirror -c new-mirror.yaml file://mirror-files2 --authfile ~/.docker/config.json  --v2
