@@ -1,11 +1,18 @@
 
-[root@dai-cldp04 andrew-day1]#
-[root@dai-cldp04 andrew-day1]# oc-mirror --v2 version
-2026/11/23 11:58:42  [INFO]   : 👋 Hello, welcome to oc-mirror
-2026/11/23 11:58:42  [INFO]   : ⚙️  setting up the environment for you...
-2026/11/23 11:58:42  [INFO]   : ⚙️  environment version: 4.22.0-202609301304.p2.g3f66eda.assembly.stream.el9-3f66eda
-WARNING: This version information is deprecated and will be replaced with the output from --short. Use --output=yaml|json to get the full version.
-Client Version: version.Info{Major:"", Minor:"", GitVersion:"4.22.0-202609301304.p2.g3f66eda.assembly.stream.el9-3f66eda", GitCommit:"3f66edaf31831b93043b0baa55d02462d4e7ee39", GitTreeState:"clean", BuildDate:"2026-09-30T13:40:59Z", GoVersion:"go1.25.14 (Red Hat 1.25.14-1.el9) X:strictfipsruntime", Compiler:"gc", Platform:"linux/amd64"}
+
+[root@dai-cldp04 andrew-day1]# cat new-mirror.yaml
+kind: ImageSetConfiguration
+apiVersion: mirror.openshift.io/v2alpha1
+archiveSize: 20
+mirror:
+  operators:
+  - catalog: registry.redhat.io/redhat/certified-operator-index:v4.20
+    packages:
+      - name: gpu-operator-certified
+        channels:
+          - name: v26.7
+            minVersion: 26.7.2
+            maxVersion: 26.7.2
 [root@dai-cldp04 andrew-day1]#
 
 
