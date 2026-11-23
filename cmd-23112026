@@ -16,6 +16,17 @@ mirror:
 [root@dai-cldp04 andrew-day1]#
 
 
+[root@dai-cldp04 andrew-day1]#
+[root@dai-cldp04 andrew-day1]#
+[root@dai-cldp04 andrew-day1]# podman ps
+CONTAINER ID  IMAGE                                         COMMAND     CREATED      STATUS      PORTS                                                            NAMES
+50ccb361f24e  registry.access.redhat.com/ubi8/pause:8.10-5  infinity    5 weeks ago  Up 5 weeks  0.0.0.0:8443->8443/tcp                                           5b9569b50aed-infra
+7d9e1e3f3901  registry.redhat.io/rhel8/redis-6:1-190        run-redis   5 weeks ago  Up 5 weeks  0.0.0.0:8443->8443/tcp, 6379/tcp                                 quay-redis
+91c4fa43155a  registry.redhat.io/quay/quay-rhel8:v3.12.12   registry    5 weeks ago  Up 3 days   0.0.0.0:8443->8443/tcp, 7443/tcp, 8080/tcp, 9091/tcp, 55443/tcp  quay-app
+[root@dai-cldp04 andrew-day1]#
+
+
+
 
 
 tar -czf - /path/to/directory | split -b 1G - backup.tar.gz.part.
