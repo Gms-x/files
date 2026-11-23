@@ -1,30 +1,6 @@
-
-
-[root@dai-cldp04 andrew-day1]# cat new-mirror.yaml
-kind: ImageSetConfiguration
-apiVersion: mirror.openshift.io/v2alpha1
-archiveSize: 20
-mirror:
-  operators:
-  - catalog: registry.redhat.io/redhat/certified-operator-index:v4.20
-    packages:
-      - name: gpu-operator-certified
-        channels:
-          - name: v26.7
-            minVersion: 26.7.2
-            maxVersion: 26.7.2
-[root@dai-cldp04 andrew-day1]#
-
-
-[root@dai-cldp04 andrew-day1]#
-[root@dai-cldp04 andrew-day1]#
-[root@dai-cldp04 andrew-day1]# podman ps
-CONTAINER ID  IMAGE                                         COMMAND     CREATED      STATUS      PORTS                                                            NAMES
-50ccb361f24e  registry.access.redhat.com/ubi8/pause:8.10-5  infinity    5 weeks ago  Up 5 weeks  0.0.0.0:8443->8443/tcp                                           5b9569b50aed-infra
-7d9e1e3f3901  registry.redhat.io/rhel8/redis-6:1-190        run-redis   5 weeks ago  Up 5 weeks  0.0.0.0:8443->8443/tcp, 6379/tcp                                 quay-redis
-91c4fa43155a  registry.redhat.io/quay/quay-rhel8:v3.12.12   registry    5 weeks ago  Up 3 days   0.0.0.0:8443->8443/tcp, 7443/tcp, 8080/tcp, 9091/tcp, 55443/tcp  quay-app
-[root@dai-cldp04 andrew-day1]#
-
+skopeo copy --all --preserve-digests \
+  docker://nvcr.io/nvidia/k8s/dcgm-exporter:4.6.1-4.8.4-distroless@sha256:148b0c025e5f2850256816fa33754fbf4733b7a086697a95613fc0ba3db5b003 \
+  docker://dai-cldp04.ocp-prod.dubaipolice.com:8443/ocp-stg/nvidia/k8s/dcgm-exporter:4.6.1-4.8.4-distroless
 
 
 
