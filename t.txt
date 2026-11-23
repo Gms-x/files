@@ -1,5 +1,117 @@
 
 
+[root@dai-cldp04 andrew-day1]#
+
+oc get subscription,installplan,csv -n nvidia-gpu-operator
+
+oc get pods -n nvidia-gpu-operator -o wide
+
+oc get events -n nvidia-gpu-operator \
+  --sort-by=.metadata.creationTimestamp | tail -n 30
+
+oc get subscription gpu-operator-certified \
+  -n nvidia-gpu-operator -o yaml
+
+
+oc get pods,jobs -n openshift-marketplace
+NAME                                                       PACKAGE                  SOURCE                         CHANNEL
+subscription.operators.coreos.com/gpu-operator-certified   gpu-operator-certified   mirrored-certified-operators   v26.7
+
+NAME                                                                               DISPLAY                                       VERSION   REPLACES                                 PHASE
+clusterserviceversion.operators.coreos.com/cert-manager-operator.v1.20.1           cert-manager Operator for Red Hat OpenShift   1.20.1    cert-manager-operator.v1.20.0            Succeeded
+clusterserviceversion.operators.coreos.com/cluster-observability-operator.v1.5.3   Cluster Observability Operator                1.5.3     cluster-observability-operator.v1.5.2    Succeeded
+clusterserviceversion.operators.coreos.com/compliance-operator.v1.10.0             Compliance Operator                           1.10.0    compliance-operator.v1.9.2               Succeeded
+clusterserviceversion.operators.coreos.com/dell-csm-operator-certified.v1.11.2     Dell Container Storage Modules                1.11.2    dell-csm-operator-certified.v1.10.2      Succeeded
+clusterserviceversion.operators.coreos.com/loki-operator.v6.6.2                    Loki Operator                                 6.6.2     loki-operator.v6.6.1                     Succeeded
+clusterserviceversion.operators.coreos.com/network-observability-operator.v2.0.0   Network Observability                         2.0.0     network-observability-operator.v1.12.3   Succeeded
+clusterserviceversion.operators.coreos.com/node-healthcheck-operator.v0.10.3       Node Health Check Operator                    0.10.3    node-healthcheck-operator.v0.10.1        Succeeded
+clusterserviceversion.operators.coreos.com/node-maintenance-operator.v5.5.0        Node Maintenance Operator                     5.5.0     node-maintenance-operator.v5.4.1         Succeeded
+clusterserviceversion.operators.coreos.com/security-profiles-operator.v0.10.1      Security Profiles Operator                    0.10.1    security-profiles-operator.v0.10.0       Succeeded
+No resources found in nvidia-gpu-operator namespace.
+No resources found in nvidia-gpu-operator namespace.
+apiVersion: operators.coreos.com/v1alpha1
+kind: Subscription
+metadata:
+  creationTimestamp: "2026-11-23T09:48:12Z"
+  generation: 1
+  labels:
+    operators.coreos.com/gpu-operator-certified.nvidia-gpu-operator: ""
+  name: gpu-operator-certified
+  namespace: nvidia-gpu-operator
+  resourceVersion: "24763407"
+  uid: 491e5358-7ec9-43ae-9052-8b38dac56705
+spec:
+  channel: v26.7
+  installPlanApproval: Automatic
+  name: gpu-operator-certified
+  source: mirrored-certified-operators
+  sourceNamespace: openshift-marketplace
+  startingCSV: gpu-operator-certified.v26.7.3
+status:
+  catalogHealth:
+  - catalogSourceRef:
+      apiVersion: operators.coreos.com/v1alpha1
+      kind: CatalogSource
+      name: mirrored-certified-operators
+      namespace: openshift-marketplace
+      resourceVersion: "24755913"
+      uid: 962f1095-e3f7-4813-8c2e-3ae2bd13a328
+    healthy: true
+    lastUpdated: "2026-11-23T09:48:12Z"
+  - catalogSourceRef:
+      apiVersion: operators.coreos.com/v1alpha1
+      kind: CatalogSource
+      name: mirrored-redhat-operators
+      namespace: openshift-marketplace
+      resourceVersion: "24759501"
+      uid: ba887d7b-a8d1-4f38-882f-7dee92381daf
+    healthy: true
+    lastUpdated: "2026-11-23T09:48:12Z"
+  conditions:
+  - message: 'bundle unpacking failed. Reason: DeadlineExceeded, and Message: Job
+      was active longer than specified deadline'
+    reason: BundleUnpackFailed
+    status: "True"
+    type: BundleUnpackFailed
+  - lastTransitionTime: "2026-11-23T09:48:12Z"
+    message: all available catalogsources are healthy
+    reason: AllCatalogSourcesHealthy
+    status: "False"
+    type: CatalogSourcesUnhealthy
+  lastUpdated: "2026-11-23T09:48:12Z"
+NAME                                     READY   STATUS    RESTARTS   AGE
+pod/marketplace-operator-587f879-vqnrp   1/1     Running   0          19m
+pod/mirrored-certified-operators-s4f2m   1/1     Running   0          14m
+pod/mirrored-redhat-operators-8kgtg      1/1     Running   0          19m
+
+NAME                                                                        STATUS     COMPLETIONS   DURATION   AGE
+job.batch/33c5ab4266e1cb4d4d6ee588fcbf60a3628188c6e89283e7d483cf0770c49ff   Complete   1/1           5s         3d2h
+job.batch/51f9ac9f1c23778d67510ae3f51eb6d3870ea92dfdefaacc61fbb28f27f921b   Failed     0/1           13m        13m
+job.batch/5f90625892887dc78c36ca72c73c42d273f1bfeb489c4951f1723322fd8d1d9   Complete   1/1           5s         3d3h
+job.batch/78f2694c06fd6943a344a40e79bf30b58e7b5958daaad8c850394d9c3edda0e   Complete   1/1           5s         12d
+[root@dai-cldp04 andrew-day1]#
+[root@dai-cldp04 andrew-day1]#
+[root@dai-cldp04 andrew-day1]#
+[root@dai-cldp04 andrew-day1]#
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 oc get subscription,installplan,csv -n nvidia-gpu-operator
 
 oc get pods -n nvidia-gpu-operator -o wide
