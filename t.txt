@@ -1,4 +1,19 @@
 
+oc debug node/dai-gensrv01.ocp-stg.staging.dubaipolice.com \
+  -- chroot /host cat /etc/containers/registries.conf \
+  | sed -n '/location = "nvcr.io\/nvidia"/,+12p'
+
+
+oc get csv -n nvidia-gpu-operator | grep gpu-operator
+
+oc get pods -n nvidia-gpu-operator
+
+oc get clusterpolicy gpu-cluster-policy \
+  -o jsonpath='{.status.state}{"\n"}{.status.conditions}{"\n"}'
+
+
+
+
 [root@dai-cldp04 ~]# oc describe node dai-cldp03.ocp-stg.staging.dubaipolice.com | grep rendered-master
                     machineconfiguration.openshift.io/currentConfig: rendered-master-8c6e4e6aa7c3aa358aa282efdeef7188
                     machineconfiguration.openshift.io/desiredConfig: rendered-master-696b3ab441f7a3daecce5feb638b60c9
