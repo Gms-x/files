@@ -1,4 +1,14 @@
 
+oc get jobs,pods -n openshift-marketplace
+
+oc get subscription,installplan,csv -n nvidia-gpu-operator
+
+oc get pods -n nvidia-gpu-operator
+
+
+
+
+
 oc get imagedigestmirrorset nvidia-certified-bundles -o yaml
 
 oc get mcp
