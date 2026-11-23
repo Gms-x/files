@@ -1,4 +1,137 @@
 
+
+[root@dai-cldp04 andrew-day1]# oc-mirror -c new-mirror.yaml file://mirror-files2 --authfile ~/.docker/config.json  --v2
+2026/11/23 13:41:08  [INFO]   : 👋 Hello, welcome to oc-mirror
+2026/11/23 13:41:08  [INFO]   : ⚙️  setting up the environment for you...
+2026/11/23 13:41:08  [INFO]   : ⚙️  environment version: 4.22.0-202609301304.p2.g3f66eda.assembly.stream.el9-3f66eda
+2026/11/23 13:41:08  [INFO]   : 🔀 workflow mode: mirrorToDisk
+2026/11/23 13:41:10  [INFO]   : 🕵  going to discover the necessary images...
+2026/11/23 13:41:10  [INFO]   : 🔍 collecting operator images...
+ ✓   () Collecting catalog registry.redhat.io/redhat/certified-operator-index@sha256:4dcd9d11f40cb4f52caeb0457e1614497265ebd1e5acb7fbdf8228e9bf8de784
+2026/11/23 13:41:10  [WARN]   : [OperatorImageCollector] nvcr.io/nvidia/cloud-native/dcgm:4.7.0-ubi10@sha256:63b6ed736cb7f7f3683b704aa99b3d719fe10da8ae152981466116f83b2ad136 has both tag and digest : using digest to pull, but tag only for mirroring
+2026/11/23 13:41:10  [WARN]   : [OperatorImageCollector] nvcr.io/nvidia/cloud-native/k8s-cc-manager:v0.4.5@sha256:9cf906a498585f10de919d75b7d0ef5ea6094844ba37f4649b2d8ed225a76047 has both tag and digest : using digest to pull, but tag only for mirroring
+2026/11/23 13:41:10  [WARN]   : [OperatorImageCollector] nvcr.io/nvidia/cloud-native/k8s-driver-manager:v0.12.1@sha256:37e6bf0cf02b5888288a173353b858da8823cc9f9fb9c6e8d6d1e2cf5bfb16c8 has both tag and digest : using digest to pull, but tag only for mirroring
+2026/11/23 13:41:10  [WARN]   : [OperatorImageCollector] nvcr.io/nvidia/cloud-native/k8s-driver-manager:v0.12.1@sha256:37e6bf0cf02b5888288a173353b858da8823cc9f9fb9c6e8d6d1e2cf5bfb16c8 has both tag and digest : using digest to pull, but tag only for mirroring
+2026/11/23 13:41:10  [WARN]   : [OperatorImageCollector] nvcr.io/nvidia/cloud-native/k8s-mig-manager:v0.15.2@sha256:b621f8257993e36c6bfa2c55810b17ede2101ba8db3a7f5fef05979fbe73e0c9 has both tag and digest : using digest to pull, but tag only for mirroring
+2026/11/23 13:41:10  [WARN]   : [OperatorImageCollector] nvcr.io/nvidia/cloud-native/nvidia-sandbox-device-plugin:v0.0.7@sha256:07a82bddeaa19b89090cfad5841f9e8ae467419ae8dc292fd21b3755c230eafb has both tag and digest : using digest to pull, but tag only for mirroring
+2026/11/23 13:41:10  [WARN]   : [OperatorImageCollector] nvcr.io/nvidia/cloud-native/vgpu-device-manager:v0.5.2@sha256:39874aea70dde5a8b1770f8115ce5934692ee1da9be0adcea68794938973e1ad has both tag and digest : using digest to pull, but tag only for mirroring
+2026/11/23 13:41:10  [WARN]   : [OperatorImageCollector] nvcr.io/nvidia/dra-driver-nvidia-gpu:v0.5.1@sha256:ae591dbc8e630b49181b40dfddf8f0a3f0890b883acb7b2b420f5b207fda253e has both tag and digest : using digest to pull, but tag only for mirroring
+2026/11/23 13:41:10  [WARN]   : [OperatorImageCollector] nvcr.io/nvidia/gpu-operator:v26.7.3@sha256:18883be4960102f24997273572015fb380801d1c791bbe6f8a599cc67e180c29 has both tag and digest : using digest to pull, but tag only for mirroring
+2026/11/23 13:41:10  [WARN]   : [OperatorImageCollector] nvcr.io/nvidia/gpu-operator:v26.7.3@sha256:18883be4960102f24997273572015fb380801d1c791bbe6f8a599cc67e180c29 has both tag and digest : using digest to pull, but tag only for mirroring
+2026/11/23 13:41:10  [WARN]   : [OperatorImageCollector] nvcr.io/nvidia/k8s-device-plugin:v0.20.2@sha256:7673383d44a84bece724d9ca8feeadf4eee69cd46475fdff614cbbca6732d463 has both tag and digest : using digest to pull, but tag only for mirroring
+2026/11/23 13:41:10  [WARN]   : [OperatorImageCollector] nvcr.io/nvidia/k8s-device-plugin:v0.20.2@sha256:7673383d44a84bece724d9ca8feeadf4eee69cd46475fdff614cbbca6732d463 has both tag and digest : using digest to pull, but tag only for mirroring
+2026/11/23 13:41:10  [WARN]   : [OperatorImageCollector] nvcr.io/nvidia/k8s/container-toolkit:v1.20.2@sha256:58b5a82a618b531747e7c287c91a6c9f346de108fb935050ce356acdacbbc57d has both tag and digest : using digest to pull, but tag only for mirroring
+2026/11/23 13:41:10  [WARN]   : [OperatorImageCollector] nvcr.io/nvidia/k8s/dcgm-exporter:4.7.0-4.9.0-distroless@sha256:2490e1dfb5baaee6765ef2841813af7d978bb459a566c22c326a8fc27c64eea9 has both tag and digest : using digest to pull, but tag only for mirroring
+2026/11/23 13:41:10  [WARN]   : [OperatorImageCollector] nvcr.io/nvidia/kubevirt-gpu-device-plugin:v1.6.1@sha256:e45b6409b2afcca9d53256860445ce0a339900defa26ba7fbcc6a03255d1899a has both tag and digest : using digest to pull, but tag only for mirroring
+2026/11/23 13:41:10  [INFO]   : 🚀 Start copying the images...
+2026/11/23 13:41:10  [INFO]   : 📌 images to copy 19
+ ✓   (5s)  k8s-driver-manager:v0.12.1@sha256:37e6bf0cf02b5888288a173353b858da8823cc9f9fb9c6e8d6d1e2cf5bfb16c8 ➡️  cache
+ ✓   (6s)  k8s-cc-manager:v0.4.5@sha256:9cf906a498585f10de919d75b7d0ef5ea6094844ba37f4649b2d8ed225a76047 ➡️  cache
+ ✓   (6s)  gdrdrv@sha256:eef1b6663d78555f0e5c49c156196b67e8a3008bc22aaa02b03dad53887ee0f1 ➡️  cache
+ ✓   (6s)  dcgm:4.7.0-ubi10@sha256:63b6ed736cb7f7f3683b704aa99b3d719fe10da8ae152981466116f83b2ad136 ➡️  cache
+ ✓   (4s)  k8s-mig-manager:v0.15.2@sha256:b621f8257993e36c6bfa2c55810b17ede2101ba8db3a7f5fef05979fbe73e0c9 ➡️  cache
+ ✓   (4s)  vgpu-device-manager:v0.5.2@sha256:39874aea70dde5a8b1770f8115ce5934692ee1da9be0adcea68794938973e1ad ➡️  cache
+ ✓   (5s)  nvidia-sandbox-device-plugin:v0.0.7@sha256:07a82bddeaa19b89090cfad5841f9e8ae467419ae8dc292fd21b3755c230eafb ➡️  cache
+ ✓   (5s)  dra-driver-nvidia-gpu:v0.5.1@sha256:ae591dbc8e630b49181b40dfddf8f0a3f0890b883acb7b2b420f5b207fda253e ➡️  cache
+ ✓   (6s)  driver@sha256:54d5e96cd981acf4525dc1d0bcc4f27acde1fe199bb739dc7cf5923517db66b5 ➡️  cache
+ ✓   (6s)  driver@sha256:e243d778bd83de47668e7629d78f673317a130fedc99941be12aad7fc6bdfa85 ➡️  cache
+ ✓   (7s)  driver@sha256:a35d05d5b984ad18713af957f87380ccbefd8f0bb5e6771fc7856e6a9e1d201f ➡️  cache
+ ✓   (6s)  driver@sha256:fbbd829db234885d6f0026ca6fb6369f6875b0b91fc5e98d7752f31aeab5e470 ➡️  cache
+ ✓   (5s)  gpu-operator:v26.7.3@sha256:18883be4960102f24997273572015fb380801d1c791bbe6f8a599cc67e180c29 ➡️  cache
+ ✓   (5s)  k8s-device-plugin:v0.20.2@sha256:7673383d44a84bece724d9ca8feeadf4eee69cd46475fdff614cbbca6732d463 ➡️  cache
+ ✓   (4s)  container-toolkit:v1.20.2@sha256:58b5a82a618b531747e7c287c91a6c9f346de108fb935050ce356acdacbbc57d ➡️  cache
+ ✓   (5s)  dcgm-exporter:4.7.0-4.9.0-distroless@sha256:2490e1dfb5baaee6765ef2841813af7d978bb459a566c22c326a8fc27c64eea9 ➡️  cache
+ ✓   (5s)  kubevirt-gpu-device-plugin:v1.6.1@sha256:e45b6409b2afcca9d53256860445ce0a339900defa26ba7fbcc6a03255d1899a ➡️  cache
+ ✓   (6s)  gpu-operator-bundle@sha256:564773582b725a7746c211e4f780ee86bb52c9a8f34243580fd21bbe4448f335 ➡️  cache
+19 / 19 (32s) [===========================================================================================================================================================================================================] 100 %
+ ✓   (9s)  certified-operator-index@sha256:4dcd9d11f40cb4f52caeb0457e1614497265ebd1e5acb7fbdf8228e9bf8de784 ➡️  cache
+2026/11/23 13:41:43  [INFO]   : === Results ===
+2026/11/23 13:41:43  [INFO]   :  ✓  19 / 19 operator images mirrored successfully
+2026/11/23 13:41:43  [INFO]   : Generating pinned configurations...
+2026/11/23 13:41:43  [INFO]   : Pinned ISC written to: mirror-files2/working-dir/isc_pinned_2026-11-23T09:41:43Z.yaml
+2026/11/23 13:41:43  [INFO]   : Pinned DISC written to: mirror-files2/working-dir/disc_pinned_2026-11-23T09:41:43Z.yaml
+2026/11/23 13:41:43  [INFO]   : 📦 Preparing the tarball archive...
+2026/11/23 13:41:45  [INFO]   : mirror time     : 35.049503641s
+2026/11/23 13:41:45  [INFO]   : 👋 Goodbye, thank you for using oc-mirror
+[root@dai-cldp04 andrew-day1]#
+[root@dai-cldp04 andrew-day1]#
+[root@dai-cldp04 andrew-day1]# oc-mirror -c new-mirror.yaml   --from "file://$(pwd)/mirror-files2"   --authfile ~/.docker/config.json   docker://dai-cldp04.ocp-prod.dubaipolice.com:8443/ocp-stg   --v2
+2026/11/23 13:41:59  [INFO]   : 👋 Hello, welcome to oc-mirror
+2026/11/23 13:41:59  [INFO]   : ⚙️  setting up the environment for you...
+2026/11/23 13:41:59  [INFO]   : ⚙️  environment version: 4.22.0-202609301304.p2.g3f66eda.assembly.stream.el9-3f66eda
+2026/11/23 13:41:59  [INFO]   : 🔀 workflow mode: diskToMirror
+2026/11/23 13:42:00  [INFO]   : Verified we can authenticate against registry "dai-cldp04.ocp-prod.dubaipolice.com:8443/ocp-stg"
+2026/11/23 13:42:00  [INFO]   : 📦 Extracting mirror archive(s)...
+/ocp/ocp-stg/install/andrew-day1/mirror-files2/mirror_000001.tar (2.0 GiB / 2.0 GiB) [=======================================================================================================================================] 6s
+/ocp/ocp-stg/install/andrew-day1/mirror-files2/mirror_000002.tar (1.1 GiB / 1.1 GiB) [=======================================================================================================================================] 3s
+2026/11/23 13:42:09  [INFO]   : 🕵  going to discover the necessary images...
+2026/11/23 13:42:09  [INFO]   : 🔍 collecting operator images...
+ ✓   () Collecting catalog registry.redhat.io/redhat/certified-operator-index:v4.20
+2026/11/23 13:42:09  [INFO]   : 🚀 Start copying the images...
+2026/11/23 13:42:09  [INFO]   : 📌 images to copy 19
+ ✓   (7s)  dcgm:4.7.0-ubi10@sha256:63b6ed736cb7f7f3683b704aa99b3d719fe10da8ae152981466116f83b2ad136 ➡️  dai-cldp04.ocp-prod.dubaipolice.com:8443/ocp-stg/nvidia/cloud-native/
+ ✓   (9s)  k8s-driver-manager:v0.12.1@sha256:37e6bf0cf02b5888288a173353b858da8823cc9f9fb9c6e8d6d1e2cf5bfb16c8 ➡️  dai-cldp04.ocp-prod.dubaipolice.com:8443/ocp-stg/nvidia/cloud-native/
+ ✗   (9s)  gdrdrv@sha256:eef1b6663d78555f0e5c49c156196b67e8a3008bc22aaa02b03dad53887ee0f1 ➡️  dai-cldp04.ocp-prod.dubaipolice.com:8443/ocp-stg/nvidia/cloud-native/
+ ✓   (11s)  k8s-cc-manager:v0.4.5@sha256:9cf906a498585f10de919d75b7d0ef5ea6094844ba37f4649b2d8ed225a76047 ➡️  dai-cldp04.ocp-prod.dubaipolice.com:8443/ocp-stg/nvidia/cloud-native/
+ ✓   (5s)  k8s-mig-manager:v0.15.2@sha256:b621f8257993e36c6bfa2c55810b17ede2101ba8db3a7f5fef05979fbe73e0c9 ➡️  dai-cldp04.ocp-prod.dubaipolice.com:8443/ocp-stg/nvidia/cloud-native/
+ ✗   (3s)  dra-driver-nvidia-gpu:v0.5.1@sha256:ae591dbc8e630b49181b40dfddf8f0a3f0890b883acb7b2b420f5b207fda253e ➡️  dai-cldp04.ocp-prod.dubaipolice.com:8443/ocp-stg/nvidia/
+ ✓   (6s)  nvidia-sandbox-device-plugin:v0.0.7@sha256:07a82bddeaa19b89090cfad5841f9e8ae467419ae8dc292fd21b3755c230eafb ➡️  dai-cldp04.ocp-prod.dubaipolice.com:8443/ocp-stg/nvidia/cloud-native/
+ ✓   (7s)  vgpu-device-manager:v0.5.2@sha256:39874aea70dde5a8b1770f8115ce5934692ee1da9be0adcea68794938973e1ad ➡️  dai-cldp04.ocp-prod.dubaipolice.com:8443/ocp-stg/nvidia/cloud-native/
+ ✓   (3s)  driver@sha256:a35d05d5b984ad18713af957f87380ccbefd8f0bb5e6771fc7856e6a9e1d201f ➡️  dai-cldp04.ocp-prod.dubaipolice.com:8443/ocp-stg/nvidia/
+ ✓   (5s)  driver@sha256:54d5e96cd981acf4525dc1d0bcc4f27acde1fe199bb739dc7cf5923517db66b5 ➡️  dai-cldp04.ocp-prod.dubaipolice.com:8443/ocp-stg/nvidia/
+ ✓   (4s)  driver@sha256:e243d778bd83de47668e7629d78f673317a130fedc99941be12aad7fc6bdfa85 ➡️  dai-cldp04.ocp-prod.dubaipolice.com:8443/ocp-stg/nvidia/
+ ✓   (5s)  driver@sha256:fbbd829db234885d6f0026ca6fb6369f6875b0b91fc5e98d7752f31aeab5e470 ➡️  dai-cldp04.ocp-prod.dubaipolice.com:8443/ocp-stg/nvidia/
+ ✗   ()  gpu-operator-bundle@sha256:564773582b725a7746c211e4f780ee86bb52c9a8f34243580fd21bbe4448f335 ➡️  dai-cldp04.ocp-prod.dubaipolice.com:8443/ocp-stg/nvidia/
+ ✓   (3s)  container-toolkit:v1.20.2@sha256:58b5a82a618b531747e7c287c91a6c9f346de108fb935050ce356acdacbbc57d ➡️  dai-cldp04.ocp-prod.dubaipolice.com:8443/ocp-stg/nvidia/k8s/
+ ✓   (6s)  k8s-device-plugin:v0.20.2@sha256:7673383d44a84bece724d9ca8feeadf4eee69cd46475fdff614cbbca6732d463 ➡️  dai-cldp04.ocp-prod.dubaipolice.com:8443/ocp-stg/nvidia/
+ ✓   (6s)  gpu-operator:v26.7.3@sha256:18883be4960102f24997273572015fb380801d1c791bbe6f8a599cc67e180c29 ➡️  dai-cldp04.ocp-prod.dubaipolice.com:8443/ocp-stg/nvidia/
+ ✓   (4s)  dcgm-exporter:4.7.0-4.9.0-distroless@sha256:2490e1dfb5baaee6765ef2841813af7d978bb459a566c22c326a8fc27c64eea9 ➡️  dai-cldp04.ocp-prod.dubaipolice.com:8443/ocp-stg/nvidia/k8s/
+ ✓   (3s)  certified-operator-index:v4.20 ➡️  dai-cldp04.ocp-prod.dubaipolice.com:8443/ocp-stg/redhat/
+19 / 19 (28s) [===========================================================================================================================================================================================================] 100 %
+ ✓   (3s)  kubevirt-gpu-device-plugin:v1.6.1@sha256:e45b6409b2afcca9d53256860445ce0a339900defa26ba7fbcc6a03255d1899a ➡️  dai-cldp04.ocp-prod.dubaipolice.com:8443/ocp-stg/nvidia/
+2026/11/23 13:42:38  [INFO]   : === Results ===
+2026/11/23 13:42:38  [INFO]   :  ✗  16 / 19 operator images mirrored: Some operator images failed to be mirrored - please check the logs
+2026/11/23 13:42:38  [ERROR]  : [Worker] error mirroring image docker://nvcr.io/nvidia/cloud-native/gdrdrv@sha256:eef1b6663d78555f0e5c49c156196b67e8a3008bc22aaa02b03dad53887ee0f1 (Operator bundles: [gpu-operator-certified.v26.7.3] - Operators: [gpu-operator-certified]) error: Manifest list must be converted to type "application/vnd.docker.distribution.manifest.list.v2+json" to be written to destination, but we cannot modify it: "Instructed to preserve digests"
+2026/11/23 13:42:38  [ERROR]  : [Worker] error mirroring image docker://nvcr.io/nvidia/dra-driver-nvidia-gpu:v0.5.1@sha256:ae591dbc8e630b49181b40dfddf8f0a3f0890b883acb7b2b420f5b207fda253e (Operator bundles: [gpu-operator-certified.v26.7.3] - Operators: [gpu-operator-certified]) error: copying image 1/2 from manifest list: writing manifest: uploading manifest sha256:444b1a9a04b86653798ff769a678960f4c0fea3ac43f416e68536c4d7d75a811 to dai-cldp04.ocp-prod.dubaipolice.com:8443/ocp-stg/nvidia/dra-driver-nvidia-gpu: manifest invalid
+2026/11/23 13:42:38  [ERROR]  : [Worker] error mirroring image docker://registry.connect.redhat.com/nvidia/gpu-operator-bundle@sha256:564773582b725a7746c211e4f780ee86bb52c9a8f34243580fd21bbe4448f335 error: skipping operator bundle docker://registry.connect.redhat.com/nvidia/gpu-operator-bundle@sha256:564773582b725a7746c211e4f780ee86bb52c9a8f34243580fd21bbe4448f335 because one of its related images failed to mirror
+2026/11/23 13:42:38  [INFO]   : 📄 Generating cluster resources...
+2026/11/23 13:42:38  [INFO]   : 📄 Generating IDMS file...
+2026/11/23 13:42:38  [INFO]   : /ocp/ocp-stg/install/andrew-day1/mirror-files2/working-dir/cluster-resources/idms-oc-mirror.yaml file created
+2026/11/23 13:42:38  [INFO]   : 📄 Generating ITMS file...
+2026/11/23 13:42:38  [INFO]   : /ocp/ocp-stg/install/andrew-day1/mirror-files2/working-dir/cluster-resources/itms-oc-mirror.yaml file created
+2026/11/23 13:42:38  [INFO]   : 📄 Generating CatalogSource file...
+2026/11/23 13:42:38  [INFO]   : /ocp/ocp-stg/install/andrew-day1/mirror-files2/working-dir/cluster-resources/cs-certified-operator-index-v4-20.yaml file created
+2026/11/23 13:42:38  [INFO]   : 📄 Generating ClusterCatalog file...
+2026/11/23 13:42:38  [INFO]   : /ocp/ocp-stg/install/andrew-day1/mirror-files2/working-dir/cluster-resources/cc-certified-operator-index-v4-20.yaml file created
+2026/11/23 13:42:38  [INFO]   : mirror time     : 37.822099919s
+2026/11/23 13:42:38  [INFO]   : 👋 Goodbye, thank you for using oc-mirror
+2026/11/23 13:42:38  [ERROR]  : [Executor] [Worker] some errors occurred during the mirroring.
+         Please review /ocp/ocp-stg/install/andrew-day1/mirror-files2/working-dir/logs/mirroring_errors_20261123_134159.txt for a list of mirroring errors.
+         You may consider:
+         * removing images or operators that cause the error from the image set config, and retrying
+         * keeping the image set config (images are mandatory for you), and retrying
+         * mirroring the failing images manually, if retries also fail.
+[root@dai-cldp04 andrew-day1]# cat new-mirror.yaml
+kind: ImageSetConfiguration
+apiVersion: mirror.openshift.io/v2alpha1
+archiveSize: 2
+mirror:
+  operators:
+  - catalog: registry.redhat.io/redhat/certified-operator-index:v4.20
+    packages:
+      - name: gpu-operator-certified
+        channels:
+          - name: v26.7
+            minVersion: 26.7.3
+            maxVersion: 26.7.3
+[root@dai-cldp04 andrew-day1]#
+
+
+
+
+
+
+
 oc patch catalogsource mirrored-certified-operators \
   -n openshift-marketplace \
   --type=merge \
