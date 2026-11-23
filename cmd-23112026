@@ -1,6 +1,14 @@
-skopeo copy --all --preserve-digests \
+
+[root@dai-cldp04 andrew-day1]# skopeo copy --all --preserve-digests \
   docker://nvcr.io/nvidia/k8s/dcgm-exporter:4.6.1-4.8.4-distroless@sha256:148b0c025e5f2850256816fa33754fbf4733b7a086697a95613fc0ba3db5b003 \
   docker://dai-cldp04.ocp-prod.dubaipolice.com:8443/ocp-stg/nvidia/k8s/dcgm-exporter:4.6.1-4.8.4-distroless
+FATA[0000] Invalid source name docker://nvcr.io/nvidia/k8s/dcgm-exporter:4.6.1-4.8.4-distroless@sha256:148b0c025e5f2850256816fa33754fbf4733b7a086697a95613fc0ba3db5b003: Docker references with both a tag and digest are currently not supported
+[root@dai-cldp04 andrew-day1]#
+[root@dai-cldp04 andrew-day1]# skopeo copy --all --preserve-digests   docker://nvcr.io/nvidia/k8s/dcgm-exporter:4.6.1-4.8.4-distroless@sha256:148b0c025e5f2850256816fa33754fbf4733b7a086697a95613fc0ba3db5b003   docker://dai-cldp04.ocp-prod.dubaipolice.com:8443/ocp-stg/nvidia/k8s/dcgm-exporter:4.6.1-4.8.4-distroless
+FATA[0000] Invalid source name docker://nvcr.io/nvidia/k8s/dcgm-exporter:4.6.1-4.8.4-distroless@sha256:148b0c025e5f2850256816fa33754fbf4733b7a086697a95613fc0ba3db5b003: Docker references with both a tag and digest are currently not supported
+[root@dai-cldp04 andrew-day1]#
+[root@dai-cldp04 andrew-day1]#
+
 
 
 
