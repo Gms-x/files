@@ -1,4 +1,58 @@
 
+
+[root@dai-cldp04 ~]#
+oc get subscription,csv -A | grep -i nvidia
+oc get clusterpolicies.nvidia.com
+oc get catalogsource mirrored-certified-operators \
+  -n openshift-marketplace -o yaml
+
+
+oc get packagemanifest gpu-operator-certified \
+  -n openshift-marketplace \
+  -o jsonpath='{range .status.channels[*]}{.name}{" → "}{.currentCSV}{"\n"}{end}'
+nvidia-gpu-operator                                clusterserviceversion.operators.coreos.com/cert-manager-operator.v1.20.1                     cert-manager Operator for Red Hat OpenShift   1.20.1                cert-manager-operator.v1.20.0                     Succeeded
+nvidia-gpu-operator                                clusterserviceversion.operators.coreos.com/cluster-observability-operator.v1.5.3             Cluster Observability Operator                1.5.3                 cluster-observability-operator.v1.5.2             Succeeded
+nvidia-gpu-operator                                clusterserviceversion.operators.coreos.com/compliance-operator.v1.10.0                       Compliance Operator                           1.10.0                compliance-operator.v1.9.2                        Succeeded
+nvidia-gpu-operator                                clusterserviceversion.operators.coreos.com/dell-csm-operator-certified.v1.11.2               Dell Container Storage Modules                1.11.2                dell-csm-operator-certified.v1.10.2               Succeeded
+nvidia-gpu-operator                                clusterserviceversion.operators.coreos.com/loki-operator.v6.6.2                              Loki Operator                                 6.6.2                 loki-operator.v6.6.1                              Succeeded
+nvidia-gpu-operator                                clusterserviceversion.operators.coreos.com/network-observability-operator.v2.0.0             Network Observability                         2.0.0                 network-observability-operator.v1.12.3            Succeeded
+nvidia-gpu-operator                                clusterserviceversion.operators.coreos.com/node-healthcheck-operator.v0.10.3                 Node Health Check Operator                    0.10.3                node-healthcheck-operator.v0.10.1                 Succeeded
+nvidia-gpu-operator                                clusterserviceversion.operators.coreos.com/node-maintenance-operator.v5.5.0                  Node Maintenance Operator                     5.5.0                 node-maintenance-operator.v5.4.1                  Succeeded
+nvidia-gpu-operator                                clusterserviceversion.operators.coreos.com/security-profiles-operator.v0.10.1                Security Profiles Operator                    0.10.1                security-profiles-operator.v0.10.0                Succeeded
+No resources found
+apiVersion: operators.coreos.com/v1alpha1
+kind: CatalogSource
+metadata:
+  creationTimestamp: "2026-11-03T11:19:09Z"
+  generation: 2
+  name: mirrored-certified-operators
+  namespace: openshift-marketplace
+  resourceVersion: "24752489"
+  uid: 962f1095-e3f7-4813-8c2e-3ae2bd13a328
+spec:
+  displayName: Mirrored Certified Operators
+  image: dai-cldp04.ocp-prod.dubaipolice.com:8443/ocp-stg/redhat/certified-operator-index@sha256:5bb80495b780780a706777878cc619b4956989b99b89ec9160d106cfa19d328c
+  publisher: oc-mirror
+  sourceType: grpc
+status:
+  connectionState:
+    address: mirrored-certified-operators.openshift-marketplace.svc:50051
+    lastConnect: "2026-11-23T09:29:54Z"
+    lastObservedState: READY
+  registryService:
+    createdAt: "2026-11-23T09:29:31Z"
+    port: "50051"
+    protocol: grpc
+    serviceName: mirrored-certified-operators
+    serviceNamespace: openshift-marketplace
+v26.7 → gpu-operator-certified.v26.7.2
+[root@dai-cldp04 ~]#
+
+
+
+
+
+
 oc get subscription,csv -A | grep -i nvidia
 oc get clusterpolicies.nvidia.com
 oc get catalogsource mirrored-certified-operators \
