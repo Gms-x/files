@@ -1,4 +1,23 @@
 
+find ./mirror-files2 -type f -name 'cs-*.yaml' -print
+
+
+oc debug node/dai-gensrv01.ocp-stg.staging.dubaipolice.com \
+  -- chroot /host cat /etc/containers/registries.conf \
+  | sed -n '/location = "nvcr.io\/nvidia"/,+12p'
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 [root@dai-cldp04 andrew-day1]#
