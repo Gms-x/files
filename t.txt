@@ -1,4 +1,19 @@
 
+oc patch catalogsource mirrored-certified-operators \
+  -n openshift-marketplace \
+  --type=merge \
+  -p '{"spec":{"image":"dai-cldp04.ocp-prod.dubaipolice.com:8443/ocp-stg/redhat/certified-operator-index:v4.20"}}'
+
+
+oc get pods -n openshift-marketplace \
+  -l olm.catalogSource=mirrored-certified-operators
+
+oc get packagemanifest gpu-operator-certified \
+  -n openshift-marketplace \
+  -o jsonpath='{range .status.channels[*]}{.name}{" → "}{.currentCSV}{"\n"}{end}'
+
+
+
 
 [root@dai-cldp04 ~]#
 oc get subscription,csv -A | grep -i nvidia
