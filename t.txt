@@ -1,4 +1,52 @@
 
+skopeo copy --all --preserve-digests \
+  --authfile ~/.docker/config.json \
+  docker://registry.connect.redhat.com/nvidia/gpu-operator-bundle@sha256:564773582b725a7746c211e4f780ee86bb52c9a8f34243580fd21bbe4448f335 \
+  docker://dai-cldp04.ocp-prod.dubaipolice.com:8443/ocp-stg/nvidia/gpu-operator-bundle:26.7.3
+
+
+
+cat <<'EOF' | oc apply -f -
+apiVersion: config.openshift.io/v1
+kind: ImageDigestMirrorSet
+metadata:
+  name: nvidia-certified-bundles
+spec:
+  imageDigestMirrors:
+    - source: registry.connect.redhat.com/nvidia
+      mirrors:
+        - dai-cldp04.ocp-prod.dubaipolice.com:8443/ocp-stg/nvidia
+      mirrorSourcePolicy: NeverContactSource
+EOF
+
+
+
+oc debug node/dai-cldp03.ocp-stg.staging.dubaipolice.com \
+  -- chroot /host cat /etc/containers/registries.conf \
+  | sed -n '/location = "registry.connect.redhat.com\/nvidia"/,+8p'
+
+
+oc delete job \
+  51f9ac9f1c23778d67510ae3f51eb6d3870ea92dfdefaacc61fbb28f27f921b \
+  -n openshift-marketplace --ignore-not-found
+
+oc delete configmap \
+  51f9ac9f1c23778d67510ae3f51eb6d3870ea92dfdefaacc61fbb28f27f921b \
+  -n openshift-marketplace --ignore-not-found
+
+
+
+oc get subscription,installplan,csv -n nvidia-gpu-operator
+oc get pods -n nvidia-gpu-operator
+
+
+
+
+
+
+
+
+
 
 [root@dai-cldp04 andrew-day1]#
 
