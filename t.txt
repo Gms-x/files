@@ -1,4 +1,20 @@
 
+[root@dai-cldp04 andrew-day1]#
+[root@dai-cldp04 andrew-day1]#
+[root@dai-cldp04 andrew-day1]# skopeo copy --all --preserve-digests \
+  --authfile ~/.docker/config.json \
+  docker://registry.connect.redhat.com/nvidia/gpu-operator-bundle@sha256:564773582b725a7746c211e4f780ee86bb52c9a8f34243580fd21bbe4448f335 \
+  docker://dai-cldp04.ocp-prod.dubaipolice.com:8443/ocp-stg/nvidia/gpu-operator-bundle:26.7.3
+Getting image source signatures
+Copying blob acf208f4e77a done   |
+Copying config 91b7f62307 done   |
+Writing manifest to image destination
+[root@dai-cldp04 andrew-day1]#
+
+
+
+
+
 skopeo copy --all --preserve-digests \
   --authfile ~/.docker/config.json \
   docker://registry.connect.redhat.com/nvidia/gpu-operator-bundle@sha256:564773582b725a7746c211e4f780ee86bb52c9a8f34243580fd21bbe4448f335 \
